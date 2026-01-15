@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Demo - Phone Number.</title>
+    <style>
+        /* WordPress-compatible reset and container styles */
+        .demo-wrapper {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            position: relative !important;
+            display: block !important;
+            clear: both !important;
+            background: #000 !important;
+        }
+
+        .demo-container {
+            width: 123% !important;
+            max-width: 1928px !important;
+            height: auto !important;
+            max-height: 1080px !important;
+            min-height: 400px !important;
+            position: relative !important;
+            display: block !important;
+            background: #1a1a1a !important;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            aspect-ratio: 16/9 !important;
+        }
+
+        .demo-frame {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: #fff !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            overflow: hidden !important;
+            transition: all 0.3s ease !important;
+            border: 4px solid #fccfcf !important;
+        }
+
+        .background-image {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+            display: block !important;
+            /* Ensure image is always visible with fallback background */
+            background: #f0f0f0 !important;
+        }
+
+        .overlay-layer {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            pointer-events: auto !important;
+            z-index: 10 !important;
+        }
+
+        .hotspot {
+            position: absolute !important;
+            border: 2px solid rgba(162,160,177,1) !important;
+            border-radius: 8px !important;
+            cursor: pointer !important;
+            pointer-events: all !important;
+            transition: all 0.3s ease !important;
+            animation: pulse 1.5s infinite;
+            z-index: 20 !important;
+            /* Allow percentage-based width and height for responsive scaling */
+            min-width: 5px !important; /* Minimum size for touch accessibility */
+            min-height: 2px !important; /* Minimum size for touch accessibility */
+            /* background: rgba(59, 130, 246, 0.1) !important; */
+        }
+
+      
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(162,160,177,1) ;
+            }
+            
+            90% {
+                box-shadow: 0 0 0 10px rgba(212, 212, 218, 0.4) ;
+            }
+            91%,100% {
+                box-shadow: 0 0 0 0 rgba(226,227,229,0) ;
+            }
+        }
+
+        /* Style all hotspots in step 1 */
+        .hotspot.step-1 {
+            border-radius: 8px !important;
+        }
+        
+        .hotspot.step-2{
+            border-radius: 10px !important;
+        }
+
+        /* Style all hotspots in step 4 */
+        .hotspot.step-4 {
+            border-radius: 6px !important;
+        }   
+
+        .hotspot.step-5{
+            border-radius: 2px !important;
+        }
+
+        .hotspot.step-6{
+            border-radius: 6px !important;
+        }
+
+        .hotspot.step-7{
+            border-radius: 6px !important;
+        }
+        
+        .hotspot.step-8{
+            border-radius: 10px !important;
+        }
+        /* Professional Tooltip Styles */
+        .tooltip {
+            position: absolute !important;
+            background: white !important;
+            color: #333 !important;
+            border-radius: clamp(6px, 1vw, 12px) !important;
+            font-size: clamp(8px, 12px, 16px) !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4 !important;
+            box-shadow: 0 3px 10.5px rgba(0, 0, 0, 0.15) !important;
+            opacity: 0 !important;
+            transform:scale(1) !important;
+            transition: all 0.3s ease !important;
+            z-index: 1000 !important;
+            border: 2px solid #CCCCCC !important;
+            overflow: visible !important;
+            pointer-events: auto !important;
+            visibility: hidden !important;
+            box-sizing: border-box !important;
+            max-width:40% !important;
+            min-height: 10px !important;
+            max-height: 65% !important;
+        }
+
+        .tooltip.visible {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform:scale(1);
+        }
+
+        /* Step-specific tooltip classes for customization */
+        .tooltip.step-1-tooltip {
+            max-width: clamp(250px, 25vw, 280px) !important;
+            border: 3px solid #22194D !important;
+        }
+
+        .step1tooltiphighlight{
+            color:#fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        .tooltip.step-2-tooltip {
+            /* max-width: clamp(20%, 30%, 15%) !important; */
+            height:auto !important;
+            font-weight: 500 !important;
+            font-size: 15px !important;
+            border: 1.5px solid #22194D !important;
+            margin-right: clamp(8px, 1vw, 10px) !important;
+        }
+
+        .step2tooltiphighlight{
+            color: #fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        .tooltip.step-3-tooltip {
+            max-width: clamp(20%, 30%, 15%) !important;
+            height: auto !important;
+            font-weight: 500 !important;
+            font-size: 15px !important;
+            border: 1.5px solid #22194D !important;
+        }
+
+        .step3tooltiphighlight{
+            color:#fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        .tooltip.step-4-tooltip{
+            max-width: clamp(300px, 35%, 500px) !important;
+            min-width: clamp(200px, 18%, 280px) !important;
+            width: clamp(280px, 30%, 360px) !important;
+            border:1.5px solid #22194D !important;
+            font-weight: 500 !important;
+            font-size: 15px !important;
+            height: auto !important;
+        }
+
+        .step4tooltiphighlight{
+            color: #fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        .tooltip.step-5-tooltip{
+            height:auto !important;
+            border: 1.5px solid #22194D !important;
+            width: clamp(250px, 25%, 300px) !important;
+            font-weight: 500 !important;
+            font-size: 15px !important;
+        }
+        
+        .step5tooltiphighlight{
+            color: #fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        .tooltip.step-6-tooltip{
+            /* max-width:22% !important; */
+            height:auto !important;
+            border: 1.5px solid #22194D !important;
+            width: clamp(250px, 25%, 300px) !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+        }
+
+        .step6tooltiphighlight{
+            color: #fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        .tooltip.step-7-tooltip{
+            height:auto !important;
+            border: 1.5px solid #22194D !important;
+            width: clamp(250px, 25%, 300px) !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+        }
+
+        .step7tooltiphighlight{
+            color: #fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        .tooltip.step-8-tooltip{
+            height: auto !important;
+            width: clamp(250px, 25%, 300px) !important;
+            border: 1.5px solid #22194D !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+        }
+
+        .step8tooltiphighlight{
+            color: #fb636ded !important;
+            font-weight: 800 !important;
+            text-decoration: underline !important;
+        }
+
+        /* Welcome tooltip specific styles */
+        .tooltip.welcome-tooltip {
+            max-width: 42% !important;
+            max-height:50% !important;
+            width: 100% !important;
+            height: auto !important;
+            z-index: 1001 !important;
+            text-align: center;
+            transform: none !important;
+        }
+
+        .tooltip.welcome-tooltip .tooltip-content {
+            font-size: 17px !important;
+            font-weight: 500 !important;
+        }
+
+        /* Welcome tooltip navigation - single button */
+        .tooltip.welcome-tooltip .tooltip-nav {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 0 20% 12% !important;
+        }
+
+        .tooltip.welcome-tooltip .tooltip-btn-start {
+            padding: 4% 9% !important;
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            background: #f12d39 !important;
+            color: white !important;
+            border: 1px solid #ccc !important;
+        }
+
+        .welcomeimage img {
+            height: 15% !important;
+            width: 45% !important;
+            object-fit: contain !important;
+        }
+
+        /* Outro tooltip specific styles */
+        .tooltip.outro-tooltip {
+            max-width: 60% !important;
+            width: 40% !important;
+            height: auto !important;
+            z-index: 1001 !important;
+            text-align: center;
+            /* Ensure no transform animations */
+            transform: none !important;
+        }
+
+        .tooltip.outro-tooltip .tooltip-content {
+            font-size: 19px !important;
+            font-weight: 500 !important;
+        }
+
+        /* Outro tooltip navigation - single button */
+        .tooltip.outro-tooltip .tooltip-nav {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            padding: 0 20px 16px !important;
+            gap: 20px;
+        }
+
+        .tooltip.outro-tooltip .tooltip-btn-restart {
+            padding: 12px 32px !important;
+            border-radius: 8px !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            border: 1px solid #000000 !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            background: white !important;
+            color: #000 !important;
+        }
+
+        .tooltip.outro-tooltip .tooltip-btn-nextdemo{
+            padding: 12px 32px !important;
+            border-radius: 8px !important;
+            font-size: 12px !important;
+            font-weight: 500 !important;
+            border: 1px solid #000000 !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            background: #f12d39 !important;
+            color: #fff !important;
+        }
+
+        .welcometooltiphighlight{
+            color:#2563eb !important;
+            font-weight: 800 !important;
+        }
+
+        .welcomegreeting{
+            display: block;
+            font-weight: 800;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Bullet List Styles for Tooltips */
+        .tooltip-bullet-list {
+            margin: 0 !important;
+            padding-left: 0 !important;
+            list-style: none !important;
+        }
+        
+        .tooltip-bullet-list li {
+            position: relative !important;
+            padding-left: 20px !important;
+            margin-bottom: 8px !important;
+            color: #333 !important;
+            font-size: 17px !important;
+            line-height: 1.5 !important;
+        }
+        
+        .tooltip-bullet-list li:last-child {
+            margin-bottom: 0 !important;
+        }
+        
+        .tooltip-bullet-list li::before {
+            content: '•' !important;
+            color: #2563eb !important;
+            font-weight: bolder !important;
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            font-size: clamp(0.6rem, 0.7vw, 0.8rem) !important;
+        }
+
+        /* Numbered List */
+        .numbered-list {
+            padding-left: 15px !important;
+        }
+
+        .numbered-list li {
+            position: relative !important;
+            margin-bottom: 8px !important;
+            color: #333 !important;
+            font-size: 13px !important;
+            line-height: 1.2 !important;
+        }
+
+        .numbered-list li:last-child{
+            margin-bottom: 0 !important;
+        }
+
+        /* Progress Bar */
+        .tooltip-progress {
+            height: 8px !important;
+            width: 99% !important;
+            background-color: #f3f4f6 !important;
+            border-radius: 0 !important;
+            overflow: hidden !important;
+        }
+
+        .tooltip-progress-bar {
+            height: 100% !important;
+            background-color: #f12d39 !important;
+            border-radius: 0 6px 6px 0 !important;
+            transition: all 0.3s ease !important;
+        }
+
+        /* Header with Close Button */
+        .tooltip-header {
+            display: flex !important;
+            justify-content: flex-end !important;
+            padding: 1px 15px 0 !important;
+        }
+
+        .tooltip-close {
+            background: #ff000085 !important;
+            border: none !important;
+            color: #fff !important;
+            border-radius: 6px !important;
+            padding: 1px 3px !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            font-size: 8px !important;
+            line-height: 1 !important;
+            min-width: 12px !important;
+            min-height: 6px !important;
+        }
+
+        .tooltip-close:hover {
+            color: #374151 !important;
+            background-color: #f3f4f6 !important;
+        }
+
+        /* Content */
+        .tooltip-content {
+            position: relative;
+            overflow: hidden;
+            padding: 5px 20px 10px !important;
+        }
+
+        /* Navigation Buttons */
+        .tooltip-nav {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            padding: 0 20px 16px !important;
+        }
+
+        .tooltip-btn {
+            padding: 9px 20px !important;
+            border-radius: 6px !important;
+            font-size: 13px !important;
+            font-weight: 500 !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            border: none !important;
+        }
+
+        .tooltip-btn-back {
+            background: transparent !important;
+            color: #000000 !important;
+            border: 1px solid #22194D !important;
+
+        }
+
+        .tooltip-btn-back:hover {
+            color: #374151 !important;
+            border-color: #22194D !important;
+            background-color: #f9fafb !important;
+            cursor: pointer !important;
+        }
+
+
+        .tooltip-btn-back:disabled {
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
+        }
+
+        .tooltip-btn-finish {
+            background: #f12d39 !important;
+            color: white !important;
+            border: 1px solid #000000 !important;
+            cursor: pointer !important;
+        }
+
+        .tooltip-btn-finish:hover {
+            background: #ff8b8b !important;
+            border-color: #2563eb !important;
+            cursor: pointer !important;
+        }
+
+        .tooltip-btn-finish:disabled {
+            opacity: 0.5 !important;
+            cursor: not-allowed !important;
+        }
+
+        /* Outward Pointing Arrows (like chat bubbles) */
+        .tooltip-arrow {
+            position: absolute !important;
+            width: 0 !important;
+            height: 0 !important;
+            z-index: 1 !important;
+            filter: drop-shadow( 0 2px 4px rgba(0, 0, 0, 0.1)) !important;
+        }
+
+        /* Arrow points DOWN from bottom of tooltip (for tooltips positioned above hotspots) */
+        .tooltip-arrow.top {
+            top: 100% !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            border-left: 8px solid transparent !important;
+            border-right: 8px solid transparent !important;
+            border-top: 12px solid #CCCCCC !important;
+            border-bottom: 0 none !important;
+        }
+
+        /* Arrow points UP from top of tooltip (for tooltips positioned below hotspots) */
+        .tooltip-arrow.bottom {
+            bottom: 100% !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            border-left: 8px solid transparent !important;
+            border-right: 8px solid transparent !important;
+            border-bottom: 12px solid #cccccc !important;
+            border-top: 0 none !important;
+        }
+
+        /* Arrow points RIGHT from right side of tooltip (for tooltips positioned left of hotspots) */
+        .tooltip-arrow.left {
+            left: 100% !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            border-top: 8px solid transparent !important;
+            border-bottom: 8px solid transparent !important;
+            border-left: 12px solid #cccccc !important;
+            border-right: 0 none !important;
+        }
+
+        /* Arrow points LEFT from left side of tooltip (for tooltips positioned right of hotspots) */
+        .tooltip-arrow.right {
+            right: 100% !important;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            border-top: 8px solid transparent !important;
+            border-bottom: 8px solid transparent !important;
+            border-right: 12px solid #cccccc !important;
+            border-left: 0 none !important;
+        }
+
+        /* Mobile Navigation Panel Styles */
+        @media (max-width: 768px) {
+            /* Mobile demo container adjustments */
+            .demo-container {
+                max-height: calc(100vh - 120px) !important;
+                min-height: calc(100vh - 120px) !important;
+                aspect-ratio: auto !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .demo-container {   
+                max-height: 300px !important;
+                min-height: 250px !important;
+                aspect-ratio: 4/3 !important;
+            }
+
+            .tooltip.welcome-tooltip {
+                width: 85vw !important;
+                height: 20vh !important;
+                min-height: 20vh !important;
+            }
+
+            .tooltip.welcome-tooltip .tooltip-content {
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+            .tooltip.welcome-tooltip .tooltip-btn-start {
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+
+            /* outro tooltip*/
+            .tooltip.outro-tooltip {
+                width: 85vw !important;
+                height: 25vh !important;
+                min-height: 25vh !important;
+            }
+
+
+            .tooltip.outro-tooltip .tooltip-content {
+                font-size: clamp(3px, 1.3vw, 8px) !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-btn-restart {
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-btn-nextdemo {
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+            .tooltip  {
+                max-height: 70% !important;
+                max-width: 35% !important;
+            }
+
+            .tooltip .tooltip-content{
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+                padding: 1px 4px 3px !important;
+            }
+
+            .tooltip-btn{
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+                min-width: 20px !important;
+            }
+
+            .tooltip-bullet-list li{
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+            .step-counter {
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            } 
+            
+            .numbered-list li {
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+            /*HOTSPOT STYLING*/
+            .hotspot.step-1{border-radius: 4px !important; left: 0.9% !important; }
+            .hotspot.step-2{border-radius: 4px !important; left: 0.9% !important; }
+            .hotspot.step-3{border-radius: 4px !important;}
+            .hotspot.step-4{border-radius: 4px !important;}
+            .hotspot.step-7{border-radius: 4px !important; left: 69.4% !important; width: 3.2% !important;height: 5.5% !important; margin-top: -1% !important;}
+            .hotspot.step-8{border-radius: 4px !important;}
+        }
+
+        /* Responsive for small screen phones */
+        @media (max-width: 360px){
+            .demo-container {
+                max-height: 300px !important;
+                min-height: 250px !important;
+                aspect-ratio: 4/3 !important;
+            }
+
+            .tooltip.welcome-tooltip {
+                width: 40vw !important;
+                height: 26vh !important;
+                min-height: 100px !important;
+            }
+
+            .welcomeimage img {
+                height: clamp(20px, 6vw, 25px) !important;
+                width: clamp(60px, 20vw, 75px) !important;
+            }
+
+            .tooltip.welcome-tooltip .tooltip-content {
+                font-size: clamp(3px, 1.6vw, 8px) !important;  
+            }
+
+            .tooltip.welcome-tooltip .tooltip-btn-start {
+                padding: 1vw 3vh !important;
+                border-radius: 5px !important;
+                font-size: 1.6vw !important;
+            }
+
+            .tooltip.outro-tooltip {
+                width: 44vw !important;
+                height: 20vh !important;
+                min-height: 20vh !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-content {
+                font-size: clamp(2px, 1.6vw, 8px) !important;
+            }
+
+            .tooltip-btn {
+                padding: 3px 7px !important;    
+            }
+            
+            .tooltip {
+                max-height: auto !important;
+                max-width: 35% !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-btn-restart {
+                padding: 6px 10px !important; 
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+            /*HOTSPOT STYLING*/
+
+
+            .hotspot.step-1{border-radius: 4px !important; margin-left: -0.7% !important; top: 16% !important;}
+            .hotspot.step-2{border-radius: 4px !important; margin-left: -0.7% !important; top: 16% !important;}
+            .hotspot.step-3{border-radius: 4px !important; height: 5% !important;}
+            .hotspot.step-4{border-radius: 4px !important; height: 5.5% !important;}
+            .hotspot.step-5{border-radius: 4px !important; height: 5.5% !important;}
+            .hotspot.step-7{border-radius: 4px !important; left: 69.4% !important; width: 3.2% !important;height: 5.5% !important; margin-top: 0% !important;}
+            .hotspot.step-8{border-radius: 4px !important; height: 6% !important;}
+
+              
+
+            /* .tooltip.step-6-tooltip {
+               max-width: 100% !important;
+            } */
+
+            .numbered-list li {
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+
+            .tooltip.outro-tooltip .tooltip-nav {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                padding: 0 clamp(12px, 4vw, 20px) clamp(8px, 3vw, 16px) !important;
+                gap: clamp(8px, 4vw, 16px) !important;
+            }
+
+            /* .tooltip.outro-tooltip .tooltip-btn-restart {
+                padding: clamp(8px, 3vw, 12px) clamp(16px, 4vw, 20px) !important;
+                border-radius: 5px !important;
+                font-size: clamp(0.7rem, 3vw, 0.9rem) !important;
+                font-weight: 500 !important;
+                border: 1px solid #000000 !important;
+                cursor: pointer !important;
+                transition: all 0.2s ease !important;
+                background: white !important;
+                color: #000 !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-btn-nextdemo{
+                padding: clamp(8px, 3vw, 12px) clamp(16px, 4vw, 20px) !important;
+                border-radius: 5px !important;
+                font-size: clamp(0.7rem, 3vw, 0.9rem) !important;
+                font-weight: 500 !important;
+                border: 1px solid #000000 !important;
+                cursor: pointer !important;
+                transition: all 0.2s ease !important;   
+                background: #22194D !important;
+                color: #fff !important;
+            } */
+
+            /* .hotspot.step-2{
+                top:18% !important; left:0.5% !important; width:4.5% !important; height:5.2% !important;
+                border-radius:5px !important;  
+            } */
+
+        }
+
+        @media (max-width: 1280px){
+            .demo-container{
+                max-width:1280px !important;
+                max-height: 720px !important;
+                aspect-ratio: 16/9 !important;
+            }
+        }
+
+        
+        /* Large displays optimization */
+        @media (min-width: 1920px) {
+            .demo-container {
+                max-width: 1920px !important;
+                max-height: 1080px !important;
+                margin: 0 auto !important;
+            }
+        }
+        
+        /* Specific optimization for 1792x1120 resolution */
+        @media (width: 1792px) and (height: 1120px) {
+            .tooltip.welcome-tooltip {
+                max-width: 45% !important;
+                width: 42% !important;
+                height: 40% !important;
+            }
+
+            .tooltip.welcome-tooltip .tooltip-content {
+                font-size: 1.3vw !important;
+            }
+
+            .tooltip.welcome-tooltip .tooltip-btn-start {
+                font-size: 0.9vw !important;
+            }
+
+            .tooltip.outro-tooltip {
+                max-width: 45% !important;
+                width: 42% !important;
+                height: 35% !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-content {
+                font-size: 1.3vw !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-btn-restart,
+            .tooltip.outro-tooltip .tooltip-btn-nextdemo {
+                font-size: 0.9vw !important;
+            }
+
+            .demo-container {
+                max-width: 1600px !important;
+                max-height: 900px !important;
+                    margin: 0 auto !important;
+            }
+        }
+
+        /* Specific optimization for 1920x1080 resolution */
+        @media (width: 1920px) and (height: 1080px) {
+            .tooltip.welcome-tooltip {
+                max-width: 45% !important;
+                width: 38% !important;
+                height: 30% !important;
+            }
+
+            .tooltip.welcome-tooltip .tooltip-content {
+                font-size: 1.2vw !important;
+            }
+
+            .tooltip.welcome-tooltip .tooltip-btn-start {
+                font-size: 0.8vw !important;
+            }
+
+            .tooltip.outro-tooltip {
+                max-width: 40% !important;
+                width: 38% !important;
+                height: 35% !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-content {
+                font-size: 1.2vw !important;
+            }
+
+            .tooltip.outro-tooltip .tooltip-btn-restart,
+            .tooltip.outro-tooltip .tooltip-btn-nextdemo {
+                font-size: 0.8vw !important;
+            }
+
+            .demo-container {
+                max-width: 1800px !important;
+                max-height: 1012px !important;
+                margin: 0 auto !important;
+            }
+        }
+
+        /* Ensure no conflicts with WordPress themes */
+        .demo-wrapper * {
+            box-sizing: border-box !important;
+        }
+
+        /* Preloader Styles */
+        .preloader-overlay {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: #CCCCCC !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 9999 !important;
+            transition: opacity 0.5s ease, visibility 0.5s ease !important;
+        }
+
+        .preloader-overlay.hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        .spinner {
+            width: 50px !important;
+            height: 50px !important;
+            border: 3px solid rgba(255, 255, 255, 0.1) !important;
+            border-top: 3px solid #f12d39 !important;
+            border-radius: 50% !important;
+            animation: spin 1s linear infinite !important;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            margin-top: 20px !important;
+            color: #ffffff !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            letter-spacing: 1px !important;
+        }
+
+        .preloader-progress {
+            margin-top: 15px !important;
+            width: 200px !important;
+            height: 4px !important;
+            background: rgb(255, 255, 255);
+            border-radius: 2px !important;
+            overflow: hidden !important;
+        }
+
+        /* .preloader-progress-bar {
+            height: 100% !important;
+            background: linear-gradient(90deg, #f12d39, #ff6b6b) !important;
+            border-radius: 2px !important;
+            transition: width 0.3s ease !important;
+            width: 0% !important;
+            display:none;
+        } */
+        
+    </style>
+</head>
+<body>
+    <div class="demo-wrapper">
+        <div class="demo-container" id="demoContainer">
+            <div class="demo-frame" id="demoFrame">
+                <!-- Preloader -->
+                <div class="preloader-overlay" id="preloader">
+                    <div class="spinner"></div>
+                    <div class="preloader-text">Loading demo...</div>
+                    <div class="preloader-progress">
+                        <!-- <div class="preloader-progress-bar" id="preloaderProgressBar"></div> -->
+                    </div>
+                </div>
+                <img class="background-image" id="backgroundImage">
+                <div class="overlay-layer" id="overlayLayer"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const demoSteps = [
+            {
+                //Step 1
+                image:"mainassets/Home_Dashboard_Analytics(Main).svg",
+                hotspots:[
+                    {x:0.5, y:15, width:4.2, height:7, tooltip:"Open the <span class='step1tooltiphighlight'>Phone</span> tab to acces call controls logs instantly - a single click brings up your dialer and call history so reps can folow up on leads without switching tools"}
+                ]
+            },
+            {
+                // Step 2
+                image: "mainassets/Home_Dashboard_Analytics(Main).svg",
+                hotspots:[
+                    {x:0.5, y:15, width:4.2, height:7, tooltip:"Open the <span class='step2tooltiphighlight'>Phone</span> tab to acces call controls logs instantly - a single click brings up your dialer and call history so reps can folow up on leads without switching tools",tooltipWidth: 35,position:'right'}
+                ]
+            },
+            {
+                // Step 3
+                image: "mainassets/PhoneSection.svg",
+                hotspots:[
+                    {x:22.4, y:26, width:5.6, height: 4, tooltip:"Use <span class='step3tooltiphighlight'>All</span> for full interaction context,<br><span class='step3tooltiphighlight'>Outgoing</span> to refine outreach,<br><span class='step3tooltiphighlight'>Incoming</span> to capture hot leads,<br><span class='step3tooltiphighlight'>Missed</span> to quickly recover lost opportunities.",tooltipWidth: 35,position:'right'},
+                    {x:16.4, y:26, width:5.8, height: 4},
+                    {x:10.6, y:26, width:5.6, height: 4},
+                    {x:5.2, y:26, width:5.2, height: 4},
+
+                ]
+            },
+            {
+                // Step 4
+                image: "mainassets/PhoneSection.svg",
+                hotspots:[
+                    {x:13, y:14.6, width:7.2, height:5,tooltip:"<ul class='tooltip-bullet-list'><li>Stay in <span class='step4tooltiphighlight'>calls</span> for a quick interaction timeline with timestamps and durations.</li><li>Use <span class='step4tooltiphighlight'>Recordings</span> to replay conversations.</li><li>Check <span class='step4tooltiphighlight'>Voicemails</span> to capture prospect intent.</li></ul>",tooltipWidth:35,position:'botom'},
+                    {x:20.5, y:14.6, width:7.2, height:5},
+                    {x:5.5, y:14.6, width:7.2, height:5}
+                ]
+            },
+            {
+                // Step 5
+                image: "mainassets/PhoneSection(With DID).svg",
+                hotspots:[
+                    {x:55, y:28.4, width:21, height:4, tooltip:"Use the <span class='step5tooltiphighlight'>DID Selector</span> to switch outbound caller IDs and match the right regional number for each campaign.",tooltipWidth:35, position:"bottom"},
+                ]
+            },
+            {
+                // Step 6
+                image: "mainassets/PhoneSection(With DID).svg",  // incall interface
+                hotspots:[
+                    {   x:52, 
+                        y:32.3, 
+                        width:24.3, 
+                        height: 56,
+                        tooltip:"<ol class='numbered-list'><li><span class='step6tooltiphighlight'>Mute</span> to block background noise.</li><li>Use to <span class='step6tooltiphighlight'>Keypad</span> to send DTMF tones for IVR.</li><li>Start <span class='step6tooltiphighlight'>Live Transcription</span> for real-time searchable text.</li><li>Put callers on <span class='step6tooltiphighlight'>Hold</span> to manage Transfers.</li><li>Start <span class='step6tooltiphighlight'>Recording</span> for training and compliance, and check status to confirm capture.</li><li><span class='step6tooltiphighlight'>Transcript</span>: View Real-time searchable text with speaker labels and playback icons.</li><li>Enable <span class='step6tooltiphighlight'>AI Assist</span> for live coaching, suggested responses, and instant summaries.</li></ol>",
+                        tooltipWidth: 35,
+                        position:"left"}
+                ]
+            },
+            {
+                // Step 7
+                image: "mainassets/PhoneSection(In call).svg", // incall interface
+                hotspots:[
+                    {   x:70.4, 
+                        y:21.2, 
+                        width:1.2, 
+                        height: 2.2,
+                        tooltip: "<span class=step7tooltiphighlight>Toggle Fullscreen</span> to expand the dialer and the transcript panels - Focus on the conversation, see more context and collaborate without UI distractions during key calls",
+                        tooltipWidth: 35,
+                        position:"bottom",
+                    }
+                ]
+            },
+            {
+                // Step 8
+                image: "mainassets/PhoneSection(With Transcription).png",
+                hotspots:[
+                    {
+                        x:42.7,
+                        y:16.8,
+                        width:56,
+                        height:5.2,
+                        tooltip:"<ul><li class='tooltip-bullet-list'><span class='step7tooltiphighlight'>Call Activity</span>:  View a quick timeline of the call with key events, duration, and outcomes.</li><li><span class='step7tooltiphighlight'>Transcript</span>: Open the transcript tab to review or start transcription for searchable, actionable call text.</li><li><span class='step7tooltiphighlight'>Notes</span>: Add or review notes to capture context, customer issues, and follow-up actions.</li></ul>",
+                        tooltipWidth: 35,
+                        position:"bottom"
+                    }
+                ]
+            }
+        ]
+
+        let currentStep = 0;
+        let isTransitioning = false;
+
+        // Enhanced image preloading system
+        let preloadedImages = {};
+        let imagesLoaded = false;
+        let preloadProgress = 0;
+        let totalImages = 0;
+
+        // Mobile Detection and Management
+        let isMobile = false;
+        let mobileCheckPerformed = false;
+
+        // Enhanced preload images in stages: first 5, then show demo, then rest in background
+        function preloadImages() {
+            const uniqueImages = [...new Set(demoSteps.map(step => step.image))];
+            totalImages = uniqueImages.length;
+            preloadProgress = 0;
+
+            console.log(`Starting to preload ${totalImages} unique images...`);
+
+            // Preload first 5 images
+            const firstBatch = uniqueImages.slice(0, 5);
+            const remainingBatch = uniqueImages.slice(5);
+
+            const preloadBatch = (batch) => {
+                const promises = batch.map((imagePath) => {
+                    return new Promise((resolve, reject) => {
+                        if (preloadedImages[imagePath]) {
+                            resolve();
+                            return;
+                        }
+                        const img = new Image();
+                        img.onload = () => {
+                            preloadedImages[imagePath] = img.src;
+                            preloadProgress++;
+                            console.log(`Preloaded ${preloadProgress}/${totalImages}: ${imagePath}`);
+                            updatePreloaderProgress();
+                            resolve();
+                        };
+                        img.onerror = () => {
+                            preloadProgress++;
+                            console.error(`Failed to preload image: ${imagePath}`);
+                            resolve(); // Resolve anyway to not block initialization
+                        };
+                        img.src = imagePath;
+                    });
+                });
+                return Promise.all(promises);
+            };
+
+            // Preload first 5 images, then start demo
+            return preloadBatch(firstBatch).then(() => {
+                console.log('✅ First 5 images preloaded, starting demo...');
+
+                // Start the demo with first image
+                console.log('🚀 Starting demo with first 5 images ready');
+                loadStep(0);
+
+                // Continue preloading remaining images in background
+                if (remainingBatch.length > 0) {
+                    console.log(`Continuing to preload ${remainingBatch.length} remaining images in background...`);
+                    preloadBatch(remainingBatch).then(() => {
+                        imagesLoaded = true;
+                        console.log('✅ All images preloaded successfully!');
+                    }).catch((error) => {
+                        console.error('Error preloading remaining images:', error);
+                        imagesLoaded = true; // Mark as loaded even if some failed
+                    });
+                } else {
+                    imagesLoaded = true;
+                }
+            });
+        }
+
+        function detectMobile() {
+            if (mobileCheckPerformed) return isMobile;
+            
+            isMobile = window.innerWidth <= 768 ||
+                      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            mobileCheckPerformed = true;
+            return isMobile;
+        }
+
+        function isMobileDevice() {
+            return detectMobile();
+        }
+
+        // Update preloader progress bar
+        function updatePreloaderProgress() {
+            const progressBar = document.getElementById('preloaderProgressBar');
+            if (progressBar && totalImages > 0) {
+                const percentage = (preloadProgress / totalImages) * 100;
+                progressBar.style.width = `${percentage}%`;
+            }
+        }
+
+        // Hide preloader with fade effect
+        function hidePreloader() {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('hidden');
+            }
+        }
+
+        // Initialize the demo with staged image preloading
+        function initDemo() {
+            detectMobile();
+
+            // Preload images in stages: first 5, then start demo, rest in background
+            preloadImages().then(() => {
+                hidePreloader();
+                setupKeyboardNavigation();
+            }).catch((error) => {
+                console.error('Error preloading images:', error);
+                // Still initialize even if some images failed to load
+                console.log('⚠️ Starting demo with partial image loading');
+                hidePreloader();
+                setupKeyboardNavigation();
+            });
+        }
+
+        // Show welcome tooltip for the first step
+        function showWelcomeTooltip() {
+            // Check if welcome tooltip already exists
+            const existingWelcomeTooltip = document.querySelector('.welcome-tooltip');
+            if (existingWelcomeTooltip) {
+                return; // Don't create a duplicate
+            }
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip welcome-tooltip';
+            
+            tooltip.innerHTML = `
+                <div class="tooltip-progress">
+                    <div class="tooltip-progress-bar" style="width: ${((currentStep + 1) / demoSteps.length) * 100}%"></div>
+                </div>
+                <div class="tooltip-header">
+                    <button class="tooltip-close" onclick="hideHotspotTooltips()">✕</button>
+                </div>
+                <div class="tooltip-content">
+                    <span class="welcomeimage"><img src="mainassets/acepeaklogo.webp" alt="acepeaklogo"></span>
+                    <span class="welcomegreeting">Welcome — this flow shows how Customer Success agents can <span class="welcometooltiphighlight">Purchase DID Numbers</span>, and place a test call to confirm the purchased <span class="welcometooltiphighlight">DID Number</span> works.
+                </div>
+                <div class="tooltip-nav">
+                    <button class="tooltip-btn tooltip-btn-start" onclick="nextStep()">Start</button>
+                </div>
+            `;
+            
+            // Position tooltip in the center of the frame
+            positionWelcomeTooltip(tooltip);
+            
+            // Append to overlay layer
+            document.getElementById('overlayLayer').appendChild(tooltip);
+            
+            // Trigger animation
+            setTimeout(() => {
+                tooltip.classList.add('visible');
+            }, 10);
+        }
+
+        // Show outro tooltip for the final step
+        function showOutroTooltip() {
+            // Check if outro tooltip already exists
+            const existingOutroTooltip = document.querySelector('.outro-tooltip');
+            if (existingOutroTooltip) {
+                return; // Don't create a duplicate
+            }
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip outro-tooltip';
+            
+            tooltip.innerHTML = `
+                <div class="tooltip-progress">
+                    <div class="tooltip-progress-bar" style="width: 100%"></div>
+                </div>
+                <div class="tooltip-header">
+                    <button class="tooltip-close" onclick="hideTooltips()">✕</button>
+                </div>
+                <div class="tooltip-content">
+                    <span class="welcomeimage"><img src="mainassets/acepeaklogo.webp" alt="acepeaklogo" height=80, width=320></span>
+                    <span class="welcomegreeting">Congratulations!</span>You've completed the <span class="step1tooltiphighlight">Credit Top-Up Demo!</span> You now have a comprehensive understanding about <span class="step1tooltiphighlight">the Top-Up & Credits.</span>
+                </div>
+                <div class="tooltip-nav">
+                    <button class="tooltip-btn tooltip-btn-restart" onclick="restartDemo()">Restart Demo</button>
+                    <button class="tooltip-btn tooltip-btn-nextdemo" onclick="startNextDemo()">Next Demo</button>
+                </div>
+            `;
+            
+            // Position tooltip in the center of the frame
+            positionOutroTooltip(tooltip);
+            
+            // Append to overlay layer
+            document.getElementById('overlayLayer').appendChild(tooltip);
+            
+            // Trigger animation
+            setTimeout(() => {
+                tooltip.classList.add('visible');
+            }, 10);
+        }
+
+        // Position welcome tooltip in the center
+        function positionWelcomeTooltip(tooltip) {
+            const frameRect = document.getElementById('demoFrame').getBoundingClientRect();
+            
+            // Get the computed dimensions (which will be in percentages converted to pixels)
+            const computedStyle = window.getComputedStyle(tooltip);
+            const tooltipWidth = parseFloat(computedStyle.width) || (frameRect.width * 0.5);
+            const tooltipHeight = parseFloat(computedStyle.height) || (frameRect.height * 0.4);
+            
+            const left = (frameRect.width - (tooltipWidth)*0.5) / 2;
+            const top = (frameRect.height - (tooltipHeight)*0.5) / 2;
+            
+            tooltip.style.left = `${Math.max(10, left)}px`;
+            tooltip.style.top = `${Math.max(10, top)}px`;
+        }
+
+        // Position outro tooltip in the center 
+        function positionOutroTooltip(tooltip) {
+            const frameRect = document.getElementById('demoFrame').getBoundingClientRect();
+            
+            // Get the computed dimensions (which will be in percentages converted to pixels)
+            const computedStyle = window.getComputedStyle(tooltip);
+            const tooltipWidth = parseFloat(computedStyle.width) || (frameRect.width * 0.5);
+            const tooltipHeight = parseFloat(computedStyle.height) || (frameRect.height * 0.4);
+            
+            const left = (frameRect.width - (tooltipWidth)*0.5) / 2;
+            const top = (frameRect.height - (tooltipHeight)*0.5) / 2;
+            
+            tooltip.style.left = `${Math.max(10, left)}px`;
+            tooltip.style.top = `${Math.max(10, top)}px`;
+        }
+
+        // Restart the demo from the beginning
+        function restartDemo() {
+            hideTooltips();
+            loadStep(0);
+        }
+
+        function startNextDemo(){
+            hideTooltips();
+            // Navigate to the Top-up Credit Demo
+            window.location.href = 'topupcredit.html';
+        }
+
+        // Hide only hotspot tooltips (preserve welcome tooltip)
+        function hideHotspotTooltips() {
+            const tooltips = document.querySelectorAll('.tooltip:not(.welcome-tooltip)');
+            tooltips.forEach(tooltip => {
+                tooltip.classList.remove('visible');
+                setTimeout(() => {
+                    if (tooltip.parentNode) {
+                        tooltip.parentNode.removeChild(tooltip);
+                    }
+                }, 300);
+            });
+        }
+
+        // Hide all tooltips including welcome tooltip
+        function hideTooltips() {
+            const tooltips = document.querySelectorAll('.tooltip');
+            tooltips.forEach(tooltip => {
+                tooltip.classList.remove('visible');
+                setTimeout(() => {
+                    if (tooltip.parentNode) {
+                        tooltip.parentNode.removeChild(tooltip);
+                    }
+                }, 300);
+            });
+        }
+
+        // Load and display a specific step with guaranteed instant image access
+        function loadStep(stepIndex) {
+            if (stepIndex < 0 || stepIndex >= demoSteps.length || isTransitioning) return;
+            
+            isTransitioning = true;
+            const backgroundImage = document.getElementById('backgroundImage');
+            const overlayLayer = document.getElementById('overlayLayer');
+
+            const step = demoSteps[stepIndex];
+            
+            // Always prefer preloaded images for instant access
+            if (imagesLoaded && preloadedImages[step.image]) {
+                console.log(`⚡ Instant transition to step ${stepIndex + 1} using preloaded image`);
+                performStepTransition(step, stepIndex, backgroundImage, overlayLayer);
+            } else {
+                console.log(`🔄 Loading image for step ${stepIndex + 1} on-demand`);
+                // Fallback to loading the image if not preloaded
+                const img = new Image();
+                
+                img.onload = () => {
+                    preloadedImages[step.image] = img.src; // Cache for future use
+                    performStepTransition(step, stepIndex, backgroundImage, overlayLayer);
+                };
+
+                img.onerror = () => {
+                    console.error(`Failed to load image: ${step.image}`);
+                    isTransitioning = false;
+                };
+
+                img.src = step.image;
+            }
+        }
+
+        // Perform the step transition with smooth image change
+        function performStepTransition(step, stepIndex, backgroundImage, overlayLayer) {
+            // Clear only hotspot tooltips, preserve welcome tooltip
+            const hotspotTooltips = overlayLayer.querySelectorAll('.tooltip:not(.welcome-tooltip)');
+            hotspotTooltips.forEach(tooltip => tooltip.remove());
+            
+            // Clear and create hotspots
+            const existingHotspots = overlayLayer.querySelectorAll('.hotspot');
+            existingHotspots.forEach(hotspot => hotspot.remove());
+            const existingWelcomeTooltip = document.querySelector('.welcome-tooltip');
+            if (existingWelcomeTooltip) {
+                overlayLayer.appendChild(existingWelcomeTooltip);
+            }
+            
+            // Create hotspots first
+            step.hotspots.forEach((hotspot, hotspotIndex) => {
+                createHotspot(hotspot, stepIndex, hotspotIndex);
+            });
+            
+            // // Smooth image transition - fade out, change source, fade in
+            // backgroundImage.style.transition = 'opacity 0.2s ease';
+            // backgroundImage.style.opacity = '0';
+            
+            setTimeout(() => {
+                // Change image source
+                backgroundImage.src = step.image;
+                backgroundImage.alt = `Demo step ${stepIndex + 1}`;
+                
+                // Auto-show tooltips for all steps (except first step which has welcome tooltip)
+                setTimeout(() => {
+                    // Show welcome tooltip for the first step only
+                    if (stepIndex === 0) {
+                        showWelcomeTooltip();
+                    } else {
+                        // Hide welcome tooltip if it exists (for step-2 and beyond)
+                        if (existingWelcomeTooltip) {
+                            existingWelcomeTooltip.remove();
+                        }
+                        
+                        // Auto-show hotspot tooltips for steps 2+
+                        step.hotspots.forEach((hotspot, hotspotIndex) => {
+                            const hotspotElement = overlayLayer.children[hotspotIndex];
+                            if (hotspotElement) {
+                                showTooltip(hotspot, hotspotElement);
+                            }
+                        });
+                    }
+                    
+                    // Force repositioning after a delay to ensure stable layout
+                    setTimeout(() => {
+                        const visibleTooltips = document.querySelectorAll('.tooltip.visible:not(.welcome-tooltip)');
+                        visibleTooltips.forEach(tooltip => {
+                            const hotspotElement = tooltip.parentElement.querySelector('.hotspot');
+                            if (hotspotElement) {
+                                const position = tooltip.className.includes('top') ? 'top' :
+                                                tooltip.className.includes('bottom') ? 'bottom' :
+                                                tooltip.className.includes('left') ? 'left' : 'right';
+                                positionTooltip(tooltip, hotspotElement, position);
+                            }
+                        });
+                    });
+                }, 10);
+
+                // Update UI
+                currentStep = stepIndex;
+                updateNavigationButtons();
+                isTransitioning = false;
+            }, 200); // Match the transition duration
+        }
+
+        // Create a hotspot element
+        function createHotspot(hotspot, stepIndex, hotspotIndex) {
+            const hotspotElement = document.createElement('div');
+            hotspotElement.className = `hotspot step-${stepIndex + 1} hotspot-${hotspotIndex + 1}`;
+            hotspotElement.style.left = `${hotspot.x}%`;
+            hotspotElement.style.top = `${hotspot.y}%`;
+            
+            // Set custom dimensions using percentages for responsive scaling
+            // Supports both percentage values (e.g., 4 for 4%) and pixel values
+            if (hotspot.width) {
+                // If width is a number, treat it as percentage; if string with 'px', use as pixels
+                const widthValue = typeof hotspot.width === 'number' ? `${hotspot.width}%` : hotspot.width;
+                hotspotElement.style.width = widthValue;
+            }
+            if (hotspot.height) {
+                // If height is a number, treat it as percentage; if string with 'px', use as pixels
+                const heightValue = typeof hotspot.height === 'number' ? `${hotspot.height}%` : hotspot.height;
+                hotspotElement.style.height = heightValue;
+            }
+            
+            // click handler
+            hotspotElement.onclick = () => showTooltip(hotspot, hotspotElement);
+            
+            // Add hover effects for all steps (including step 2)
+            hotspotElement.onclick = () => {
+                if (!hotspotElement.querySelector('.tooltip.visible:not(.welcome-tooltip)')) {
+                    nextStep(currentStep+1);
+                }
+            };
+            
+            // hotspotElement.onmouseleave = () => {
+            //     // hideHotspotTooltips();
+            // };
+
+            document.getElementById('overlayLayer').appendChild(hotspotElement);
+        }
+
+        // Show tooltip for a hotspot
+        function showTooltip(hotspot, hotspotElement, stepIndex = currentStep) {
+            // Add this validation check at the beginning
+            if (!hotspot.tooltip || hotspot.tooltip.trim() === '') {
+                return; // Don't show tooltip, just return
+            }
+            hideHotspotTooltips(); // Only hide hotspot tooltips, not welcome tooltip
+
+            const tooltip = document.createElement('div');
+            // Use step-specific class and position class
+            const positionClass = hotspot.tooltipPosition || hotspot.position || 'bottom';
+
+            // Determine arrow class based on tooltip position relative to hotspot
+            const arrowClass = {
+                'top': 'bottom',    // tooltip above hotspot -> arrow on bottom of tooltip (pointing down)
+                'bottom': 'top',    // tooltip below hotspot -> arrow on top of tooltip (pointing up)
+                'left': 'right',    // tooltip left of hotspot -> arrow on right of tooltip (pointing right)
+                'right': 'left'     // tooltip right of hotspot -> arrow on left of tooltip (pointing left)
+            }[positionClass] || 'top';
+
+            // Check if we should use mobile navigation panel
+            const useMobileNav = isMobileDevice();
+            const mobileClass = useMobileNav ? 'mobile-navigation' : '';
+
+            // Conditionally apply step-specific classes - only if no custom dimensions are provided
+            const hasCustomDimensions = hotspot.tooltipWidth || hotspot.tooltipHeight;
+            const stepClass = hasCustomDimensions ? '' : `step-${stepIndex + 1}-tooltip`;
+            tooltip.className = `tooltip ${stepClass} position-${positionClass} ${mobileClass}`.trim();
+            
+            // Create professional tooltip structure
+            tooltip.innerHTML = `
+                <div class="tooltip-progress">
+                    <div class="tooltip-progress-bar" style="width: ${((currentStep + 1) / demoSteps.length) * 100}%"></div>
+                </div>
+                <div class="tooltip-header">
+                    <button class="tooltip-close" onclick="hideHotspotTooltips()">✕</button>
+                </div>
+                <div class="tooltip-content">
+                    ${hotspot.tooltip}
+                </div>
+                <div class="tooltip-nav">
+                    <button class="tooltip-btn tooltip-btn-back" onclick="previousStep()">Back</button>
+                    <div class='step-counter'> ${currentStep} / ${demoSteps.length}</div>
+                    <button class="tooltip-btn tooltip-btn-finish" onclick="nextStep()">${currentStep === demoSteps.length - 1 ? 'Finish' : 'Next'}</button>
+                </div>
+                <div class="tooltip-arrow ${positionClass}"></div>
+            `;
+            
+            // Apply custom tooltip dimensions if provided (percentage or pixel values)
+            if (hotspot.tooltipWidth) {
+                const widthValue = typeof hotspot.tooltipWidth === 'number' ? `${hotspot.tooltipWidth}%` : hotspot.tooltipWidth;
+                // Use !important to override any CSS step-specific classes
+                tooltip.style.setProperty('width', widthValue, 'important');
+                tooltip.style.setProperty('max-width', widthValue, 'important');
+            }
+            if (hotspot.tooltipHeight) {
+                const heightValue = typeof hotspot.tooltipHeight === 'number' ? `${hotspot.tooltipHeight}%` : hotspot.tooltipHeight;
+                tooltip.style.setProperty('height', heightValue, 'important');
+                // Add max-height constraint for percentage heights to prevent excessive scaling
+                if (typeof hotspot.tooltipHeight === 'number') {
+                    const maxHeightPercent = Math.min(hotspot.tooltipHeight, 50); // Cap at 35%
+                    tooltip.style.setProperty('max-height', `${maxHeightPercent}vh`, 'important');
+                }
+            }
+            
+            // Position tooltip
+            positionTooltip(tooltip, hotspotElement, positionClass);
+            
+            // Append to overlay layer instead of hotspot for proper positioning
+            document.getElementById('overlayLayer').appendChild(tooltip);
+            
+            // Trigger animation
+            setTimeout(() => {
+                tooltip.classList.add('visible');
+            }, 50); // Increased delay to ensure positioning is complete
+
+            setTimeout(()=>{
+                positionTooltip(tooltip,hotspotElement, positionClass);
+            },100
+        );
+            
+            // Add extra repositioning for step 12 to fix the timing issue
+            if (stepIndex === 11) { // step 12 is index 11
+                setTimeout(() => {
+                    const hotspotElement2 = tooltip.parentElement.querySelector('.hotspot');
+                    if (hotspotElement2) {
+                        positionTooltip(tooltip, hotspotElement2, positionClass);
+                    }
+                }, 300);
+            }
+        }
+
+        // Enhanced Position tooltip relative to hotspot with center alignment
+        function positionTooltip(tooltip, hotspotElement, position = 'bottom') {
+            // Get hotspot position relative to the demo frame
+            const hotspotRect = hotspotElement.getBoundingClientRect();
+            const frameRect = document.getElementById('demoFrame').getBoundingClientRect();
+            
+            const hotspotLeft = hotspotRect.left - frameRect.left;
+            const hotspotTop = hotspotRect.top - frameRect.top;
+            const hotspotRight = hotspotRect.right - frameRect.left;
+            const hotspotCenterX = hotspotLeft + (hotspotRect.width / 2);
+            const hotspotCenterY = hotspotTop + (hotspotRect.height / 2);
+            
+            // Frame dimensions
+            const frameWidth = frameRect.width;
+            const frameHeight = frameRect.height;
+            const padding = 70;
+            const paddingright= 120;
+            
+            // Temporarily set tooltip to visible for dimension calculation
+            tooltip.style.visibility = 'hidden';
+            tooltip.style.display = 'block';
+            tooltip.style.left = '0px';
+            tooltip.style.top = '0px';
+            
+            // Calculate tooltip dimensions - handle both fixed and percentage-based sizes
+            let tooltipWidth, tooltipHeight;
+            
+            // Check if tooltip has custom percentage-based dimensions
+            const computedStyle = window.getComputedStyle(tooltip);
+            const tooltipWidthValue = computedStyle.width;
+            const tooltipHeightValue = computedStyle.height;
+            
+            if (tooltipWidthValue.endsWith('%')) {
+                // Calculate actual pixel width from percentage
+                tooltipWidth = (parseFloat(tooltipWidthValue) / 100) * frameWidth;
+            } else {
+                tooltipWidth = tooltip.offsetWidth || parseFloat(tooltipWidthValue) || 300;
+            }
+            
+            if (tooltipHeightValue.endsWith('%')) {
+                // For percentage heights, use a more conservative calculation
+                // Cap percentage heights to prevent excessive scaling on large displays
+                const maxHeightPercent = Math.min(parseFloat(tooltipHeightValue), 35); // Cap at 35%
+                tooltipHeight = (maxHeightPercent / 100) * frameHeight;
+                // Apply reasonable minimum/maximum constraints
+                tooltipHeight = Math.max(tooltipHeight, Math.min(frameHeight * 0.15, 120)); // Min: 15% of frame or 120px
+                tooltipHeight = Math.min(tooltipHeight, frameHeight * 0.4); // Max: 40% of frame
+            } else {
+                tooltipHeight = tooltip.offsetHeight || parseFloat(tooltipHeightValue) || 150;
+            }
+            
+            // Apply more reasonable minimum dimensions based on frame size
+            const minWidth = Math.max(200, frameWidth * 0.15); // Minimum 200px or 15% of frame
+            const minHeight = Math.max(100, frameHeight * 0.12); // Minimum 100px or 12% of frame
+            tooltipWidth = Math.max(tooltipWidth, minWidth);
+            tooltipHeight = Math.max(tooltipHeight, minHeight);
+            
+            // Check if hotspot is in the bottom 30% of the screen (critical for steps 11 & 12)
+            const hotspotPercentage = (hotspotTop + hotspotRect.height / 2) / frameRect.height;
+            const hotspotRightPercentage = hotspotRight/frameRect.width;
+            const isNearBottom = hotspotPercentage > 0.80; // Hotspot in bottom 30%
+            const isNearRight= hotspotRightPercentage > 0.80;
+
+            let left, top;
+            
+            // Enhanced positioning logic with center alignment
+            if (isNearBottom) {
+                // For tooltips near bottom, position top right of the hotspot
+                left = hotspotLeft + hotspotRect.width + 20;
+                top = hotspotTop - tooltipHeight - 20;
+
+                // Ensure tooltip doesn't go off-screen horizontally
+                if (left + tooltipWidth > frameWidth - padding) {
+                    left = frameWidth - tooltipWidth - padding;
+                }
+
+                // If positioning above would go off-screen, position as high as possible
+                if (top < padding) {
+                    top = padding;
+                }
+            }
+            else if(isNearRight){
+                left = hotspotLeft - tooltipWidth - 20;
+                top = hotspotCenterY - (tooltipHeight/2);
+
+                if(top+tooltipHeight > frameHeight - padding){
+                    top= frameHeight - tooltipHeight -padding;
+                }
+
+                if (left <paddingright){
+                    left= paddingright; 
+                }
+            } else {
+                // Center-aligned positioning logic for all positions
+                switch(position) {
+                    case 'top':
+                        left = hotspotCenterX - (tooltipWidth / 2);
+                        top = hotspotTop - tooltipHeight - 20;
+                        break;
+                    case 'bottom':
+                        left = hotspotCenterX - (tooltipWidth / 2);
+                        top = hotspotTop + hotspotRect.height + 20;
+                        break;
+                    case 'left':
+                        left = hotspotLeft - tooltipWidth - 20;
+                        top = hotspotCenterY - (tooltipHeight / 2);
+                        break;
+                    case 'right':
+                        left = hotspotLeft + hotspotRect.width + 20;
+                        top = hotspotCenterY - (tooltipHeight / 2);
+                        break;
+                    default:
+                        left = hotspotCenterX - (tooltipWidth / 2);
+                        top = hotspotTop + hotspotRect.height + 20;
+                }
+            }
+            
+            // Ensure tooltip stays within frame boundaries
+            left = Math.max(padding, Math.min(left, frameWidth - tooltipWidth - padding));
+            top = Math.max(padding, Math.min(top, frameHeight - tooltipHeight - padding));
+
+            // Apply positioning
+            tooltip.style.left = `${left}px`;
+            tooltip.style.top = `${top}px`;
+            tooltip.style.visibility = 'visible';
+
+            // Adjust arrow position to point towards hotspot center
+            const arrow = tooltip.querySelector('.tooltip-arrow');
+            if (arrow) {
+                const tooltipRect = tooltip.getBoundingClientRect();
+                const hotspotCenterX = hotspotRect.left + hotspotRect.width / 2;
+                const hotspotCenterY = hotspotRect.top + hotspotRect.height / 2;
+                const tooltipLeft = tooltipRect.left;
+                const tooltipTop = tooltipRect.top;
+
+                if (arrow.classList.contains('top') || arrow.classList.contains('bottom')) {
+                    // For top/bottom arrows, adjust horizontal position
+                    const relativeX = hotspotCenterX - tooltipLeft;
+                    const arrowLeftPercent = (relativeX / tooltipRect.width) * 100;
+                    arrow.style.left = `${Math.max(10, Math.min(90, arrowLeftPercent))}%`;
+                    arrow.style.transform = 'translateX(-50%)'; // Keep vertical centering
+                } else if (arrow.classList.contains('left') || arrow.classList.contains('right')) {
+                    // For left/right arrows, adjust vertical position
+                    const relativeY = hotspotCenterY - tooltipTop;
+                    const arrowTopPercent = (relativeY / tooltipRect.height) * 100;
+                    arrow.style.top = `${Math.max(10, Math.min(90, arrowTopPercent))}%`;
+                    arrow.style.transform = 'translateY(-50%)'; // Keep horizontal centering
+                }
+            }
+        }
+
+        // Update navigation button states
+        function updateNavigationButtons() {
+            const tooltips = document.querySelectorAll('.tooltip');
+            tooltips.forEach(tooltip => {
+                const backButton = tooltip.querySelector('.tooltip-btn-back');
+                const nextButton = tooltip.querySelector('.tooltip-btn-finish');
+                
+                if (backButton) {
+                    backButton.disabled = currentStep === 0;
+                }
+                
+                if (nextButton) {
+                    if (currentStep === demoSteps.length - 1) {
+                        nextButton.textContent = 'Finish';
+                        nextButton.disabled = false;
+                    } else {
+                        nextButton.textContent = 'Next';
+                        nextButton.disabled = false;
+                    }
+                }
+            });
+        }
+
+        // Navigation functions
+        function nextStep() {
+            if (currentStep < demoSteps.length - 1 && !isTransitioning) {
+                hideTooltips(); // Hide all tooltips when changing steps
+                loadStep(currentStep + 1);
+            } else if (currentStep === demoSteps.length - 1 && !isTransitioning) {
+                // We're on the last step, show outro tooltip
+                hideTooltips(); // Hide all tooltips
+                showOutroTooltip(); // Show the outro tooltip
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 0 && !isTransitioning) {
+                hideTooltips(); // Hide all tooltips when changing steps
+                loadStep(currentStep - 1);
+            }
+        }
+
+        function goToStep(stepIndex) {
+            if (stepIndex !== currentStep && !isTransitioning) {
+                hideTooltips(); // Hide all tooltips when changing steps
+                loadStep(stepIndex);
+            }
+        }
+
+        // Keyboard navigation
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                switch(e.key) {
+                    case 'ArrowRight':
+                    case ' ':
+                        e.preventDefault();
+                        nextStep();
+                        break;
+                    case 'ArrowLeft':
+                        e.preventDefault();
+                        previousStep();
+                        break;
+                    case 'Home':
+                        e.preventDefault();
+                        goToStep(0);
+                        break;
+                    case 'End':
+                        e.preventDefault();
+                        goToStep(demoSteps.length - 1);
+                        break;
+                    case 'Escape':
+                        e.preventDefault();
+                        hideTooltips();
+                        break;
+                    case '0':
+                        e.preventDefault();
+                        goToStep(0);
+                        break;
+                    case '1':
+                        e.preventDefault();
+                        goToStep(0);
+                        break;
+                    case '2':
+                        e.preventDefault();
+                        goToStep(1);
+                        break;
+                    case '3':
+                        e.preventDefault();
+                        goToStep(2);
+                        break;
+                    case '4':
+                        e.preventDefault();
+                        goToStep(3);
+                        break;
+                    case '5':
+                        e.preventDefault();
+                        goToStep(4);
+                        break;
+                    case '6':
+                        e.preventDefault();
+                        goToStep(5);
+                        break;
+                    case '7':
+                        e.preventDefault();
+                        goToStep(6);
+                        break;
+                    case '8':
+                        e.preventDefault();
+                        goToStep(7);
+                        break;
+                }
+            });
+        }
+
+        // Enhanced window resize handler for percentage-based tooltips
+        window.addEventListener('resize', () => {
+            // Delay resize handling to ensure DOM has stabilized
+            setTimeout(() => {
+                const visibleTooltips = document.querySelectorAll('.tooltip.visible');
+                visibleTooltips.forEach(tooltip => {
+                    if (tooltip.classList.contains('welcome-tooltip')) {
+                        positionWelcomeTooltip(tooltip);
+                    } else if (tooltip.classList.contains('outro-tooltip')) {
+                        positionOutroTooltip(tooltip);
+                    } else {
+                        // For hotspot tooltips, recalculate dimensions first
+                        const hotspotElement = tooltip.parentElement.querySelector('.hotspot');
+                        if (hotspotElement) {
+                            // Get the original tooltip data to recalculate percentage dimensions
+                            const stepIndex = parseInt(tooltip.className.match(/step-(\d+)-tooltip/)?.[1] || currentStep) - 1;
+                            const hotspot = demoSteps[stepIndex]?.hotspots[0];
+                            
+                            if (hotspot && (hotspot.tooltipWidth || hotspot.tooltipHeight)) {
+                                // Reapply percentage dimensions to ensure they recalculate correctly
+                                if (hotspot.tooltipWidth) {
+                                    const widthValue = typeof hotspot.tooltipWidth === 'number' ? `${hotspot.tooltipWidth}%` : hotspot.tooltipWidth;
+                                    tooltip.style.setProperty('width', widthValue, 'important');
+                                    tooltip.style.setProperty('max-width', widthValue, 'important');
+                                }
+                                if (hotspot.tooltipHeight) {
+                                    const heightValue = typeof hotspot.tooltipHeight === 'number' ? `${hotspot.tooltipHeight}%` : hotspot.tooltipHeight;
+                                    tooltip.style.setProperty('height', heightValue, 'important');
+                                }
+                            }
+                            
+                            // Then reposition
+                            const position = tooltip.className.includes('top') ? 'top' :
+                                            tooltip.className.includes('bottom') ? 'bottom' :
+                                            tooltip.className.includes('left') ? 'left' : 'right';
+                            positionTooltip(tooltip, hotspotElement, position);
+                        }
+                    }
+                });
+            }, 150); // Increased delay for better stability
+        });
+        
+        // Initial layout adjustment
+        document.addEventListener('DOMContentLoaded', () => {
+            // Force a reflow to ensure proper positioning after page load
+            setTimeout(() => {
+                const container = document.getElementById('demoContainer');
+                if (container) {
+                    container.offsetHeight; // Trigger reflow
+                }
+            }, 100);
+        });
+
+        // Auto-advance option (optional)
+        let autoAdvanceInterval;
+        
+        function startAutoAdvance(intervalMs = 5000) {
+            stopAutoAdvance();
+            autoAdvanceInterval = setInterval(() => {
+                if (currentStep < demoSteps.length - 1) {
+                    nextStep();
+                } else {
+                    stopAutoAdvance();
+                }
+            }, intervalMs);
+        }
+
+        function stopAutoAdvance() {
+            if (autoAdvanceInterval) {
+                clearInterval(autoAdvanceInterval);
+                autoAdvanceInterval = null;
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initDemo);
+
+        // Export functions for external control
+        window.demoAPI = {
+            nextStep,
+            previousStep,
+            goToStep,
+            startAutoAdvance,
+            stopAutoAdvance,
+            getCurrentStep: () => currentStep,
+            getTotalSteps: () => demoSteps.length
+        };
+
+        // Debug function to verify tooltip dimensions (call in browser console)
+        window.debugTooltipDimensions = function() {
+            const tooltips = document.querySelectorAll('.tooltip:not(.welcome-tooltip):not(.outro-tooltip)');
+            tooltips.forEach((tooltip, index) => {
+                const computedStyle = window.getComputedStyle(tooltip);
+                console.log(`Tooltip ${index + 1}:`, {
+                    width: computedStyle.width,
+                    height: computedStyle.height,
+                    maxWidth: computedStyle.maxWidth,
+                    className: tooltip.className
+                });
+            });
+        };
+
+        // Debug function to check preloading status (call in browser console)
+        window.debugPreloadingStatus = function() {
+            console.log('=== IMAGE PRELOADING STATUS ===');
+            console.log(`Images loaded: ${imagesLoaded}`);
+            console.log(`Preload progress: ${preloadProgress}/${totalImages}`);
+            console.log(`Preloaded images:`, Object.keys(preloadedImages));
+            
+            const uniqueImages = [...new Set(demoSteps.map(step => step.image))];
+            console.log(`Expected images (${uniqueImages.length}):`, uniqueImages);
+            
+            uniqueImages.forEach(image => {
+                const status = preloadedImages[image] ? '✅ Preloaded' : '❌ Not preloaded';
+                console.log(`${status}: ${image}`);
+            });
+        };
+    </script>
+</body>
+</html>
