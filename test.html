@@ -808,40 +808,39 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .demo-container {
+         @media (max-width: 480px) {
+            .demo-container {   
                 max-height: 300px !important;
                 min-height: 250px !important;
                 aspect-ratio: 4/3 !important;
             }
 
             .tooltip.welcome-tooltip {
-                width: 80vw !important;
-                height: 30vh !important;
-                min-height: 125px !important;
-                max-height: 130px !important;
+                width: 85vw !important;
+                height: 23vh !important;
+                min-height: 20vh !important;
             }
 
             .tooltip.welcome-tooltip .tooltip-content {
                 font-size: clamp(3px, 1.6vw, 8px) !important;
-                padding: 3px 6px !important;
             }
 
             .tooltip.welcome-tooltip .tooltip-btn-start {
-                padding: 4px 10px !important;
-                font-size: clamp(3px, 1.6vw, 6px) !important;
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
             }
 
+
+            /* outro tooltip*/
             .tooltip.outro-tooltip {
-                width: 80vw !important;
-                height: 25vh !important;
-                max-height: 110px !important;
-                min-height: 110px !important;
+                width: 50vw !important;
+                height: 10vh !important;
+                min-height: 15vh !important;
             }
+
 
             .tooltip.outro-tooltip .tooltip-content {
-                font-size: clamp(3px, 1.6vw, 8px) !important;
-                padding: 3px 6px !important;
+                font-size: clamp(3px, 1.3vw, 8px) !important;
             }
 
             .tooltip.outro-tooltip .tooltip-btn-restart {
@@ -849,29 +848,121 @@
                 font-size: clamp(3px, 1.6vw, 8px) !important;
             }
 
-            /* Tooltip styling */
-            .tooltip {
-                max-height: 45% !important;
-                max-width: 35% !important;
+            .tooltip.outro-tooltip .tooltip-btn-nextdemo {
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
             }
 
-            .tooltip .tooltip-content {
-                font-size: clamp(3px, 1.5vw, 8px) !important;
+            /*tooltip styling*/
+
+            .tooltip  {
+                max-height: 77% !important;
+                max-width: 40% !important;
+                margin-bottom: 5% !important;
+            }
+
+            .tooltip-nav {
+                    padding: 10px 20px 9px !important;
+            }
+
+            .tooltip .tooltip-content{
+                font-size: clamp(3px, 1.6vw, 8px) !important;
                 padding: 1px 4px 3px !important;
             }
-            .tooltip-btn {
-                padding: 5px 10px !important;
-                font-size: clamp(4px, 1.2vw, 7px) !important;
+
+            .tooltip .tooltip-content li {
+                  font-size: clamp(3px, 1.6vw, 8px) !important;
+                padding: 1px 4px 3px !important;
+            }
+            
+
+            .tooltip-btn{
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
                 min-width: 20px !important;
             }
-            .tooltip-bullet-list li {
-                font-size: clamp(3px, 1.5vw, 8px) !important;
-                /* padding: 1px 4px 3px !important; */
-            }
-            .step-counter {
-                font-size: clamp(3px, 1.5vw, 8px) !important;
+
+            .tooltip-bullet-list li{
+                font-size: clamp(3px, 1.6vw, 8px) !important;
             }
 
+            .step-counter {
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            } 
+            
+            .numbered-list li {
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+            }
+
+            /*hostspot styling*/
+
+            .hotspot.step-2 {border-radius: 3px !important;}
+            .hotspot.step-3{border-radius: 3px !important;}
+            .hotspot.step-3{border-radius: 3px !important;}
+            .hotspot.step-4{border-radius: 3px !important;}
+            .hotspot.step-5{border-radius: 3px !important;}
+            .hotspot.step-6{border-radius: 3px !important;}
+            .hotspot.step-7{border-radius: 3px !important;}
+            .hotspot.step-8{border-radius: 3px !important; margin-top: 0.5% !important;}
+            .hotspot.step-9{border-radius: 3px !important;}
+            .hotspot.step-10{border-radius: 3px !important;}
+            .hotspot.step-11{border-radius: 3px !important;}
+            .hotspot.step-12{border-radius: 3px !important;}
+            .hotspot.step-13{border-radius: 3px !important;}
+            .hotspot.step-14{border-radius: 3px !important;}
+            .hotspot.step-15{border-radius: 3px !important;}
+            .hotspot.step-18{border-radius: 3px !important;}
+            .hotspot.step-24{border-radius: 3px !important;}
+            .hotspot.step-25{border-radius: 3px !important;}
+            .hotspot.step-26{border-radius: 3px !important;}
+            .hotspot.step-27{border-radius: 3px !important;}
+            .hotspot.step-28{border-radius: 3px !important;}
+            .hotspot.step-29{border-radius: 3px !important;}
+            .hotspot.step-30{border-radius: 3px !important;}
+            .hotspot.step-31{border-radius: 3px !important;}
+            .hotspot.step-32{border-radius: 3px !important;}
+            .hotspot.step-35{border-radius: 3px !important;}
+            .hotspot.step-36{border-radius: 3px !important;}
+            .hotspot.step-37{border-radius: 3px !important;}
+            .hotspot.step-38{border-radius: 3px !important;}
+            .hotspot.step-39{border-radius: 3px !important;}
+            .hotspot.step-40{border-radius: 3px !important;}
+            .hotspot.step-41{border-radius: 3px !important;}
+            .hotspot.step-44{border-radius: 3px !important;}
+            .hotspot.step-45{border-radius: 3px !important;}
+            .hotspot.step-46{border-radius: 3px !important;}
+            .hotspot.step-48{border-radius: 3px !important;}
+            .hotspot.step-49{border-radius: 3px !important;}
+            .hotspot.step-50{border-radius: 3px !important;}
+            .hotspot.step-51{border-radius: 3px !important;}
+            .hotspot.step-53{border-radius: 3px !important;}
+            .hotspot.step-54{border-radius: 3px !important;}
+            .hotspot.step-55{border-radius: 3px !important;}
+            .hotspot.step-56{border-radius: 3px !important;}
+            .hotspot.step-57{border-radius: 3px !important;}
+            .hotspot.step-58{border-radius: 3px !important;}
+            .hotspot.step-59{border-radius: 3px !important;}
+            .hotspot.step-60{border-radius: 3px !important;}
+            .hotspot.step-61{border-radius: 3px !important;}
+            .hotspot.step-62{border-radius: 3px !important;}
+            .hotspot.step-63{border-radius: 3px !important;}
+            .hotspot.step-64{border-radius: 3px !important;}
+            .hotspot.step-64.hotspot-2{border-radius: 3px !important;}
+            .hotspot.step-65{border-radius: 3px !important;}
+            .hotspot.step-66{border-radius: 3px !important;}
+            .hotspot.step-67{border-radius: 3px !important;}
+            .hotspot.step-68{border-radius: 3px !important;}
+            .hotspot.step-69{border-radius: 3px !important;}
+            .hotspot.step-70{border-radius: 3px !important;}
+            .hotspot.step-71{border-radius: 3px !important;}
+            .hotspot.step-72{border-radius: 3px !important;}
+            .hotspot.step-73{border-radius: 3px !important;}
+            .hotspot.step-74{border-radius: 3px !important;}
+            .hotspot.step-75{border-radius: 3px !important;}
+            .hotspot.step-76{border-radius: 3px !important;}
+            .hotspot.step-77{border-radius: 3px !important;}
+            .hotspot.step-78{border-radius: 3px !important;}
+            .hotspot.step-79{border-radius: 3px !important;}
 
         }
 
