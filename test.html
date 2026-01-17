@@ -1161,15 +1161,16 @@
                 display: flex !important;
                 justify-content: center !important;
                 align-items: center !important;
-                padding: 0 clamp(12px, 4vw, 20px) clamp(8px, 3vw, 16px) !important;
+                /* padding: 0 clamp(12px, 4vw, 20px) clamp(8px, 3vw, 16px) !important; */
+                padding: 10px 7px !important;
                 gap: clamp(8px, 4vw, 16px) !important;
             }
 
             .tooltip.outro-tooltip .tooltip-btn-restart {
                 /* padding: clamp(8px, 3vw, 12px) clamp(16px, 4vw, 20px) !important; */
-                padding: 5px 5px !important;
+                padding: 5px 3px !important;
                 border-radius: 5px !important;
-                font-size: clamp(0.7rem, 3vw, 0.9rem) !important;
+                font-size: clamp(0.1rem, 2.5vw, 0.7rem) !important;
                 font-weight: 500 !important;
                 border: 1px solid #000000 !important;
                 cursor: pointer !important;
@@ -1180,9 +1181,9 @@
 
             .tooltip.outro-tooltip .tooltip-btn-nextdemo {
                 /* padding: clamp(8px, 3vw, 12px) clamp(16px, 4vw, 20px) !important; */
-                padding: 5px 5px !important;
+                padding: 5px 3px !important;
                 border-radius: 5px !important;
-                font-size: clamp(0.7rem, 3vw, 0.9rem) !important;
+                font-size: clamp(0.1rem, 2.5vw, 0.7rem) !important;
                 font-weight: 500 !important;
                 border: 1px solid #000000 !important;
                 cursor: pointer !important;
@@ -1191,31 +1192,101 @@
                 color: #fff !important;
             }
 
-            .hotspot.step-2 {
+            .hotspot.step-2,.hotspot.step-9,.hotspot.step-15,.hotspot.step-35, .hotspot.step-41, .hotspot.step-45,.hotspot.step-50,.hotspot.step-54,.hotspot.step-61,.hotspot.step-66,.hotspot.step-73{
                 left: 0% !important;
                 top: 9% !important;
                 width: 5% !important;
                 border-radius: 4px !important;
             }
-            .hotspot.step-3{
-                top: 17% !important;
-            }
-            .hotspot.step-4{
+            .hotspot.step-3,.hotspot.step-4{
                 top: 17.5% !important;
+                border-radius: 3px !important;
             }
             .hotspot.step-5.hotspot-2{
                 top: 10% !important;
             }
             .hotspot.step-5.hotspot-1{
                 top: 15% !important;
-                border-radius: 5px !important;
+                border-radius: 3px !important;
             }
             .hotspot.step-6{
                 top: 17% !important;
                 border-radius: 4px !important;
             }
-            
+            .hotspot.step-7,.hotspot.step-8{
+                top: 17.5% !important;
+                border-radius: 3px !important;
+            }
+            .hotspot.step-10{
+                top: 15.6% !important;
+                border-radius: 3px !important;
+            }
+            .hotspot.step-11{
+                border-radius: 3px !important;
+                top: 29% !important;
+                left: 54.5% !important;
+            }
+            .hotspot.step-13{
+                left: 69.8% !important;
+                top: 21.8% !important;
+                width: 2.3% !important;
+                height: 3.9% !important;
+                border-radius: 3px !important;
+            }
+            .hotspot.step-14{
+                top: 13% !important;
+                border-radius: 3px !important;
+            }
+            .hotspot.step-16.hotspot-1,.hotspot.step-17.hotspot-1{
+                left: 27.2% !important;
+            }
+            .hotspot.step-16,.hotspot.step-17,.hotspot.step-19{
+                border-radius: 6px !important;
+            }
+            .hotspot.step-18{
+                top: 15% !important;
+                border-radius: 4px !important;
+            }
+            .hotspot.step-20{
+                top: 5% !important;
+                border-radius: 12px !important;
+            }
+            .hotspot.step-21{
+                top: 7% !important;
+                height: 86% !important;
+                border-radius: 4px !important;
+            }
+            .hotspot.step-22{top: 71% !important; height: 26.3% !important; border-radius: 3px !important;}
+            .hotspot.step-24{top: 90.3% !important; border-radius: 3px !important;}
+            .hotspot.step-25.hotspot-1{left: 27% !important; width: 18% !important; height: 13% !important; top: 9% !important;}
+            .hotspot.step-25.hotspot-2{left: 82.6% !important; top: 10.6% !important; width: 2.4% !important; border-radius: 3px !important;}
+            .hotspot.step-26{top: 8% !important; left: 27.5% !important;}
+            .hotspot.step-26.hotspot-1{border-radius: 3px !important; left: 85.2% !important; top: 10.6% !important;}
+            .hotspot.step-27{border-radius: 5px !important; top: 10.4% !important; left: 82.3 !important;}
+            .hotspot.step-27.hotspot-1{border-radius: 3px !important; left: 88.7% !important; top: 11.9% !important; width: 2.2% !important; height: 3.5% !important;}
+            .hotspot.step-28{border-radius: 0px !important;}
+            .hotspot.step-29.hotspot-1{left: 88.6% !important; width: 2.3% !important; top: 11.8% !important; height: 3.8% !important; border-radius: 3px !important;}
+            .hotspot.step-31{border-radius: 4px !important;}
 
+            .hotspot.step-36,.hotspot.step-37,.hotspot.step-38{top: 11% !important; border-radius: 7px !important;}
+            .hotspot.step-39{top: 21.2% !important; border-radius: 4px !important;}
+            .hotspot.step-40{border-radius: 4px !important;}
+            .hotspot.step-42{left: 24.5% !important; top: 9.8% !important; border-radius: 4px !important;}
+            .hotspot.step-44{top: 91.9% !important; border-radius: 3px !important;}
+            .hotspot.step-46{top: 14.8% !important; border-radius: 3px !important;}
+            .hotspot.step-48{top: 91.8% !important; border-radius: 3px !important;}
+            .hotspot.step-49{top: 9.6% !important; border-radius: 4px !important;}
+            .hotspot.step-51{top: 15.5% !important;}
+            .hotspot.step-60{top: 9.7% !important; border-radius: 3px !important;}
+            .hotspot.step-63{left: 90.7% !important; top: 9.6% !important; }
+            .hotspot.step-63.hotspot-1{border-radius: 3px !important; left: 90.5% !important;}
+            .hotspot.step-63.hotspot-2{left: 4% !important;}
+            .hotspot.step-62,.hotspot.step-63,.hotspot.step-64,.hotspot.step-65{border-radius: 4px !important;}
+            .hotspot.step-65{top: 66% !important;}
+            .hotspot.step-68{top: 10% !important;}
+            .hotspot.step-69{top: 9.4% !important;}
+            .hotspot.step-70,.hotspot.step-71,.hotspot.step-72{top: 10.2% !important; width: 2.9% !important; height: 4.5% !important;border-radius: 5px !important;}
+            .hotspot.step-74,.hotspot.step-75,.hotspot.step-76,.hotspot.step-77,.hotspot.step-78{top: 3% !important;}
         }
 
         @media (max-width: 1280px) {
