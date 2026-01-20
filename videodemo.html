@@ -97,37 +97,15 @@
         }
 
         /* Style all hotspots in step 1 */
-        .hotspot.step-1 {
-            border-radius: 12px !important;
-        }
-        
-        .hotspot.step-2{
-            border-radius: 23px !important;
-        }
+        .hotspot.step-1 {border-radius: 12px !important;}
+        .hotspot.step-2{border-radius: 23px !important;}
+        .hotspot.step-3{border-radius: 23px !important;}
+        .hotspot.step-4 {border-radius: 23px !important;}   
+        .hotspot.step-5{border-radius: 8px !important;}
+        .hotspot.step-6{border-radius: 1px !important;}
+        .hotspot.step-7{border-radius: 1px !important;}
+        .hotspot.step-8{border-radius: 6px !important;}
 
-        .hotspot.step-3{
-            border-radius: 23px !important;
-        }
-        
-        .hotspot.step-4 {
-            border-radius: 23px !important;
-        }   
-
-        .hotspot.step-5{
-            border-radius: 8px !important;
-        }
-
-        .hotspot.step-6{
-            border-radius: 1px !important;
-        }
-
-        .hotspot.step-7{
-            border-radius: 1px !important;
-        }
-        
-        .hotspot.step-8{
-            border-radius: 6px !important;
-        }
         /* Professional Tooltip Styles */
         .tooltip {
             position: absolute !important;
@@ -164,61 +142,31 @@
             border: 3px solid #22194D !important;
         }
 
-        .steptooltiphighlight{
-            font-weight: 800 !important;
-        }
-
         .tooltip.step-2-tooltip {
             height:auto !important;
-            font-weight: 400 !important;
             font-size: 15px !important;
             border: 1px solid #22194D !important;
-            margin-right: clamp(8px, 1vw, 10px) !important;
-        }
-
-        .steptooltiphighlight{
-            color: black !important;
-            font-weight: 800 !important;
-            text-decoration: underline !important;
         }
 
         .tooltip.step-3-tooltip {
             height: auto !important;
-            font-weight: 500 !important;
             font-size: 15px !important;
             border: 1.5px solid #22194D !important;
-        }
-
-        .steptooltiphighlight{
-            font-weight: 800 !important;
-            text-decoration: underline !important;
         }
 
         .tooltip.step-4-tooltip{
             min-width: clamp(200px, 18%, 280px) !important;
             width: clamp(280px, 30%, 360px) !important;
             border:1.5px solid #22194D !important;
-            font-weight: 500 !important;
             font-size: 15px !important;
             height: auto !important;
-        }
-
-        .steptooltiphighlight{
-            font-weight: 800 !important;
-            text-decoration: underline !important;
         }
 
         .tooltip.step-5-tooltip{
             height:auto !important;
             border: 1.5px solid #22194D !important;
             width: clamp(250px, 25%, 300px) !important;
-            font-weight: 500 !important;
             font-size: 15px !important;
-        }
-        
-        .steptooltiphighlight{
-            font-weight: 800 !important;
-            text-decoration: underline !important;
         }
 
         .tooltip.step-6-tooltip{
@@ -230,22 +178,11 @@
             font-weight: 500 !important;
         }
 
-        .steptooltiphighlight{
-            font-weight: 800 !important;
-            text-decoration: underline !important;
-        }
-
         .tooltip.step-7-tooltip{
             height:auto !important;
             border: 1.5px solid #22194D !important;
             width: clamp(250px, 25%, 300px) !important;
             font-size: 15px !important;
-            font-weight: 500 !important;
-        }
-
-        .steptooltiphighlight{
-            font-weight: 800 !important;
-            text-decoration: underline !important;
         }
 
         .tooltip.step-8-tooltip{
@@ -253,23 +190,23 @@
             width: clamp(250px, 25%, 300px) !important;
             border: 1.5px solid #22194D !important;
             font-size: 15px !important;
-            font-weight: 500 !important;
         }
 
-        .steptooltiphighlight{
-            font-weight: 800 !important;
-            text-decoration: underline !important;
-        }
+        /*Step tooltip highlight*/
+        .steptooltiphighlight{color: #000000ed !important;font-weight: 500 !important; text-decoration: underline !important; font-weight: 700 !important;}
 
         /* Welcome tooltip specific styles */
         .tooltip.welcome-tooltip {
-            max-width: 42% !important;
-            max-height:50% !important;
+            /* max-width: 42% !important;
+            max-height: 50% !important; */
+            /* min-height: 30% !important; */
             width: 100% !important;
             height: auto !important;
             z-index: 1001 !important;
             text-align: center;
             transform: none !important;
+            left: 416.5px !important;
+            top: 220.172px !important;
         }
 
         .tooltip.welcome-tooltip .tooltip-content {
@@ -282,11 +219,7 @@
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
-            padding: 0 20% 12% !important;
-        }
-
-        .steptooltiphighlight {
-            color:#000;
+            padding: 0 20% 7% !important;
         }
 
         .tooltip.welcome-tooltip .tooltip-btn-start {
@@ -297,7 +230,7 @@
             transition: all 0.2s ease !important;
             background: #f12d39 !important;
             color: white !important;
-            border: 1px solid #ccc !important;
+            border: 1px solid #eeecec !important;
         }
 
         .welcomeimage img {
@@ -313,7 +246,6 @@
             height: auto !important;
             z-index: 1001 !important;
             text-align: center;
-            /* Ensure no transform animations */
             transform: none !important;
         }
 
@@ -356,8 +288,7 @@
         }
 
         .welcometooltiphighlight{
-            color:#000 !important;
-            font-weight: 800 !important;
+            color:#2563eb !important;
         }
 
         .welcomegreeting{
@@ -365,52 +296,6 @@
             font-weight: 800;
             text-align: center;
             font-weight: bold;
-        }
-
-        /* Bullet List Styles for Tooltips */
-        .tooltip-bullet-list {
-            margin: 0 !important;
-            padding-left: 0 !important;
-            list-style: none !important;
-        }
-        
-        .tooltip-bullet-list li {
-            position: relative !important;
-            padding-left: 20px !important;
-            margin-bottom: 8px !important;
-            color: #333 !important;
-            font-size: 13px !important;
-            line-height: 1.5 !important;
-        }
-        
-        .tooltip-bullet-list li:last-child {
-            margin-bottom: 0 !important;
-        }
-        
-        .tooltip-bullet-list li::before {
-            content: '•' !important;
-            color: #2563eb !important;
-            font-weight: bolder !important;
-            position: absolute !important;
-            left: 0 !important;
-            top: 0 !important;
-            font-size: clamp(0.6rem, 0.7vw, 0.8rem) !important;
-        }
-
-        .numbered-list {
-            padding-left: 15px !important;
-        }
-
-        .numbered-list li {
-            position: relative !important;
-            margin-bottom: 8px !important;
-            color: #333 !important;
-            font-size: 13px !important;
-            line-height: 1.2 !important;
-        }
-
-        .numbered-list li:last-child{
-            margin-bottom: 0 !important;
         }
 
         /* Progress Bar */
@@ -436,14 +321,17 @@
         }
 
         .tooltip-close {
-            background: transparent !important;
+            background: #ff0000 !important;
             border: none !important;
-            color: #6b7280 !important;
-            border-radius: 6px !important;
-            padding: 2px !important;
+            color: #fff !important;
+            border-radius: 2px !important;
+            padding: 1px 3px !important;
             cursor: pointer !important;
             transition: all 0.2s ease !important;
-            font-size: 12px !important;
+            font-size: 16px !important;
+            line-height: 1 !important;
+            min-width: 12px !important;
+            min-height: 6px !important;
         }
 
         .tooltip-close:hover {
@@ -573,6 +461,18 @@
                 max-height: calc(100vh - 120px) !important;
                 min-height: calc(100vh - 120px) !important;
                 aspect-ratio: auto !important;
+            }
+
+            /*Welcome tooltip*/
+            .tooltip.welcome-tooltip {
+                width: 80vw !important;
+                height: 28vh !important;
+                min-height: 27vh !important;
+                max-height: 27vh !important;
+            }
+            .tooltip.welcome-tooltip .tooltip-content {
+                font-size: clamp(3px, 1.6vw, 15px) !important;
+                padding: 3px 6px !important;
             }
         }
 
@@ -895,6 +795,7 @@
                 hotspots:[
                     {   x:43.3, y:10, width:5.2, height:9,
                         tooltip: "<span class='steptooltiphighlight'>Start Instant meetings</span> with <span class='steptooltiphighlight'>one click</span> to speed up decisions and avoid scheduling delays.",
+                        tooltipWidth:25,
                         position:"bottom",
                     }
                 ]
@@ -1100,7 +1001,7 @@
                 </div>
                 <div class="tooltip-content">
                     <span class="welcomeimage"><img src="mainassets/acepeaklogo.webp" alt="acepeaklogo"></span>
-                    <span class="welcomegreeting">Welcome to <span class='welcometooltiphighlight'>Acepeak's UCaaS Meeting Center</span> — easily start, join, or schedule meetings all in one place to streamline administration and accelerate team collaboration.</span>
+                    <span class="welcomegreeting">Welcome to <span class='steptooltiphighlight'>Acepeak's UCaaS Meeting Center</span> — easily start, join, or schedule meetings all in one place to streamline administration and accelerate team collaboration.</span>
                 </div>
                 <div class="tooltip-nav">
                     <button class="tooltip-btn tooltip-btn-start" onclick="nextStep()">Start</button>
@@ -1338,7 +1239,7 @@
             hotspotElement.className = `hotspot step-${stepIndex + 1} hotspot-${hotspotIndex + 1}`;
             hotspotElement.style.left = `${hotspot.x}%`;
             hotspotElement.style.top = `${hotspot.y}%`;
-            
+
             // Set custom dimensions using percentages for responsive scaling
             // Supports both percentage values (e.g., 4 for 4%) and pixel values
             if (hotspot.width) {
@@ -1351,15 +1252,15 @@
                 const heightValue = typeof hotspot.height === 'number' ? `${hotspot.height}%` : hotspot.height;
                 hotspotElement.style.height = heightValue;
             }
-            
-            // click handler
-            hotspotElement.onclick = () =>{
-                nextStep(currentStep+1);
+
+            // Add click handler
+            hotspotElement.onclick = () => {
+                nextStep(currentStep + 1)
             }
-            
-            // hotspotElement.onmouseleave = () => {
-            //     // hideHotspotTooltips();
-            // };
+
+            hotspotElement.onmouseleave = () => {
+                // hideHotspotTooltips();
+            };
 
             document.getElementById('overlayLayer').appendChild(hotspotElement);
         }
@@ -1406,7 +1307,7 @@
                 </div>
                 <div class="tooltip-nav">
                     <button class="tooltip-btn tooltip-btn-back" onclick="previousStep()">Back</button>
-                    <div></div>
+                    <div class='step-counter'>${currentStep}/${demoSteps.length-1}</div>
                     <button class="tooltip-btn tooltip-btn-finish" onclick="nextStep()">${currentStep === demoSteps.length - 1 ? 'Finish' : 'Next'}</button>
                 </div>
                 <div class="tooltip-arrow ${positionClass}"></div>
@@ -1444,16 +1345,6 @@
                 positionTooltip(tooltip, hotspotElement, positionClass)
             },50
         );
-            
-            // Add extra repositioning for step 12 to fix the timing issue
-            if (stepIndex === 11) { // step 12 is index 11
-                setTimeout(() => {
-                    const hotspotElement2 = tooltip.parentElement.querySelector('.hotspot');
-                    if (hotspotElement2) {
-                        positionTooltip(tooltip, hotspotElement2, positionClass);
-                    }
-                }, 300);
-            }
         }
 
         // Enhanced Position tooltip relative to hotspot with center alignment
@@ -1680,42 +1571,6 @@
                     case 'Escape':
                         e.preventDefault();
                         hideTooltips();
-                        break;
-                    case '0':
-                        e.preventDefault();
-                        goToStep(0);
-                        break;
-                    case '1':
-                        e.preventDefault();
-                        goToStep(0);
-                        break;
-                    case '2':
-                        e.preventDefault();
-                        goToStep(1);
-                        break;
-                    case '3':
-                        e.preventDefault();
-                        goToStep(2);
-                        break;
-                    case '4':
-                        e.preventDefault();
-                        goToStep(3);
-                        break;
-                    case '5':
-                        e.preventDefault();
-                        goToStep(4);
-                        break;
-                    case '6':
-                        e.preventDefault();
-                        goToStep(5);
-                        break;
-                    case '7':
-                        e.preventDefault();
-                        goToStep(6);
-                        break;
-                    case '8':
-                        e.preventDefault();
-                        goToStep(7);
                         break;
                 }
             });

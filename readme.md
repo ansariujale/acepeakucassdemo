@@ -10,3 +10,5 @@
 ### 3) Remove font weight from every tooltip except the **welcome** and **outro** tooltip.
 ### 4) Change Image source from Local Images to Cloud source link.
     *** mainassets/image.svg => https://www.acepeak.com/wp-content/uploads/2025/12/image.svg
+### 5) Remove document.addeventlistener for keys.
+* Except the  _leftarrow, rightarrow, end, home, and escape_ keys.
