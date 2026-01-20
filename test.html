@@ -19,7 +19,7 @@
         }
 
         .demo-container {
-            width: 123% !important;
+            width: 124% !important;
             max-width: 1928px !important;
             height: auto !important;
             max-height: 1080px !important;
@@ -31,6 +31,7 @@
             padding: 0 !important;
             overflow: hidden !important;
             aspect-ratio: 16/9 !important;
+            right: 12% !important;
         }
 
         .demo-frame {
@@ -86,23 +87,6 @@
             /* background: rgba(59, 130, 246, 0.1) !important; */
         }
 
-        .hotspot::before {
-            content: '' !important;
-            position: absolute !important;
-            top: 50% !important;
-            left: 50% !important;
-            width: 8px !important;
-            height: 8px !important;
-            border-radius: 50% !important;
-            transform: translate(-50%, -50%) !important;
-            animation: blink 2s infinite !important;
-            background: #3b82f6 !important;
-        }
-
-        .hotspot::before {
-            display: none !important;
-        }
-
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(162, 160, 177, 1);
@@ -137,213 +121,57 @@
         }
 
         /* Style all hotspots in step */
-        .hotspot.step-1 {
-            border-radius: 1px !important;
-        }
-
-        .hotspot.step-2 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-4 {
-            border-radius: 10px !important;
-        }
-
-        .hotspot.step-5 {
-            border-radius: 16px !important;
-        }
-
-        .hotspot.step-6 {
-            border-radius: 15px !important;
-        }
-
-        .hotspot.step-7 {
-            border-radius: 12px !important;
-        }
-
-        .hotspot.step-9 {
-            border-radius: 11px !important
-        }
-
-        .hotspot.step-11 {
-            border-radius: 7px !important;
-        }
-
-        .hotspot.step-13 {
-            border-radius: 4px !important;
-        }
-
-        .hotspot.step-14 {
-            border-radius: 12px !important;
-        }
-
-        .hotspot.step-15 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-16 {
-            border-radius: 18px !important;
-        }
-
-        .hotspot.step-17 {
-            border-radius: 17px !important;
-        }
-
-        .hotspot.step-18 {
-            border-radius: 15px !important;
-        }
-
-        .hotspot.step-19 {
-            border-radius: 15px !important;
-        }
-
-        .hotspot.step-20 {
-            border-radius: 50px !important;
-        }
-
-        .hotspot.step-22 {
-            border-radius: 10px !important;
-        }
-
-        .hotspot.step-21 {
-            border-radius: 10px !important;
-        }
-
-        .hotspot.step-25.hotspot-2 {
-            border-radius: 20px !important
-        }
-
-        .hotspot.step-26.hotspot-1 {
-            border-radius: 20px !important;
-        }
-
-        .hotspot.step-27.hotspot-1 {
-            border-radius: 20px !important;
-        }
-
-        .hotspot.step-29.hotspot-1 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-31 {
-            border-radius: 15px !important;
-        }
-
-        .hotspot.step-25 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-36 {
-            border-radius: 28px !important;
-        }
-
-        .hotspot.step-37 {
-            border-radius: 28px !important;
-        }
-
-        .hotspot.step-38 {
-            border-radius: 28px !important;
-        }
-
-        .hotspot.step-41 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-42 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-44 {
-            border-radius: 18px !important;
-        }
-
-        .hotspot.step-45 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-46 {
-            border-radius: 17px !important;
-        }
-
-        .hotspot.step-49 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-50 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-53 {
-            border-radius: 18px !important;
-        }
-
-        .hotspot.step-54 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-60 {
-            border-radius: 17px !important;
-        }
-
-        .hotspot.step-63.hotspot-1 {
-            border-radius: 17px !important;
-        }
-
-        .hotspot.step-64.hotspot-2 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-66 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-68 {
-            border-radius: 15px !important;
-        }
-
-        .hotspot.step-69 {
-            border-radius: 15px !important;
-        }
-
-        .hotspot.step-70 {
-            border-radius: 18px !important;
-        }
-
-        .hotspot.step-71 {
-            border-radius: 18px !important;
-        }
-
-        .hotspot.step-72 {
-            border-radius: 18px !important;
-        }
-
-        .hotspot.step-73 {
-            border-radius: 11px !important;
-        }
-
-        .hotspot.step-74 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-75 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-76 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-77 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-78 {
-            border-radius: 25px !important;
-        }
-
-
-
-
+        .hotspot.step-1 {border-radius: 1px !important;}
+        .hotspot.step-2 {border-radius: 11px !important;}
+        .hotspot.step-4 {border-radius: 10px !important;}
+        .hotspot.step-5 {border-radius: 16px !important;}
+        .hotspot.step-6 {border-radius: 15px !important;}
+        .hotspot.step-7 {border-radius: 12px !important;}
+        .hotspot.step-9 {border-radius: 11px !important}
+        .hotspot.step-11 {border-radius: 7px !important;}
+        .hotspot.step-13 {border-radius: 4px !important;}
+        .hotspot.step-14 {border-radius: 12px !important;}
+        .hotspot.step-15 {border-radius: 11px !important;}
+        .hotspot.step-16 {border-radius: 18px !important;}
+        .hotspot.step-17 {border-radius: 17px !important;}
+        .hotspot.step-18 {border-radius: 15px !important;}
+        .hotspot.step-19 {border-radius: 15px !important;}
+        .hotspot.step-20 {border-radius: 50px !important;}
+        .hotspot.step-22 {border-radius: 10px !important;}
+        .hotspot.step-21 {border-radius: 10px !important;}
+        .hotspot.step-25.hotspot-2 {border-radius: 20px !important}
+        .hotspot.step-26.hotspot-1 {border-radius: 20px !important;}
+        .hotspot.step-27.hotspot-1 {border-radius: 20px !important;}
+        .hotspot.step-29.hotspot-1 {border-radius: 25px !important;}
+        .hotspot.step-31 {border-radius: 15px !important;}
+        .hotspot.step-25 {border-radius: 11px !important;}
+        .hotspot.step-36 {border-radius: 28px !important;}
+        .hotspot.step-37 {border-radius: 28px !important;}
+        .hotspot.step-38 {border-radius: 28px !important;}
+        .hotspot.step-41 {border-radius: 11px !important;}
+        .hotspot.step-42 {border-radius: 25px !important;}
+        .hotspot.step-44 {border-radius: 18px !important;}
+        .hotspot.step-45 {border-radius: 11px !important;}
+        .hotspot.step-46 {border-radius: 17px !important;}
+        .hotspot.step-49 {border-radius: 25px !important;}
+        .hotspot.step-50 {border-radius: 11px !important;}
+        .hotspot.step-53 {border-radius: 18px !important;}
+        .hotspot.step-54 {border-radius: 11px !important;}
+        .hotspot.step-60 {border-radius: 17px !important;}
+        .hotspot.step-63.hotspot-1 {border-radius: 17px !important;}
+        .hotspot.step-64.hotspot-2 {border-radius: 25px !important;}
+        .hotspot.step-66 {border-radius: 11px !important;}
+        .hotspot.step-68 {border-radius: 15px !important;}
+        .hotspot.step-69 {border-radius: 15px !important;}
+        .hotspot.step-70 {border-radius: 18px !important;}
+        .hotspot.step-71 {border-radius: 18px !important;}
+        .hotspot.step-72 {border-radius: 18px !important;}
+        .hotspot.step-73 {border-radius: 11px !important;}
+        .hotspot.step-74 {border-radius: 25px !important;}
+        .hotspot.step-75 {border-radius: 25px !important;}
+        .hotspot.step-76 {border-radius: 25px !important;}
+        .hotspot.step-77 {border-radius: 25px !important;}
+        .hotspot.step-78 {border-radius: 25px !important;}
 
         /* Professional Tooltip Styles */
         .tooltip {
@@ -366,7 +194,7 @@
             box-sizing: border-box !important;
             max-width:35% !important;
             min-height: 10px !important;
-            max-height: 55% !important;
+            /* max-height: 55% !important; */
         }
 
         .tooltip.visible {
@@ -383,7 +211,6 @@
 
         .tooltip.step-2-tooltip {
             height:auto !important;
-            font-weight: 400 !important;
             font-size: 12px !important;
             border: 1px solid #22194D !important;
             margin-right: clamp(8px, 1vw, 10px) !important;
@@ -392,7 +219,6 @@
 
         .tooltip.step-3-tooltip {
             height: auto !important;
-            font-weight: 500 !important;
             font-size: 12px !important;
             border: 1px solid #22194D !important;
             margin-right: clamp(8px, 1vw, 10px) !important;
@@ -401,86 +227,73 @@
         .tooltip.step-4-tooltip{
             width: clamp(280px, 30%, 360px) !important;
             border: 1px solid #22194D !important;
-            font-weight: 500 !important;
             font-size: 12px !important;
             height: auto !important;
         }
 
         .tooltip.step-5-tooltip{
             height:auto !important;
-            font-weight: 500 !important;
             font-size: 12px !important;
         }
 
         .tooltip.step-6-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
         }
 
         .tooltip.step-7-tooltip{
             height:auto !important;
             font-size: 12px !important;
-            font-weight: 500 !important;
         }
 
         .tooltip.step-8-tooltip{
             height:auto !important;
             font-size: 12px !important;
-            font-weight: 500 !important;
         }
 
         .tooltip.step-9-tooltip {
             font-size: 12px !important;
-            font-weight:500 !important;
             height:auto !important;
             margin-bottom: 50px;
         }
 
         .tooltip.step-10-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             margin-bottom: 50px;
         }
 
         .tooltip.step-11-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-12-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-13-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-14-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-15-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-16-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
             margin-left: -10px !important;
@@ -488,48 +301,42 @@
 
         .tooltip.step-17-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-18-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-19-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-20-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-21-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         .tooltip.step-22-tooltip {
             font-size: 12px !important;
-            font-weight: 500 !important;
             height: auto !important;
             line-height: 1.4 !important;
         }
 
         /*steptooltiphighlight*/
-        .steptooltiphighlight{color: #fb636ded !important;font-weight: 500 !important; text-decoration: underline;}
+        .steptooltiphighlight{color: #000000ed !important;font-weight: 500 !important; text-decoration: underline !important; font-weight: 700 !important;}
 
         /* Welcome tooltip specific styles */
         .tooltip.welcome-tooltip {
@@ -540,10 +347,9 @@
             height: auto !important;
             z-index: 1001 !important;
             text-align: center;
-            /* Ensure no transform animations */
             transform: none !important;
-            /* left: 416.5px !important;
-            top: 220.172px !important; */
+            left: 416.5px !important;
+            top: 220.172px !important;
         }
 
         .tooltip.welcome-tooltip .tooltip-content {
@@ -583,7 +389,6 @@
             height: auto !important;
             z-index: 1001 !important;
             text-align: center;
-            /* Ensure no transform animations */
             transform: none !important;
         }
 
@@ -636,17 +441,7 @@
             font-weight: bold;
         }
 
-        .step1tooltiphighlight {
-            color: #fb636ded !important;
-            font-weight: 500 !important;
-            text-decoration: underline;
-        }
 
-        .step2tooltiphighlight {
-            color: #fb636ded !important;
-            font-weight: 500 !important;
-            text-decoration: underline;
-        }
 
         /* Bullet List Styles for Tooltips */
         .tooltip-bullet-list {
@@ -657,7 +452,7 @@
 
         .tooltip-bullet-list li {
             position: relative !important;
-            padding-left: 10px !important;
+            padding-left: 3px !important;
             margin-bottom: 8px !important;
             color: #333 !important;
             font-size: 17px !important;
@@ -674,9 +469,9 @@
             color: #2563eb !important;
             font-weight: bold !important;
             position: absolute !important;
-            left: 0 !important;
-            top: 0 !important;
-            font-size: clamp(0.6rem, 0.7vw, 0.8rem) !important;
+            left: -2% !important;
+            top: -7% !important;
+            font-size: clamp(1rem, 1vw, 1rem) !important;
         }
 
         /* Progress Bar */
@@ -707,7 +502,7 @@
             border: none !important;
             color: #fff !important;
             border-radius: 2px !important;
-            padding: 1px 3px !important;
+            padding: 2px 5px !important;
             cursor: pointer !important;
             transition: all 0.2s ease !important;
             font-size: 8px !important;
@@ -984,7 +779,7 @@
             }
 
             .tooltip .tooltip-content li {
-                  font-size: clamp(3px, 1.6vw, 8px) !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
                 padding: 1px 4px 3px !important;
             }
             
@@ -1094,8 +889,8 @@
             .tooltip.welcome-tooltip {
                 width: 55vw !important;
                 max-width: 59vw !important;
-                height: 28vh !important;
-                min-height: 100px !important;
+                height: 17vh !important;
+                min-height: 17vh !important;
                 left: 130.666px !important;
             }
 
@@ -1114,27 +909,12 @@
                 font-size: 2.5vw !important;
             }
             .tooltip {
-                max-height: 30vh !important;
+                max-height: 40vh !important;
                 width: 49vw !important;
                 max-width: 48vw !important;
                 left: 35px !important;
             }
-            .tooltip.step-2-tooltip{
-                max-width: 39% !important;
-                max-height: 37% !important;
-            }
-            .tooltip.step-3-tooltip{
-                max-width: 39% !important;
-                max-height: 52% !important;
-            }
-            .tooltip.step-4-tooltip{
-                max-width: 237px !important;
-                max-height: 140px !important;
-            }
-            .tooltip.step-5-tooltip{
-                max-width: 200px !important;
-                max-height: 78px !important;
-            }
+            
             .tooltip .tooltip-content{
                 font-size: 6px !important;
             }
@@ -1145,16 +925,10 @@
             .tooltip-nav{
                 padding: 2px 20px 9px !important
             }
-            .tooltip-content ol{
-                padding: 0 0 0 15px !important;
+            .tooltip .tooltip-content li {
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+                padding: 1px 4px 0px !important;
             }
-            .tooltip-content ul{
-                padding: 0 0 0 15px !important;
-            }
-            .tooltip-bullet-list li{
-                padding: 0 0 0 7px !important;
-            }
-
 
             .tooltip-close {
                 padding: 3px 4px !important;
@@ -1413,7 +1187,7 @@
         .preloader-overlay {
             position: absolute !important;
             top: 0 !important;
-            left: 0 !important;
+            left: 0 !important; 
             width: 100% !important;
             height: 100% !important;
             background: #CCCCCC !important;
@@ -1595,7 +1369,7 @@
            },
            {
             // Step 12
-                image: "mainassets/PhoneSection(With DID).svg",  // incall interface
+                image: "https://www.acepeak.com/wp-content/uploads/2025/12/PhoneSectionWith-DID.svg",  // incall interface
                 hotspots:[
                     {   x:52,
                         y:32.3, 
@@ -2383,7 +2157,7 @@
         let isMobile = false;
         let mobileCheckPerformed = false;
 
-        // Enhanced preload images in stages: first 5, then show demo, then rest in background
+        // preload images in stages: first 30, then show demo, then rest in background
         function preloadImages() {
             const uniqueImages = [...new Set(demoSteps.map(step => step.image))];
             totalImages = uniqueImages.length;
@@ -2391,9 +2165,9 @@
 
             console.log(`Starting to preload ${totalImages} unique images...`);
 
-            // Preload first 5 images
-            const firstBatch = uniqueImages.slice(0, 5);
-            const remainingBatch = uniqueImages.slice(5);
+            // Preload first 35 images
+            const firstBatch = uniqueImages.slice(0, 35);
+            const remainingBatch = uniqueImages.slice(35);
 
             const preloadBatch = (batch) => {
                 const promises = batch.map((imagePath) => {
@@ -2421,12 +2195,12 @@
                 return Promise.all(promises);
             };
 
-            // Preload first 5 images, then start demo
+            // Preload first 30 images, then start demo
             return preloadBatch(firstBatch).then(() => {
-                console.log('✅ First 5 images preloaded, starting demo...');
+                console.log('✅ First 30 images preloaded, starting demo...');
 
                 // Start the demo with first image
-                console.log('🚀 Starting demo with first 5 images ready');
+                console.log('🚀 Starting demo with first 30 images ready');
                 loadStep(0);
 
                 // Continue preloading remaining images in background
@@ -2444,6 +2218,7 @@
                 }
             });
         }
+        
 
         function detectMobile() {
             if (mobileCheckPerformed) return isMobile;
@@ -2486,7 +2261,7 @@
             }).catch((error) => {
                 console.error('Error preloading images:', error);
                 // Still initialize even if some images failed to load
-                console.log('⚠️ Starting demo with partial image loading');
+                // console.log('⚠️ Starting demo with partial image loading');
                 hidePreloader();
                 setupKeyboardNavigation();
             });
@@ -2652,10 +2427,10 @@
 
             // Always prefer preloaded images for instant access
             if (imagesLoaded && preloadedImages[step.image]) {
-                console.log(`⚡ Instant transition to step ${stepIndex + 1} using preloaded image`);
+                // console.log(`⚡ Instant transition to step ${stepIndex + 1} using preloaded image`);
                 performStepTransition(step, stepIndex, backgroundImage, overlayLayer);
             } else {
-                console.log(`🔄 Loading image for step ${stepIndex + 1} on-demand`);
+                // console.log(`🔄 Loading image for step ${stepIndex + 1} on-demand`);
                 // Fallback to loading the image if not preloaded
                 const img = new Image();
 
@@ -2817,7 +2592,7 @@
                 </div>
                 <div class="tooltip-nav">
                     <button class="tooltip-btn tooltip-btn-back" onclick="previousStep()">Back</button>
-                    <div class='step-counter'>${currentStep} / ${demoSteps.length}</div>
+                    <div class='step-counter'>${getStepSection(currentStep)[0]} / ${getStepSection(currentStep)[1]}</div>
                     <button class="tooltip-btn tooltip-btn-finish" onclick="nextStep()">${currentStep === demoSteps.length - 1 ? 'Finish' : 'Next'}</button>
 
                 </div>
@@ -3082,58 +2857,52 @@
                         e.preventDefault();
                         hideTooltips();
                         break;
-                    case '1':
-                        e.preventDefault();
-                        goToStep(0);
-                    case '2':
-                        e.preventDefault();
-                        goToStep(1);
-                    case '3':
-                        e.preventDefault();
-                        goToStep(2);
-                    case '4':
-                        e.preventDefault();
-                        goToStep(3);
-                    case '5':
-                        e.preventDefault();
-                        goToStep(4);
-                    case '6':
-                        e.preventDefault();
-                        goToStep(5);
-                    case '7':
-                        e.preventDefault();
-                        goToStep(6);
-                    case '8':
-                        e.preventDefault();
-                        goToStep(7);
-                    case '9':
-                        e.preventDefault();
-                        goToStep(8);
-                    case 'a':
-                        e.preventDefault();
-                        goToStep(10);
-                    case 'b':
-                        e.preventDefault();
-                        goToStep(20);
-                    case 'c':
-                        e.preventDefault;
-                        goToStep(30);
-                    case 'd':
-                        e.preventDefault;
-                        goToStep(40);
-                    case 'e':
-                        e.preventDefault;
-                        goToStep(50);
-                    case 'f':
-                        e.preventDefault;
-                        goToStep(60);
-                    case 'g':
-                        e.preventDefault;
-                        goToStep(70);
                 }
             });
         }
 
+        function getStepSection(currentStep){
+
+            //Splitting the steps into different sections
+            let dashboardSection = 7;
+            let phoneSection = 6;
+            let chatSection = 20;
+            let videoSection = 6;
+            let inboxSection = 6;
+            let contactSection = 5;
+            let departmentsSection = 4;
+            let campaignSection = 7;
+            let adminSection = 5;
+            let reportSection = 7;
+            let integrationSection = 6;
+
+            if (currentStep >= 1 && currentStep <= 7) {
+                return [currentStep, dashboardSection];
+            } else if (currentStep >= 8 && currentStep <= 13) {
+                return [currentStep - 7, phoneSection];
+            } else if (currentStep >= 14 && currentStep <= 33) {
+                return [currentStep - 13, chatSection];
+            } else if (currentStep >= 34 && currentStep <= 39) {
+                return [currentStep - 33, videoSection];
+            } else if (currentStep >= 40 && currentStep <= 45) {
+                return [currentStep - 39, inboxSection];
+            } else if (currentStep >= 46 && currentStep <= 50) {
+                return [currentStep - 45, contactSection];
+            } else if (currentStep >= 51 && currentStep <= 54) {
+                return [currentStep - 50, departmentsSection];
+            } else if (currentStep >= 55 && currentStep <= 61) {
+                return [currentStep - 54, campaignSection];
+            } else if (currentStep >= 62 && currentStep <= 66) {
+                return [currentStep - 61, adminSection];
+            } else if (currentStep >= 67 && currentStep <= 73) {
+                return [currentStep - 66, reportSection];
+            } else if (currentStep >= 74 && currentStep <= 79) {
+                return [currentStep - 73, integrationSection];
+            } else {
+                return [0, demoSteps.length - 1];
+            }
+        }
+    
         // Enhanced window resize handler for percentage-based tooltips
         window.addEventListener('resize', () => {
             // Delay resize handling to ensure DOM has stabilized
