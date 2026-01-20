@@ -164,8 +164,7 @@
             border: 3px solid #22194D !important;
         }
 
-        .step1tooltiphighlight{
-            color:#2563eb !important;
+        .steptooltiphighlight{
             font-weight: 800 !important;
         }
 
@@ -177,8 +176,8 @@
             margin-right: clamp(8px, 1vw, 10px) !important;
         }
 
-        .step2tooltiphighlight{
-            color:#fb636ded !important;
+        .steptooltiphighlight{
+            color: black !important;
             font-weight: 800 !important;
             text-decoration: underline !important;
         }
@@ -190,8 +189,7 @@
             border: 1.5px solid #22194D !important;
         }
 
-        .step3tooltiphighlight{
-            color:#fb636ded !important;
+        .steptooltiphighlight{
             font-weight: 800 !important;
             text-decoration: underline !important;
         }
@@ -205,8 +203,7 @@
             height: auto !important;
         }
 
-        .step4tooltiphighlight{
-            color: #fb636ded !important;
+        .steptooltiphighlight{
             font-weight: 800 !important;
             text-decoration: underline !important;
         }
@@ -219,8 +216,7 @@
             font-size: 15px !important;
         }
         
-        .step5tooltiphighlight{
-            color: #fb636ded !important;
+        .steptooltiphighlight{
             font-weight: 800 !important;
             text-decoration: underline !important;
         }
@@ -234,8 +230,7 @@
             font-weight: 500 !important;
         }
 
-        .step6tooltiphighlight{
-            color: #fb636ded !important;
+        .steptooltiphighlight{
             font-weight: 800 !important;
             text-decoration: underline !important;
         }
@@ -248,8 +243,7 @@
             font-weight: 500 !important;
         }
 
-        .step7tooltiphighlight{
-            color: #fb636ded !important;
+        .steptooltiphighlight{
             font-weight: 800 !important;
             text-decoration: underline !important;
         }
@@ -262,8 +256,7 @@
             font-weight: 500 !important;
         }
 
-        .step8tooltiphighlight{
-            color: #fb636ded !important;
+        .steptooltiphighlight{
             font-weight: 800 !important;
             text-decoration: underline !important;
         }
@@ -290,6 +283,10 @@
             justify-content: center !important;
             align-items: center !important;
             padding: 0 20% 12% !important;
+        }
+
+        .steptooltiphighlight {
+            color:#000;
         }
 
         .tooltip.welcome-tooltip .tooltip-btn-start {
@@ -359,7 +356,7 @@
         }
 
         .welcometooltiphighlight{
-            color:#2563eb !important;
+            color:#000 !important;
             font-weight: 800 !important;
         }
 
@@ -603,7 +600,7 @@
 
             .tooltip.outro-tooltip {    
                 width: 85vw !important;
-                height: 30vh !important;
+                height: 23vh !important;
                 min-height: 100px !important;
             }
 
@@ -632,7 +629,7 @@
             .hotspot.step-2{border-radius: 4px !important;}
             .hotspot.step-3{border-radius: 4px !important;}
             .hotspot.step-4{border-radius: 4px !important;}
-            .hotspot.step-7{border-radius: 4px !important; left: 69.4% !important; width: 3.2% !important;height: 5.5% !important; margin-top: -1% !important;}
+            .hotspot.step-7{border-radius: 4px !important;}
             .hotspot.step-8{border-radius: 4px !important;}
 
         /* Responsive for small screen phones */
@@ -897,7 +894,7 @@
                 image: "mainassets/VideoSection.svg",
                 hotspots:[
                     {   x:43.3, y:10, width:5.2, height:9,
-                        tooltip: "<span class='step2tooltiphighlight'>Start Instant meetings</span> with <span class='step2tooltiphighlight'>one click</span> to speed up decisions and avoid scheduling delays.",
+                        tooltip: "<span class='steptooltiphighlight'>Start Instant meetings</span> with <span class='steptooltiphighlight'>one click</span> to speed up decisions and avoid scheduling delays.",
                         position:"bottom",
                     }
                 ]
@@ -907,7 +904,7 @@
                 image: "mainassets/VideoSection.svg",
                 hotspots:[
                     {   x:57.2, y:10, width:5.2, height: 9,
-                        tooltip: "<span class='step3tooltiphighlight'>Join meetings quickly</span> via the join button or meeting ID for secure and easy collaboration.",
+                        tooltip: "<span class='steptooltiphighlight'>Join meetings quickly</span> via the join button or meeting ID for secure and easy collaboration.",
                         position: "bottom"
                     }
                 ]
@@ -917,7 +914,7 @@
                 image: "mainassets/VideoSection.svg",
                 hotspots:[
                     {   x:72.2, y:10.2, width:5.2, height: 9,
-                        tooltip: "<span class='step4tooltiphighlight'>Easily schedule</span> demos or team syncs with a streamlined, hassle-free workflow.",
+                        tooltip: "<span class='steptooltiphighlight'>Easily schedule</span> demos or team syncs with a streamlined, hassle-free workflow.",
                         position: "bottom"
                     }
                 ]
@@ -927,7 +924,7 @@
                 image: "mainassets/ScheduleNewMeeting.svg",
                 hotspots:[
                     {   x:88.9, y:91.8, width:10, height: 4.5,
-                        tooltip: "<span class='step5tooltiphighlight'>Meetings are schedules smoothly</span> with <span class='step5tooltiphighlight'>correct details</span> and <span class='step5tooltiphighlight'>easy member invitations</span>, giving you full confidence.",
+                        tooltip: "<span class='steptooltiphighlight'>Meetings are schedules smoothly</span> with <span class='steptooltiphighlight'>correct details</span> and <span class='steptooltiphighlight'>easy member invitations</span>, giving you full confidence.",
                         tooltipWidth: 35,
                         position: "top"
                     }
@@ -938,7 +935,7 @@
                 image: "mainassets/VideoSection.svg",
                 hotspots:[
                     {   x:5.1, y:25.5, width:16.8, height:5.6, 
-                        tooltip:"<span class='step6tooltiphighlight'>Ongoing Meetings:</span> Join live sessions instantly.<br><span class='step6tooltiphighlight'>Invited Meetings:</span> See all upcoming invites in one place.<br><span class='step6tooltiphighlight'>Past Meetings:</span> Review completed sessions and follow up easily",                                
+                        tooltip:"<span class='steptooltiphighlight'>Ongoing Meetings:</span> Join live sessions instantly.<br><span class='steptooltiphighlight'>Invited Meetings:</span> See all upcoming invites in one place.<br><span class='steptooltiphighlight'>Past Meetings:</span> Review completed sessions and follow up easily",                                
                         tooltipWidth: 35,
                         position:"right"
                     },
@@ -952,7 +949,7 @@
                 hotspots:[
                     {
                         x:5.1, y: 37.1, width:16.8, height: 5.6,
-                        tooltip: "Access all stored call meeting archives.<br><span class='step7tooltiphighlight'>All Recordings:</span> View every call for audits and documentations.<br><span class='step7tooltiphighlight'>My Recorings:</span> Quickly find your own calls and demos.<br><span class='step7tooltiphighlight'>Shared with me:</span> Acccess recordings shared by others for easy collaboration.",
+                        tooltip: "Access all stored call meeting archives.<br><span class='steptooltiphighlight'>All Recordings:</span> View every call for audits and documentations.<br><span class='steptooltiphighlight'>My Recorings:</span> Quickly find your own calls and demos.<br><span class='steptooltiphighlight'>Shared with me:</span> Acccess recordings shared by others for easy collaboration.",
                         tooltipWidth: 35,
                         position:"right"
                     }
@@ -1142,7 +1139,7 @@
                 </div>
                 <div class="tooltip-content">
                     <span class="welcomeimage"><img src="mainassets/acepeaklogo.webp" alt="acepeaklogo" height=80, width=320></span>
-                    <span class="welcomegreeting">Congratulations! You've completed the <span class="step1tooltiphighlight">Video Meeting Demo!</span> You now have a comprehensive understanding about <span class="step1tooltiphighlight">video conferencing, meeting scheduling, and collaboration tools</span> to enhance team productivity and communication.</span>
+                    <span class="welcomegreeting">Congratulations! You've completed the <span class="steptooltiphighlight">Video Meeting Demo!</span> You now have a comprehensive understanding about <span class="steptooltiphighlight">video conferencing, meeting scheduling, and collaboration tools</span> to enhance team productivity and communication.</span>
                 </div>
                 <div class="tooltip-nav">
                     <button class="tooltip-btn tooltip-btn-restart" onclick="restartDemo()">Restart Demo</button>
