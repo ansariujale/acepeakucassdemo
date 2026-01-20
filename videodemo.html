@@ -200,9 +200,9 @@
 
         /* Welcome tooltip specific styles */
         .tooltip.welcome-tooltip {
-            max-width: 42% !important;
-            max-height: 50% !important;
-            min-height: 30% !important;
+            /* max-width: 42% !important;
+            max-height: 50% !important; */
+            /* min-height: 30% !important; */
             width: 100% !important;
             height: auto !important;
             z-index: 1001 !important;
@@ -222,7 +222,7 @@
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
-            padding: 0 20% 12% !important;
+            padding: 0 20% 7% !important;
         }
 
         .tooltip.welcome-tooltip .tooltip-btn-start {
@@ -233,7 +233,7 @@
             transition: all 0.2s ease !important;
             background: #f12d39 !important;
             color: white !important;
-            border: 1px solid #ccc !important;
+            border: 1px solid #eeecec !important;
         }
 
         .welcomeimage img {
@@ -249,7 +249,6 @@
             height: auto !important;
             z-index: 1001 !important;
             text-align: center;
-            /* Ensure no transform animations */
             transform: none !important;
         }
 
@@ -293,7 +292,6 @@
 
         .welcometooltiphighlight{
             color:#2563eb !important;
-            font-weight: 800 !important;
         }
 
         .welcomegreeting{
@@ -301,52 +299,6 @@
             font-weight: 800;
             text-align: center;
             font-weight: bold;
-        }
-
-        /* Bullet List Styles for Tooltips */
-        .tooltip-bullet-list {
-            margin: 0 !important;
-            padding-left: 0 !important;
-            list-style: none !important;
-        }
-        
-        .tooltip-bullet-list li {
-            position: relative !important;
-            padding-left: 20px !important;
-            margin-bottom: 8px !important;
-            color: #333 !important;
-            font-size: 13px !important;
-            line-height: 1.5 !important;
-        }
-        
-        .tooltip-bullet-list li:last-child {
-            margin-bottom: 0 !important;
-        }
-        
-        .tooltip-bullet-list li::before {
-            content: '•' !important;
-            color: #2563eb !important;
-            font-weight: bolder !important;
-            position: absolute !important;
-            left: 0 !important;
-            top: 0 !important;
-            font-size: clamp(0.6rem, 0.7vw, 0.8rem) !important;
-        }
-
-        .numbered-list {
-            padding-left: 15px !important;
-        }
-
-        .numbered-list li {
-            position: relative !important;
-            margin-bottom: 8px !important;
-            color: #333 !important;
-            font-size: 13px !important;
-            line-height: 1.2 !important;
-        }
-
-        .numbered-list li:last-child{
-            margin-bottom: 0 !important;
         }
 
         /* Progress Bar */
@@ -1034,7 +986,7 @@
                 </div>
                 <div class="tooltip-content">
                     <span class="welcomeimage"><img src="mainassets/acepeaklogo.webp" alt="acepeaklogo"></span>
-                    <span class="welcomegreeting">Welcome to <span class='welcometooltiphighlight'>Acepeak's UCaaS Meeting Center</span> — easily start, join, or schedule meetings all in one place to streamline administration and accelerate team collaboration.</span>
+                    <span class="welcomegreeting">Welcome to <span class='steptooltiphighlight'>Acepeak's UCaaS Meeting Center</span> — easily start, join, or schedule meetings all in one place to streamline administration and accelerate team collaboration.</span>
                 </div>
                 <div class="tooltip-nav">
                     <button class="tooltip-btn tooltip-btn-start" onclick="nextStep()">Start</button>
@@ -1604,42 +1556,6 @@
                     case 'Escape':
                         e.preventDefault();
                         hideTooltips();
-                        break;
-                    case '0':
-                        e.preventDefault();
-                        goToStep(0);
-                        break;
-                    case '1':
-                        e.preventDefault();
-                        goToStep(0);
-                        break;
-                    case '2':
-                        e.preventDefault();
-                        goToStep(1);
-                        break;
-                    case '3':
-                        e.preventDefault();
-                        goToStep(2);
-                        break;
-                    case '4':
-                        e.preventDefault();
-                        goToStep(3);
-                        break;
-                    case '5':
-                        e.preventDefault();
-                        goToStep(4);
-                        break;
-                    case '6':
-                        e.preventDefault();
-                        goToStep(5);
-                        break;
-                    case '7':
-                        e.preventDefault();
-                        goToStep(6);
-                        break;
-                    case '8':
-                        e.preventDefault();
-                        goToStep(7);
                         break;
                 }
             });
