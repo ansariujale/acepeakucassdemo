@@ -147,7 +147,7 @@
             pointer-events: auto !important;
             visibility: hidden !important;
             box-sizing: border-box !important;
-            max-width:40% !important;
+            max-width: 40% !important;
             min-height: 10px !important;
             max-height: 65% !important;
         }
@@ -170,7 +170,6 @@
         }
 
         .tooltip.step-2-tooltip {
-            max-width: clamp(20%, 30%, 15%) !important;
             height:auto !important;
             font-weight: 400 !important;
             font-size: 15px !important;
@@ -182,11 +181,9 @@
             color:#fb636ded !important;
             font-weight: 800 !important;
             text-decoration: underline !important;
-            font-size: 14px !important;
         }
 
         .tooltip.step-3-tooltip {
-            max-width: clamp(20%, 30%, 15%) !important;
             height: auto !important;
             font-weight: 500 !important;
             font-size: 15px !important;
@@ -200,7 +197,6 @@
         }
 
         .tooltip.step-4-tooltip{
-            max-width: clamp(300px, 35%, 500px) !important;
             min-width: clamp(200px, 18%, 280px) !important;
             width: clamp(280px, 30%, 360px) !important;
             border:1.5px solid #22194D !important;
@@ -597,29 +593,47 @@
             }
 
             .tooltip.welcome-tooltip .tooltip-content {
-                font-size: clamp(1rem, 3vw, 1.2rem) !important;
+                font-size: clamp(2px, 1.4vw, 8px) !important;
             }
 
             .tooltip.welcome-tooltip .tooltip-btn-start {
                 padding: 8px 20px !important;
-                font-size: clamp(0.75rem, 2.5vw, 0.9rem) !important;
+                font-size: clamp(2px, 1.4vw, 8px) !important;
             }
 
-            .tooltip.outro-tooltip {
+            .tooltip.outro-tooltip {    
                 width: 85vw !important;
                 height: 30vh !important;
                 min-height: 100px !important;
             }
 
             .tooltip.outro-tooltip .tooltip-content {
-                font-size: clamp(1rem, 3vw, 1.2rem) !important;
+                font-size: clamp(2px, 1.4vw, 8px) !important;
             }
 
-            .tooltip.outro-tooltip .tooltip-btn-restart {
+            .tooltip.outro-tooltip .tooltip-btn {
                 padding: 8px 20px !important;
-                font-size: clamp(0.75rem, 2.5vw, 0.9rem) !important;
+                font-size: clamp(2px, 1.4vw, 8px) !important;
             }
         }
+
+            .tooltip .tooltip-content {
+                font-size: clamp(1px, 1.4vw, 8px);
+            }
+
+            .tooltip-btn{
+                padding: 6px 10px !important;
+                font-size: clamp(3px, 1.6vw, 8px) !important;
+                min-width: 20px !important;
+            }
+
+            /*HOTSPOT STYLING*/
+            .hotspot.step-1{border-radius: 4px !important; left: 0.9% !important; width: 3.5% !important; }
+            .hotspot.step-2{border-radius: 4px !important;}
+            .hotspot.step-3{border-radius: 4px !important;}
+            .hotspot.step-4{border-radius: 4px !important;}
+            .hotspot.step-7{border-radius: 4px !important; left: 69.4% !important; width: 3.2% !important;height: 5.5% !important; margin-top: -1% !important;}
+            .hotspot.step-8{border-radius: 4px !important;}
 
         /* Responsive for small screen phones */
         @media (max-width: 360px){
@@ -884,7 +898,6 @@
                 hotspots:[
                     {   x:43.3, y:10, width:5.2, height:9,
                         tooltip: "<span class='step2tooltiphighlight'>Start Instant meetings</span> with <span class='step2tooltiphighlight'>one click</span> to speed up decisions and avoid scheduling delays.",
-                        tooltipWidth:25,
                         position:"bottom",
                     }
                 ]
