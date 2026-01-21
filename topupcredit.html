@@ -18,7 +18,7 @@
         }
 
         .demo-container {
-            width: 123% !important;
+            width: 100% !important;
             max-width: 1928px !important;
             height: auto !important;
             max-height: 1080px !important;
@@ -130,7 +130,7 @@
             line-height: 1.4 !important;
             box-shadow: 0 3px 10.5px rgba(0, 0, 0, 0.15) !important;
             opacity: 0 !important;
-            transform:scale(1) !important;
+            transform: scale(1) !important;
             transition: all 0.3s ease !important;
             z-index: 1000 !important;
             border: 2px solid #CCCCCC !important;
@@ -138,9 +138,9 @@
             pointer-events: auto !important;
             visibility: hidden !important;
             box-sizing: border-box !important;
-            max-width:40% !important;
+            max-width:35% !important;
             min-height: 10px !important;
-            max-height: 55% !important;
+            /* max-height: 55% !important; */
         }
 
         .tooltip.visible {
@@ -162,7 +162,7 @@
         }
 
         .tooltip.step-2-tooltip {
-            max-width: clamp(20%, 30%, 15%) !important;
+            /* max-width: clamp(20%, 30%, 15%) !important; */
             height:auto !important;
             font-weight: 400 !important;
             font-size: 15px !important;
@@ -170,7 +170,7 @@
         }
 
         .tooltip.step-3-tooltip {
-            max-width: clamp(20%, 30%, 15%) !important;
+            /* max-width: clamp(20%, 30%, 15%) !important; */
             height: auto !important;
             font-weight: 500 !important;
             font-size: 15px !important;
@@ -178,9 +178,9 @@
         }
 
         .tooltip.step-4-tooltip{
-            max-width: clamp(300px, 35%, 500px) !important;
-            min-width: clamp(200px, 18%, 280px) !important;
-            width: clamp(280px, 30%, 360px) !important;
+            /* max-width: clamp(300px, 35%, 500px) !important;
+            min-width: clamp(200px, 18%, 280px) !important; */
+            /* width: clamp(280px, 30%, 360px) !important; */
             border:1.5px solid #22194D !important;
             font-weight: 500 !important;
             font-size: 15px !important;
@@ -191,14 +191,14 @@
         .tooltip.step-5-tooltip{
             height:auto !important;
             border: 1.5px solid #22194D !important;
-            width: clamp(250px, 25%, 300px) !important;
+            /* width: clamp(250px, 25%, 300px) !important; */
             font-weight: 500 !important;
             font-size: 15px !important;
         }
         
 
         .tooltip.step-6-tooltip{
-            max-width:22% !important;
+            /* max-width:22% !important; */
             height:auto !important;
             font-size: 15px !important;
             font-weight: 500 !important;
@@ -206,7 +206,7 @@
 
         .tooltip.step-7-tooltip{
             height:auto !important;
-            width: clamp(250px, 25%, 300px) !important;
+            /* width: clamp(250px, 25%, 300px) !important; */
             font-size: 15px !important;
             font-weight: 500 !important;
         }
@@ -265,7 +265,7 @@
 
         .tooltip.outro-tooltip .tooltip-content {
             font-size: 19px !important;
-            font-weight: 500 !important;
+            font-weight: 400 !important;
         }
 
         /* Outro tooltip navigation - single button */
@@ -367,14 +367,17 @@
         }
 
         .tooltip-close {
-            background: #ff000085 !important;
+            background: #ff0000 !important;
             border: none !important;
             color: #fff !important;
-            border-radius: 6px !important;
-            padding: 3px !important;
+            border-radius: 2px !important;
+            padding: 2px 5px !important;
             cursor: pointer !important;
             transition: all 0.2s ease !important;
             font-size: 8px !important;
+            line-height: 1 !important;
+            min-width: 12px !important;
+            min-height: 6px !important;
         }
 
         .tooltip-close:hover {
@@ -504,6 +507,50 @@
                 max-height: calc(100vh - 120px) !important;
                 min-height: calc(100vh - 120px) !important;
                 aspect-ratio: auto !important;
+            }
+
+            /*Welcome tooltip*/
+            .tooltip.welcome-tooltip {
+                width: 80vw !important;
+                height: 36vh !important;
+                min-height: 36vh !important;
+                max-height: 36vh !important;
+            }
+            .tooltip.welcome-tooltip .tooltip-content {
+                font-size: clamp(3px, 1.6vw, 15px) !important;
+                padding: 3px 6px !important;
+            }
+            .tooltip.welcome-tooltip .tooltip-btn-start {
+                padding: 10px 25px !important;
+                font-size: clamp(3px, 1.6vw, 12px) !important;
+            }
+            /*Outro tooltip*/
+            .tooltip.outro-tooltip {
+                width: 80vw !important;
+                height: 38vh !important;
+                min-height: 38vh !important;
+                max-height: 38vh !important;
+            }
+            .tooltip.outro-tooltip .tooltip-content {
+                font-size: clamp(3px, 1.6vw, 15px) !important;
+                padding: 10px 25px !important;
+            }
+            .tooltip.outro-tooltip .tooltip-btn-restart {
+                padding: 10px 25px !important;
+                font-size: clamp(3px, 1.6vw, 15px) !important;
+            }
+            .tooltip.outro-tooltip .tooltip-btn-nextdemo{
+                padding: 10px 25px !important;
+                font-size: clamp(3px, 1.6vw, 15px) !important;
+            }
+            .tooltip .tooltip-content {
+                font-size: clamp(3px, 1.3vw, 15px) !important;
+                padding: 10px 15px 10px !important;
+            }
+            .tooltip-btn {
+                padding: 5px 10px !important;
+                font-size: clamp(4px, 1.2vw, 14px) !important;
+                min-width: 20px !important;
             }
         }
 
@@ -654,9 +701,6 @@
             .tooltip .tooltip-content {
                 font-size: clamp(5px, 5vw, 5px) !important;
             }
-
-
-
             .step-counter {
                 font-size: clamp(2px, 1.6vw, 8px) !important;
             }
@@ -870,35 +914,35 @@
         const demoSteps = [
             {
                 // Step 1
-                image: 'mainassets/Home_Dashboard_Analytics(Main).svg',
+                image: 'https://www.acepeak.com/wp-content/uploads/2025/12/Home_Dashboard_AnalyticsMain.svg',
                 hotspots: [
                     { x: 91.6, y: 0.9, width: 7.7, height: 5.4, tooltip: "Click on the 'Call Summary' tab to view incoming and outgoing Call's statistics.",tooltipWidth:35, position: 'left' }
                 ]
             },
             {
                 // Step 2
-                image: 'mainassets/Home_Dashboard_Analytics(Main).svg',
+                image: 'https://www.acepeak.com/wp-content/uploads/2025/12/Home_Dashboard_AnalyticsMain.svg',
                 hotspots: [
                     { x: 96.2, y: 1.12, width: 2.9, height: 5.1, tooltip: 'Open your <span class="steptooltiphighlight">profile menu</span> by clicking the avatar in the top-right. This reveals account options like My Profile, Change Password, and Add Funds to manage billing quickly.', tooltipWidth:35, position: 'left' }
                 ]
             },
             {
                 // Step 3
-                image: 'mainassets/User_Profile.svg',
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/User_Profile.svg',
                 hotspots:[
                     { x: 81.6, y: 45.1, width: 18, height: 3, tooltip: 'Select <span class="steptooltiphighlight">Add Funds</span> from the profile menu to navigate to <span class="steptooltiphighlight">Billing → Plan</span>. This takes you straight to the top-up panel so you can add credits for <span class="steptooltiphighlight">Calls and SMS</span>.', tooltipWidth:35, position: 'left' }
                 ]
             },
             {   
                 //Step 4
-                image: 'mainassets/Add_User_Credits.svg',
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/Add_User_Credits.svg',
                 hotspots: [
                     {
                         x:42,
                         y:47.8,
                         width:17.8,
                         height:5.5,
-                        tooltip: '💳 Complete Your Credit Card Top-Up.<br><span class="steptooltiphighlight">Name:</span> Enter cardholder name exactly as it appears on the card.<br><span class="steptooltiphighlight">Card</span>: Input card number accurately (use <span class="steptooltiphighlight">xxxx xxxx xxxx xxxx</span> format).<br><span class="steptooltiphighlight">Expiry:</span> Enter valid expiry as <span class="step4tooltiphighlight">MM/YY (Month 01-12)</span>.<br><span class="step4tooltiphighlight">CVC:</span> Type the 3-4 digit security code for verification.<br><span class="step4tooltiphighlight">Review:</span> Confirm name and expiry match the card (check <span class="step4tooltiphighlight">"Save"</span> if desired,).<br><span class="step4tooltiphighlight">Submit:</span> Click <span class="step4tooltiphighlight">"Pay"</span> to process the funds and credit your account.', tooltipWidth:35, position:'right'
+                        tooltip: '💳 Complete Your Credit Card Top-Up.<br><span class="steptooltiphighlight">Name:</span> Enter cardholder name exactly as it appears on the card.<br><span class="steptooltiphighlight">Card</span>: Input card number accurately (use <span class="steptooltiphighlight">xxxx xxxx xxxx xxxx</span> format).<br><span class="steptooltiphighlight">Expiry:</span> Enter valid expiry as <span class="steptooltiphighlight">MM/YY (Month 01-12)</span>.<br><span class="steptooltiphighlight">CVC:</span> Type the 3-4 digit security code for verification.<br><span class="steptooltiphighlight">Review:</span> Confirm name and expiry match the card (check <span class="steptooltiphighlight">"Save"</span> if desired,).<br><span class="steptooltiphighlight">Submit:</span> Click <span class="steptooltiphighlight">"Pay"</span> to process the funds and credit your account.', tooltipWidth:35, position:'right'
                     },
                     { x:23.4, y:47.8, width:17.8, height:5.5},
                     { x:23.4, y:57.2, width:17.8, height:5.5},
@@ -908,21 +952,21 @@
             },
             {
                 // Step 5
-                image:'mainassets/Add_User_Credits.svg',
+                image:'https://www.acepeak.com/wp-content/uploads/2026/01/Add_User_Credits.svg',
                 hotspots:[
                     { x:22.4, y:21.5, width:38 , height:53  , tooltip:'While processing, a loading indicator appears on the Pay button. Wait for confirmation before navigating away — <span class="steptooltiphighlight">interrupting may cause duplicate attempts or failures.</span>',tooltipWidth:35, position:'right'}
                 ]
             },
             {
                 // Step 6
-                image:'mainassets/Billing_Credits_purchase(UCaaS)png.svg',
+                image:'https://www.acepeak.com/wp-content/uploads/2026/01/Billing_Credits_purchaseUCaaSpng.svg',
                 hotspots:[
                     { x: 91.6, y: 0.9, width: 7.7, height: 5.4, tooltip:'After <span class="steptooltiphighlight">success</span> you will see a green toast and the Invoice list updated. Verify the new invoice or fund-top up appears to confirm the account balance was credited correctly.', tooltipWidth:35, position:'left'}
                 ]
             },
             {
                 // Step 7
-                image:'mainassets/PhoneSection.svg',
+                image:'https://www.acepeak.com/wp-content/uploads/2026/01/PhoneSection.svg',
                 hotspots:[
                     { x: 51.8, y: 18.9, width: 24.5, height: 69.3, tooltip:'Open <span class="steptooltiphighlight">Phone</span> and <span class="steptooltiphighlight">use the dialer</span> to enter a test number (example +1 202 895 7777). Placing a short test call validates outbound calling and available credit after top-up.',tooltipWidth:35, position:'left'},
                     { x: 0.7, y: 14.9, width: 4, height: 6.7}
@@ -1072,7 +1116,7 @@
                 </div>
                 <div class="tooltip-content">
                     <span class="welcomeimage"><img src="mainassets/acepeaklogo.webp" alt="acepeaklogo"></span>
-                    <span class="welcomegreeting">Welcome — this flow shows how Customer Success agents can <span class="welcometooltiphighlight">top up account balance</span>, verify a successful transaction in invoices, and place a test call to confirm <span class="welcometooltiphighlight">calling/SMS</span> credits work.
+                    <span class="welcomegreeting">Welcome — this flow shows how Customer Success agents can <span class="steptooltiphighlight">top up account balance</span>, verify a successful transaction in invoices, and place a test call to confirm <span class="steptooltiphighlight">calling/SMS</span> credits work.
                 </div>
                 <div class="tooltip-nav">
                     <button class="tooltip-btn tooltip-btn-start" onclick="nextStep()">Start</button>
@@ -1325,14 +1369,8 @@
             }
             
             // Add click handler
-            hotspotElement.onclick = () => showTooltip(hotspot, hotspotElement);
+            hotspotElement.onclick = () => nextStep(currentStep+1);
             
-            // Add hover effects for all steps (including step 2)
-            hotspotElement.onmouseenter = () => {
-                if (!hotspotElement.querySelector('.tooltip.visible:not(.welcome-tooltip)')) {
-                    showTooltip(hotspot, hotspotElement);
-                }
-            };
             
             hotspotElement.onmouseleave = () => {
                 // hideHotspotTooltips();
@@ -1384,7 +1422,7 @@
                 <div class="tooltip-nav">
                     <button class="tooltip-btn tooltip-btn-back" onclick="previousStep()">Back</button>
                     <div class="step-counter">
-                    ${currentStep} / ${demoSteps.length + 1}
+                    ${currentStep} / ${demoSteps.length -1}
                     </div>
                     <button class="tooltip-btn tooltip-btn-finish" onclick="nextStep()">${currentStep === demoSteps.length - 1 ? 'Finish' : 'Next'}</button>
                 </div>
@@ -1419,15 +1457,9 @@
                 tooltip.classList.add('visible');
             }, 50); // Increased delay to ensure positioning is complete
             
-            // Add extra repositioning for step 12 to fix the timing issue
-            if (stepIndex === 11) { // step 12 is index 11
-                setTimeout(() => {
-                    const hotspotElement2 = tooltip.parentElement.querySelector('.hotspot');
-                    if (hotspotElement2) {
-                        positionTooltip(tooltip, hotspotElement2, positionClass);
-                    }
-                }, 300);
-            }
+            setTimeout(() => {
+                positionTooltip(tooltip,hotspotElement,positionClass);
+            },50)
         }
 
         // Enhanced Position tooltip relative to hotspot with center alignment
