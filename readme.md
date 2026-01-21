@@ -12,3 +12,13 @@
     *** mainassets/image.svg => https://www.acepeak.com/wp-content/uploads/2025/12/image.svg
 ### 5) Remove document.addeventlistener for keys.
 * Except the  _leftarrow, rightarrow, end, home, and escape_ keys.
+
+## Current Status
+- [x] testdemo.html
+- [x] videodemo.html
+- [ ] topupcredit.html
+- [ ] chatdemo.html
+- [ ] contactdemo.html
+- [ ] didnumberpurchasedemo.html
+- [ ] phonedemo.html
+- [ ] overalltabdemo.html
