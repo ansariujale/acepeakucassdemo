@@ -383,8 +383,9 @@
 
         /* Outro tooltip specific styles */
         .tooltip.outro-tooltip {
-            max-width: 60% !important;
-            width: 40% !important;
+            max-width: 500px !important;
+            width: auto !important;
+            min-width: 300px !important;
             height: auto !important;
             z-index: 1001 !important;
             text-align: center;
@@ -402,13 +403,25 @@
             justify-content: center !important;
             align-items: center !important;
             padding: 0 20px 16px !important;
-            gap: 20px;
+            gap: 15px;
+        }
+
+        .tooltip.outro-tooltip .tooltip-btn-continue {
+            padding: 10px 20px !important;
+            border-radius: 8px !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            border: 1px solid #000000 !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+            background: #f12d39 !important;
+            color: #fff !important;
         }
 
         .tooltip.outro-tooltip .tooltip-btn-restart {
-            padding: 12px 32px !important;
+            padding: 10px 20px !important;
             border-radius: 8px !important;
-            font-size: 12px !important;
+            font-size: 14px !important;
             font-weight: 500 !important;
             border: 1px solid #000000 !important;
             cursor: pointer !important;
@@ -418,15 +431,15 @@
         }
 
         .tooltip.outro-tooltip .tooltip-btn-nextdemo {
-            padding: 12px 32px !important;
+            padding: 10px 20px !important;
             border-radius: 8px !important;
-            font-size: 12px !important;
+            font-size: 14px !important;
             font-weight: 500 !important;
             border: 1px solid #000000 !important;
             cursor: pointer !important;
             transition: all 0.2s ease !important;
-            background: #f12d39 !important;
-            color: #fff !important;
+            background: #fff !important;
+            color: #000 !important;
         }
 
         .welcometooltiphighlight {
@@ -1390,6 +1403,7 @@
             background: #d1232f;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
@@ -2755,7 +2769,13 @@
                 return; // Don't create a duplicate
             }
 
-            const nextDemoName= demoNames[demoIndex + 1] || "End of Tour";
+            // Check if this is the Admin Demo (index 8) or any specific demo that needs special handling
+            if (demoNames[demoIndex] === 'Admin Demo') {
+                 showAllTourCompletedTooltip();
+                 return;
+            }
+
+            const nextDemoName = demoNames[demoIndex + 1] || "End of Tour";
 
             const tooltip = document.createElement('div');
             tooltip.className = 'tooltip demo-completed-tooltip outro-tooltip'; // Reuse outro styles
@@ -2769,7 +2789,7 @@
                     You've finished the <span class="step1tooltiphighlight">${demoNames[demoIndex]}</span>.
                 </div>
                 <div class="tooltip-nav">
-                    <button class="tooltip-btn tooltip-btn-continue" onclick="goToDemo(${demoIndex+1})">${nextDemoName}</button>
+                    <button class="tooltip-btn tooltip-btn-nextdemo" onclick="goToDemo(${demoIndex+1})">${nextDemoName}</button>
                     <button class="tooltip-btn tooltip-btn-continue" onclick="handleContinueTour()">Continue Tour</button>
                 </div>
             `;
@@ -2784,6 +2804,61 @@
             setTimeout(() => {
                 tooltip.classList.add('visible');
             }, 10);
+        }
+
+        function showAllTourCompletedTooltip() {
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip demo-completed-tooltip outro-tooltip'; // Reuse outro styles
+
+            tooltip.innerHTML = `
+                <div class="tooltip-header">
+                    <button class="tooltip-close" onclick="hideTooltips()">✕</button>
+                </div>
+                <div class="tooltip-content">
+                    <span class="welcomegreeting">🎉 Tour Completed!</span>
+                    You have successfully completed <span class="step1tooltiphighlight">All the Tours</span>.
+                </div>
+                <div class="tooltip-nav">
+                    <button class="tooltip-btn tooltip-btn-continue" onclick="triggerCelebration()">Celebrate!</button>
+                </div>
+            `;
+
+            positionOutroTooltip(tooltip);
+            document.getElementById('overlayLayer').appendChild(tooltip);
+
+            setTimeout(() => {
+                tooltip.classList.add('visible');
+            }, 10);
+        }
+
+        function triggerCelebration() {
+             var duration = 5 * 1000;
+             var animationEnd = Date.now() + duration;
+             var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+
+             var randomInOut = function(min, max) {
+               return Math.random() * (max - min) + min;
+             };
+
+             var interval = setInterval(function() {
+               var timeLeft = animationEnd - Date.now();
+
+               if (timeLeft <= 0) {
+                 return clearInterval(interval);
+               }
+
+               var particleCount = 50 * (timeLeft / duration);
+               // since particles fall down, start a bit higher than random
+               confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInOut(0.1, 0.3), y: Math.random() - 0.2 } }));
+               confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInOut(0.7, 0.9), y: Math.random() - 0.2 } }));
+             }, 250);
+             
+             // Also fire a big burst immediately
+             confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+             });
         }
 
         // Create a hotspot element
