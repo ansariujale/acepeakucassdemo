@@ -13,6 +13,14 @@
 ### 5) Remove document.addeventlistener for keys.
 * Except the  _leftarrow, rightarrow, end, home, and escape_ keys.
 
+
+# New demo style changes to be done
+ - See Chapter button size
+ - See chapter button right and bottom gap
+ - Modal Popup styling
+ - Demo completion tooltip styling
+ - Demo completion continue and next demo button styling
+
 ## Current Status
 - [x] testdemo.html
 - [x] videodemo.html
