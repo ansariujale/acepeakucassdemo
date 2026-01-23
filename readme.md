@@ -20,7 +20,8 @@
  - Modal Popup styling
  - Demo completion tooltip styling
  - Demo completion continue and next demo button styling
-
+ - remove the hover border-radius value from the checked modal list item
+ - text size of the percentage text of the modal-progress-bar should be increased  
 ## Current Status
 - [x] testdemo.html
 - [x] videodemo.html
