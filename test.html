@@ -1264,6 +1264,7 @@
             width: 100% !important;
             height: 100% !important;
             background-color: rgba(0, 0, 0, 0.5) !important;
+            backdrop-filter: blur(1.5px) !important;
             opacity: 0 !important;
             visibility: hidden !important;
             transition: opacity 0.3s ease !important;
@@ -1283,7 +1284,7 @@
             padding: 20px !important;
             border: 1px solid #888 !important;
             width: 80% !important;
-            max-width: 33% !important;
+            max-width: 35% !important;
             max-height: 80vh !important;
             overflow-y: hidden !important;
             border-radius: 25px !important;
@@ -1334,7 +1335,9 @@
                 cursor: pointer;
                 margin: auto;
             }
-        
+        .modal li:last-child{
+            padding: 0px 0px 20px 0px;
+        }
         .modal ul {
             padding-left: 0;
         }
@@ -1403,8 +1406,9 @@
         }
 
         .modal-progress-text {
-            font-size: 0.75rem;
-             color: #666;
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #333333;
             font-weight: 500;
         }
 
@@ -1418,15 +1422,22 @@
         .bottom-right-button {
             padding: 18% 45%;
             background: #f12d39;
-            color: white;
+            color: white;   
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: bolder;
+            border-radius: 35px !important;
         }
 
         .bottom-right-button:hover {
-            background: #d1232f;
+            background: #68060c !important;
+            transform: translateY(3px) !important;
+            background: linear-gradient(180deg, #8b0000 0%, #68060c 100%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.2s !important;
+
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -2862,9 +2873,9 @@
         }
 
         function triggerCelebration() {
-             var duration = 5 * 1000;
+             var duration = 1000;
              var animationEnd = Date.now() + duration;
-             var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+             var defaults = { startVelocity: 30, spread: 180, ticks: 20, zIndex: 9999 };
 
              var randomInOut = function(min, max) {
                return Math.random() * (max - min) + min;
@@ -2877,7 +2888,7 @@
                  return clearInterval(interval);
                }
 
-               var particleCount = 50 * (timeLeft / duration);
+               var particleCount = 10 * (timeLeft / duration);
                // since particles fall down, start a bit higher than random
                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInOut(0.1, 0.3), y: Math.random() - 0.2 } }));
                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInOut(0.7, 0.9), y: Math.random() - 0.2 } }));
@@ -2885,8 +2896,8 @@
              
              // Also fire a big burst immediately
              confetti({
-                particleCount: 100,
-                spread: 70,
+                particleCount: 80,
+                spread: 900,
                 origin: { y: 0.6 }
              });
         }
