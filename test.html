@@ -19,7 +19,7 @@
         }
 
         .demo-container {
-            width: 124% !important;
+            width: 100% !important;
             max-width: 1928px !important;
             height: auto !important;
             max-height: 1080px !important;
@@ -31,7 +31,6 @@
             padding: 0 !important;
             overflow: hidden !important;
             aspect-ratio: 16/9 !important;
-            right: 12% !important;
         }
 
         .demo-frame {
@@ -1242,6 +1241,154 @@
             font-weight: 400 !important;
             letter-spacing: 1px !important;
         }
+
+        /* Modal styles */
+        .modal {
+            position: fixed !important;
+            z-index: 1000 !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: opacity 0.3s ease !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .modal.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .modal-content {
+            background-color: #fff !important;
+            padding: 20px !important;
+            border: 1px solid #888 !important;
+            border-radius: 20px !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3) !important;
+            position: relative !important;
+            max-width: 400px !important;
+            max-height: 80vh !important;
+            overflow-y: auto !important;
+        }
+
+        .close {
+            color: #aaa !important;
+            float: right !important;
+            font-size: 28px !important;
+            font-weight: bold !important;
+            cursor: pointer !important;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+        }
+
+        .modal li {
+                padding: 8px 0;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 600;
+                align-items: center;
+                cursor: pointer;
+            }
+
+        .modal li:hover {
+            background-color: #e2e2e2;
+        }
+
+        .modal li input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            appearance: none;
+            border: 2px dashed #999;
+            background: transparent;
+            position: relative;
+        }
+
+        .modal li input[type="checkbox"]:checked {
+            background: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        .modal li input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+        }
+
+        .modal li.checked {
+            text-decoration: line-through;
+            color: #888;
+        }
+
+        .modal li.checked {
+            text-decoration: line-through;
+            background-color: #eeeeee;
+        }
+
+        .modal-progress {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .modal-progress-bar-container {
+            flex-grow: 1;
+            height: 4px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .modal-progress-bar {
+            height: 100%;
+            background-color: #3296dc;
+            width: 0%;
+            border-radius: 0 2px 2px 0;
+            transition: width 0.3s ease;
+        }
+
+        .modal-progress-text {
+            font-size: 0.75rem;
+             color: #666;
+            font-weight: 500;
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+
+        .bottom-right-button {
+            padding: 10px 20px;
+            background: #f12d39;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .bottom-right-button:hover {
+            background: #d1232f;
+        }
     </style>
 </head>
 
@@ -1259,6 +1406,35 @@
                 </div>
                 <img class="background-image" id="backgroundImage">
                 <div class="overlay-layer" id="overlayLayer"></div>
+            </div>
+            <div class="button-container">
+                <button class="bottom-right-button" onclick="openModal()">See Chapters</button>
+            </div>
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Welcome to Acepeak UCaaS Tour</h2>
+                    <div class="modal-progress">
+                        <div class="modal-progress-bar-container">
+                            <div class="modal-progress-bar" id="modalProgressBar"></div>
+                        </div>
+                        <span class="modal-progress-text" id="modalProgressText">0%</span>
+                    </div>
+                    <ul>
+                        <li data-step="0" onclick="goToDemo(0)"><input type="checkbox" disabled>Overall Demo</li>
+                        <li data-step="1" onclick="goToDemo(1)"><input type="checkbox" disabled>Phone Demo</li>
+                        <li data-step="2" onclick="goToDemo(2)"><input type="checkbox" disabled>Chat Demo</li>
+                        <li data-step="3" onclick="goToDemo(3)"><input type="checkbox" disabled>Video Demo</li>
+                        <li data-step="4" onclick="goToDemo(4)"><input type="checkbox" disabled>Inbox Demo</li>
+                        <li data-step="5" onclick="goToDemo(5)"><input type="checkbox" disabled>Contact Demo</li>
+                        <li data-step="6" onclick="goToDemo(6)"><input type="checkbox" disabled>Department Demo</li>
+                        <li data-step="7" onclick="goToDemo(7)"><input type="checkbox" disabled>Campaign Demo</li>
+                        <li data-step="9" onclick="goToDemo(9)"><input type="checkbox" disabled>Reports Demo</li>
+                        <li data-step="10" onclick="goToDemo(10)"><input type="checkbox" disabled>Integrations Demo</li>
+                        <li data-step="8" onclick="goToDemo(8)"><input type="checkbox" disabled>Admin Demo</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -2155,6 +2331,35 @@
             
         ];
 
+        const demoNames = [
+            "Overall Demo",
+            "Phone Demo",
+            "Chat Demo",
+            "Video Demo",
+            "Inbox Demo",
+            "Contact Demo",
+            "Department Demo",
+            "Campaign Demo",
+            "Admin Demo",
+            "Reports Demo",
+            "Integrations Demo"
+        ];
+
+        const demoGroups = [
+                [1, 2, 3, 4, 5, 6, 7],          // Overall Demo
+                [8, 9, 10, 11, 12, 13],         // Phone Demo
+                [14, 15, 16, 17, 18, 19, 20 , 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],    // Chat Demo
+                [34, 35, 36, 37, 38, 39],       // Video Demo
+                [40, 41, 42, 43],               // Inbox Demo
+                [44, 45, 46, 47, 48],           // Contact Demo
+                [49, 50, 51, 52],               // Department Demo
+                [53, 54, 55, 56, 57, 58, 59],   // Campaign Demo
+                [60, 61, 62, 63, 64],           // Admin Demo
+                [65, 66, 67, 68, 69, 70, 71],   // Reports Demo
+                [72, 73, 74, 75, 76, 77, 78, 79],   // Integrations Demo
+            ];
+
+        let visitedSteps = new Set();
         let currentStep = 0;
         let isTransitioning = false;
 
@@ -2339,8 +2544,7 @@
                     <span class="welcomegreeting">🎉 Congratulations!</span>You've completed the <span class="step1tooltiphighlight">UCAAS Demo!</span> You now have a comprehensive understanding of our <span class="step1tooltiphighlight">Unified Communications Platform.</span>
                 </div>
                 <div class="tooltip-nav">
-                    <button class="tooltip-btn tooltip-btn-restart" onclick="restartDemo()">Restart Demo</button>
-                    <button class="tooltip-btn tooltip-btn-nextdemo" onclick="startNextDemo()">Next Demo</button>
+                    <button class="tooltip-btn tooltip-btn-continue" onclick="handleContinueTour()">Continue Tour</button>
                 </div>
             `;
 
@@ -2430,6 +2634,11 @@
         function loadStep(stepIndex) {
             if (stepIndex < 0 || stepIndex >= demoSteps.length || isTransitioning) return;
 
+            visitedSteps.add(stepIndex);
+            const demoIndex = getDemoForStep(stepIndex);
+            if (demoIndex !== -1 && isDemoCompleted(demoIndex)) {
+                showDemoCompletedTooltip(demoIndex);
+            }
             isTransitioning = true;
             const backgroundImage = document.getElementById('backgroundImage');
             const overlayLayer = document.getElementById('overlayLayer');
@@ -2527,6 +2736,54 @@
                 updateNavigationButtons();
                 isTransitioning = false;
             }, 200); // Match the transition duration
+        }
+
+        function isDemoCompleted(demoIndex) {
+            const steps = demoGroups[demoIndex];
+            return steps.every(step => visitedSteps.has(step));
+        }
+
+        function getDemoForStep(stepIndex) {
+            return demoGroups.findIndex(steps => steps.includes(stepIndex));
+        }
+
+        // Show demo completed tooltip
+        function showDemoCompletedTooltip(demoIndex) {
+            // Check if demo completed tooltip already exists
+            const existingTooltip = document.querySelector('.demo-completed-tooltip');
+            if (existingTooltip) {
+                return; // Don't create a duplicate
+            }
+
+            const nextDemoName= demoNames[demoIndex + 1] || "End of Tour";
+
+            const tooltip = document.createElement('div');
+            tooltip.className = 'tooltip demo-completed-tooltip outro-tooltip'; // Reuse outro styles
+
+            tooltip.innerHTML = `
+                <div class="tooltip-header">
+                    <button class="tooltip-close" onclick="hideTooltips()">✕</button>
+                </div>
+                <div class="tooltip-content">
+                    <span class="welcomegreeting">Demo Completed!</span>
+                    You've finished the <span class="step1tooltiphighlight">${demoNames[demoIndex]}</span>.
+                </div>
+                <div class="tooltip-nav">
+                    <button class="tooltip-btn tooltip-btn-continue" onclick="goToDemo(${demoIndex+1})">${nextDemoName}</button>
+                    <button class="tooltip-btn tooltip-btn-continue" onclick="handleContinueTour()">Continue Tour</button>
+                </div>
+            `;
+
+            // Position tooltip in the center of the frame
+            positionOutroTooltip(tooltip);
+
+            // Append to overlay layer
+            document.getElementById('overlayLayer').appendChild(tooltip);
+
+            // Trigger animation
+            setTimeout(() => {
+                tooltip.classList.add('visible');
+            }, 10);
         }
 
         // Create a hotspot element
@@ -2819,6 +3076,21 @@
 
         // Navigation functions
         function nextStep() {
+            if (document.getElementById('myModal').classList.contains('show')) return;
+            
+            // Check if current step is the last step of the current demo group
+            const currentDemoIndex = getDemoForStep(currentStep);
+            const currentDemoGroup = demoGroups[currentDemoIndex];
+            
+            if (currentDemoGroup) {
+                const lastStepOfGroup = currentDemoGroup[currentDemoGroup.length - 1];
+                if (currentStep === lastStepOfGroup) {
+                    hideTooltips();
+                    showDemoCompletedTooltip(currentDemoIndex);
+                    return;
+                }
+            }
+
             if (currentStep < demoSteps.length - 1 && !isTransitioning) {
                 hideTooltips(); // Hide all tooltips when changing steps
                 loadStep(currentStep + 1);
@@ -2830,6 +3102,7 @@
         }
 
         function previousStep() {
+            if (document.getElementById('myModal').classList.contains('show')) return;
             if (currentStep > 0 && !isTransitioning) {
                 hideTooltips(); // Hide all tooltips when changing steps
                 loadStep(currentStep - 1);
@@ -2840,12 +3113,22 @@
             if (stepIndex !== currentStep && !isTransitioning) {
                 hideTooltips(); // Hide all tooltips when changing steps
                 loadStep(stepIndex);
+                updateModalProgress();
+            }
+        }
+
+        function goToDemo(demoIndex) {
+            const steps = demoGroups[demoIndex];
+            if (steps && steps.length > 0) {
+                closeModal();
+                goToStep(steps[0]);
             }
         }
 
         // Keyboard navigation
         function setupKeyboardNavigation() {
             document.addEventListener('keydown', (e) => {
+                if (document.getElementById('myModal').classList.contains('show')) return;
                 switch (e.key) {
                     case 'ArrowRight':
                     case ' ':
@@ -2879,7 +3162,7 @@
             let phoneSection = 6;
             let chatSection = 20;
             let videoSection = 6;
-            let inboxSection = 6;
+            let inboxSection = 4;
             let contactSection = 5;
             let departmentsSection = 4;
             let campaignSection = 7;
@@ -2895,20 +3178,20 @@
                 return [currentStep - 13, chatSection];
             } else if (currentStep >= 34 && currentStep <= 39) {
                 return [currentStep - 33, videoSection];
-            } else if (currentStep >= 40 && currentStep <= 45) {
+            } else if (currentStep >= 40 && currentStep <= 43) {
                 return [currentStep - 39, inboxSection];
-            } else if (currentStep >= 46 && currentStep <= 50) {
-                return [currentStep - 45, contactSection];
-            } else if (currentStep >= 51 && currentStep <= 54) {
-                return [currentStep - 50, departmentsSection];
-            } else if (currentStep >= 55 && currentStep <= 61) {
-                return [currentStep - 54, campaignSection];
-            } else if (currentStep >= 62 && currentStep <= 66) {
-                return [currentStep - 61, adminSection];
-            } else if (currentStep >= 67 && currentStep <= 73) {
-                return [currentStep - 66, reportSection];
-            } else if (currentStep >= 74 && currentStep <= 79) {
-                return [currentStep - 73, integrationSection];
+            } else if (currentStep >= 44 && currentStep <= 48) {
+                return [currentStep - 43, contactSection];
+            } else if (currentStep >= 49 && currentStep <= 52) {
+                return [currentStep - 48, departmentsSection];
+            } else if (currentStep >= 53 && currentStep <= 59) {
+                return [currentStep - 52, campaignSection];
+            } else if (currentStep >= 60 && currentStep <= 64) {
+                return [currentStep - 59, adminSection];
+            } else if (currentStep >= 65 && currentStep <= 71) {
+                return [currentStep - 64, reportSection];
+            } else if (currentStep >= 72 && currentStep <= 79) {
+                return [currentStep - 71, integrationSection];
             } else {
                 return [0, demoSteps.length - 1];
             }
@@ -3014,6 +3297,66 @@
                     className: tooltip.className
                 });
             });
+        };
+
+        function handleContinueTour() {
+            hideTooltips();
+            openModal();
+        }
+
+        // Modal functions
+        function openModal() {
+            updateModalProgress();
+            document.getElementById('myModal').classList.add('show');
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').classList.remove('show');
+        }
+
+        function updateModalProgress() {
+            const completedDemos = demoGroups.reduce((count, steps, index) => count + (isDemoCompleted(index) ? 1 : 0), 0);
+            const progressPercent = (completedDemos / demoGroups.length) * 100;
+            const progressBar = document.getElementById('modalProgressBar');
+            const progressText = document.getElementById('modalProgressText');
+            if (progressBar) progressBar.style.width = progressPercent + '%';
+            if (progressText) progressText.textContent = Math.round(progressPercent) + '%';
+            // Update checkboxes and text
+            const modalLis = document.querySelectorAll('#myModal li');
+            for (let i = 0; i < modalLis.length; i++) {
+                const li = modalLis[i];
+                const checkbox = li.querySelector('input[type="checkbox"]');
+                if (isDemoCompleted(i)) {
+                    checkbox.checked = true;
+                    li.classList.add('checked');
+                } else {
+                    checkbox.checked = false;
+                    li.classList.remove('checked');
+                }
+            }
+        }
+
+        // Export functions for external control
+        window.demoAPI = {
+            nextStep,
+            previousStep,
+            goToStep,
+            startAutoAdvance,
+            stopAutoAdvance,
+            getCurrentStep: () => currentStep,
+            getTotalSteps: () => demoSteps.length,
+            getCurrentStepName: () => {
+                const li = document.querySelector(`#myModal li[data-step="${currentStep}"]`);
+                return li ? li.textContent.trim() : null;
+            }
+        };
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                closeModal();
+            }
         };
 
         // Debug function to check preloading status (call in browser console)
