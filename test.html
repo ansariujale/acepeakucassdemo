@@ -1482,9 +1482,9 @@
                             <li data-step="5" onclick="goToDemo(5)"><input type="checkbox" disabled>Contact Demo</li>
                             <li data-step="6" onclick="goToDemo(6)"><input type="checkbox" disabled>Department Demo</li>
                             <li data-step="7" onclick="goToDemo(7)"><input type="checkbox" disabled>Campaign Demo</li>
-                            <li data-step="9" onclick="goToDemo(9)"><input type="checkbox" disabled>Reports Demo</li>
-                            <li data-step="10" onclick="goToDemo(10)"><input type="checkbox" disabled>Integrations Demo</li>
-                            <li data-step="8" onclick="goToDemo(8)"><input type="checkbox" disabled>Admin Demo</li>
+                            <li data-step="9" onclick="goToDemo(8)"><input type="checkbox" disabled>Reports Demo</li>
+                            <li data-step="10" onclick="goToDemo(9)"><input type="checkbox" disabled>Integrations Demo</li>
+                            <li data-step="8" onclick="goToDemo(10)"><input type="checkbox" disabled>Admin Demo</li>
                         </ul>
                     </div>
                 </div>
@@ -3285,31 +3285,53 @@
             let campaignSection = 7;
             let adminSection = 5;
             let reportSection = 7;
-            let integrationSection = 6;
+            let integrationSection = 7;
 
             if (currentStep >= 1 && currentStep <= 7) {
+                // Overall Dashboard Section
                 return [currentStep, dashboardSection];
-            } else if (currentStep >= 8 && currentStep <= 13) {
+            } 
+            else if (currentStep >= 8 && currentStep <= 13) {
+                // Phone Section
                 return [currentStep - 7, phoneSection];
-            } else if (currentStep >= 14 && currentStep <= 33) {
+            }
+            else if (currentStep >= 14 && currentStep <= 33) {
+                // Chat Section
                 return [currentStep - 13, chatSection];
-            } else if (currentStep >= 34 && currentStep <= 39) {
+            }
+            else if (currentStep >= 34 && currentStep <= 39) {
+                // Video Section
                 return [currentStep - 33, videoSection];
-            } else if (currentStep >= 40 && currentStep <= 43) {
+            }
+            else if (currentStep >= 40 && currentStep <= 43) {
+                // Inbox Section
                 return [currentStep - 39, inboxSection];
-            } else if (currentStep >= 44 && currentStep <= 48) {
+            }
+            else if (currentStep >= 44 && currentStep <= 48) {
+                // Contact Section
                 return [currentStep - 43, contactSection];
-            } else if (currentStep >= 49 && currentStep <= 52) {
+            }
+            else if (currentStep >= 49 && currentStep <= 52) {
+                // Departments Section
                 return [currentStep - 48, departmentsSection];
-            } else if (currentStep >= 53 && currentStep <= 59) {
+            }
+            else if (currentStep >= 53 && currentStep <= 59) {
+                // Campaigns Section
                 return [currentStep - 52, campaignSection];
-            } else if (currentStep >= 60 && currentStep <= 64) {
-                return [currentStep - 59, adminSection];
-            } else if (currentStep >= 65 && currentStep <= 71) {
-                return [currentStep - 64, reportSection];
-            } else if (currentStep >= 72 && currentStep <= 79) {
-                return [currentStep - 71, integrationSection];
-            } else {
+            }
+            else if (currentStep >= 60 && currentStep <= 66) {
+                // Reports Section
+                return [currentStep - 59, reportSection];
+            }
+            else if (currentStep >= 67 && currentStep <= 73) {
+                // Integrations Section
+                return [currentStep - 66, integrationSection];
+            }
+            else if (currentStep >= 74 && currentStep <= 78) {
+                // Admin Section
+                return [currentStep - 73, adminSection];
+            }
+            else {
                 return [0, demoSteps.length - 1];
             }
         }
