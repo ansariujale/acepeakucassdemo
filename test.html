@@ -1335,10 +1335,7 @@
                 cursor: pointer;
                 margin: auto;
             }
-        .modal li:last-child{
-            padding: 0px 0px 20px 0px;
-        }
-        .modal ul {
+        .modal ul { 
             padding-left: 0;
         }
         .modal li:hover {
@@ -1420,10 +1417,11 @@
         }
 
         .bottom-right-button {
-            padding: 18% 45%;
+            padding: 18% 15%;
             background: #f12d39;
             color: white;   
             border: none;
+            white-space: nowrap;
             border-radius: 5px;
             cursor: pointer;
             font-size: 14px;
@@ -1433,7 +1431,7 @@
 
         .bottom-right-button:hover {
             background: #68060c !important;
-            transform: translateY(3px) !important;
+            transform: translateY(-3px) !important;
             background: linear-gradient(180deg, #8b0000 0%, #68060c 100%);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0,0,0,0.3);
             transition: all 0.2s !important;
@@ -1503,14 +1501,14 @@
             ]
            },
            {// Dashboard Section
-            // Step 2
+            // Step 1
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Home_Dashboard_AnalyticsMain.svg',
             hotspots:[
                 {x:0.9, y:8, width:4, height:7, tooltip:'Quickly return to the main page of your dashboard,<span class="steptooltiphighlight"> Where you can overview your activities</span><span class="steptooltiphighlight"> and get a snapshot of your stats at a glance.</span> — It serves as your central hub for monitoring key metrics.',tooltipWidth: 35, tooltipPosition: 'right'}
             ]
            },
            {
-            // Step 3
+            // Step 2
             image: 'https://www.acepeak.com/wp-content/uploads/2025/12/Home_Dashboard_AnalyticsMain.svg',
                 hotspots: [
                     {   x: 14.4, y: 16, width: 8.6, height: 4.5,
@@ -1524,7 +1522,7 @@
                 ]
             },
             {
-                // Step 4
+                // Step 3
                 image: 'https://www.acepeak.com/wp-content/uploads/2025/12/Home_Dashboard_AnalyticsMain.svg',
                 hotspots: [
                     {   x: 52.9, y: 16.6, width: 5.4, height: 4,
@@ -1537,7 +1535,7 @@
                 ]
             },
             {
-                // Step 5
+                // Step 4
                 image: 'https://www.acepeak.com/wp-content/uploads/2026/01/Home_Dashboard_AnalyticsDashboardSelector.svg',
                 hotspots: [
                     {   x: 84.5, y: 13.6, width: 14.7, height: 14.2,
@@ -1548,7 +1546,7 @@
                 ]
            },
            {
-            // Step 6
+            // Step 5
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/VideoDashboard.svg',
                 hotspots:[
                     {   x: 6, y:16.4, width: 61, height: 7.3,
@@ -1558,7 +1556,7 @@
                 ]
            },
            {
-            // Step 7
+            // Step 6
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/CampaignDashboard.svg',
                 hotspots:[
                     {   x: 53.1, y: 16.7, width: 17.4, height: 4.4,
@@ -1570,7 +1568,7 @@
                 ]
            },
            {
-            // Step 8
+            // Step 7
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/CampaignDashboard.svg',
                 hotspots:[
                     {   x: 13.2, y: 16.6, width: 6.5, height: 4,
@@ -1583,7 +1581,7 @@
            },
            {
             // Phone Section
-            // Step 9
+            // Step 8
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/PhoneSectionWith-DID.svg',
             hotspots:[
                 {   x:0.9,
@@ -1594,7 +1592,7 @@
             ]
            },
            {
-            // Step 10
+            // Step 9
                 image: "https://www.acepeak.com/wp-content/uploads/2025/12/PhoneSectionWith-DID.svg",
                 hotspots:[
                     {x:13, y:14.6, width:7.2, height:5,tooltip:"<ul class='tooltip-bullet-list'><li>Stay in <span class='steptooltiphighlight'>calls</span> for a quick interaction timeline with timestamps and durations.</li><li>Use <span class='steptooltiphighlight'>Recordings</span> to replay conversations.</li><li>Check <span class='steptooltiphighlight'>Voicemails</span> to capture prospect intent.</li></ul>",tooltipWidth:35,position:'bottom'},
@@ -1603,14 +1601,14 @@
                 ]
            },
            {
-            // Step 11
+            // Step 10
                 image: "https://www.acepeak.com/wp-content/uploads/2025/12/PhoneSectionWith-DID.svg",
                 hotspots:[
                     {x:55, y:28.4, width:21, height:4, tooltip:"Use the <span class='steptooltiphighlight'>DID Selector</span> to switch outbound caller IDs and match the right regional number for each campaign.",tooltipWidth:35, position:"bottom"},
                 ]
            },
            {
-            // Step 12
+            // Step 11
                 image: "https://www.acepeak.com/wp-content/uploads/2025/12/PhoneSectionWith-DID.svg",  // incall interface
                 hotspots:[
                     {   x:52,
@@ -1624,7 +1622,7 @@
                 ]
            },
            {
-            // Step 13
+            // Step 12
                 image: "https://www.acepeak.com/wp-content/uploads/2026/01/PhoneSectionIn-call.svg", // incall interface
                 hotspots:[
                     {   x:70.4, 
@@ -1637,7 +1635,7 @@
                 ]
            },
            {
-            // Step 14
+            // Step 13
                 image: "https://www.acepeak.com/wp-content/uploads/2026/01/PhoneSectionWith-Transcription.svg",
                 hotspots:[
                     {
@@ -1653,7 +1651,7 @@
            },
            {
             // Chat Section
-            // Step 15
+            // Step 14
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/ChatSection.svg',
             hotspots:[
                 {   x:0.9,
@@ -1664,7 +1662,7 @@
             ]
            },
            {
-            // Step 16
+            // Step 15
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation4.svg',
             hotspots:[
                     { x: 27.6, y: 16.3, width: 72.3, height: 82.5,
@@ -1674,7 +1672,7 @@
             ]
            },
            {
-            // Step 17
+            // Step 16
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation5.svg',
             hotspots: [
                     {   x: 27.6, y: 16.3, width: 72.6, height: 82.5,
@@ -1684,7 +1682,7 @@
             ]
            },
            {
-            // Step 18
+            // Step 17
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation6.svg',
             hotspots: [
                 { x:17.5, y: 13.9, width: 11, height: 8.7,
@@ -1694,7 +1692,7 @@
             ]
            },
            {
-            // Step 19
+            // Step 18
             image:'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation7.svg',
             hotspots: [
                 {   x: 55, y: 2, width: 45, height: 97,
@@ -1704,7 +1702,7 @@
             ]
            },
            {
-            // Step 20
+            // Step 19
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation8.svg',
             hotspots:[
                 {   x: 40.25, y:3, width: 19.6, height: 9.3,
@@ -1713,7 +1711,7 @@
             ]
            },
            {
-            // Step 21
+            // Step 20
             image : 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCall1.svg',
             hotspots: [
                 {   x: 10, y: 5, width: 80, height: 90,
@@ -1723,7 +1721,7 @@
             ]
            },
            {
-            // Step 22
+            // Step 21
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCall2.svg',
             hotspots: [
                 {   x: 79.5, y: 71.7, width: 20.4, height: 26.7,
@@ -1733,7 +1731,7 @@
             ]
            },
            {
-            // Step 23
+            // Step 22
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation.svg',
             hotspots:[
                 {   x: 28.5, y: 7, width: 71, height:92,
@@ -1743,7 +1741,7 @@
             ]
            },
            {
-            //step 24                                                                           
+            //step 23                                                                           
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation2.svg',
             hotspots:[
                 {   x:93, y: 92, width: 5, height: 5,
@@ -1753,7 +1751,7 @@
             ]
            },
            {
-            // Step 25
+            // Step 24
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation3.svg',
             hotspots: [
                 { x: 29, y:24, width: 17, height: 11,
@@ -1765,7 +1763,7 @@
             ]
            },
            {
-            // Step 26
+            // Step 25
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNotePinned.svg',
             hotspots: [
                 {
@@ -1779,7 +1777,7 @@
             ]
            },
            {
-            // step 27
+            // step 26
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder.svg',
             hotspots: [
                 {
@@ -1793,7 +1791,7 @@
             ]
            },
            {
-            //Step 28
+            //Step 27
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder2.svg',
             hotspots:[
                 {   x:37.5, y: 41, width: 25, height : 18,
@@ -1802,7 +1800,7 @@
             ]
            },
            {
-            // Step 29
+            // Step 28
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder3.svg',
             hotspots: [
                 {
@@ -1816,7 +1814,7 @@
             ]
            },
            {
-            // Step 30
+            // Step 29
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile.svg',
             hotspots: [
                 { x: 27.7, y: 7.4, width: 72, height: 92,
@@ -1826,7 +1824,7 @@
             ]
            },
            {
-            // Step 31
+            // Step 30
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile2.svg',
             hotspots: [
                 { x:37.5, y: 35, width: 25, height : 30,
@@ -1835,7 +1833,7 @@
             ]
            },
            {
-            // Step 32
+            // Step 31
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile3.svg',
             hotspots: [
                 {   x: 27.7, y: 7.4, width: 72, height: 92,
@@ -1845,7 +1843,7 @@
             ]
            },
            {
-            // Step 33
+            // Step 32
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatComparison.svg',
             hotspots: [
                 {   x: 27.7, y: 7.4, width: 72, height: 92,
@@ -1855,7 +1853,7 @@
             ]
            },
            {
-            // Step 34
+            // Step 33
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationEditTeam.svg',
             hotspots: [
                 {   x:55, y: 1, width: 45, height: 99,
@@ -1865,7 +1863,7 @@
             ]
            },
            {   // Video Section
-               // Step 35
+               // Step 34
                image:'https://www.acepeak.com/wp-content/uploads/2025/12/VideoSection.svg',
                hotspots:[
                    {   x:0.9,
@@ -1876,7 +1874,7 @@
                 ]
             },
             {
-             // Step 36
+             // Step 35
                  image: "https://www.acepeak.com/wp-content/uploads/2025/12/VideoSection.svg",
                  hotspots:[
                      {   x:43.3, y:10, width:5.2, height:9,
@@ -1886,7 +1884,7 @@
                  ]
             },
             {
-                // Step 37
+                // Step 36
                 image: "https://www.acepeak.com/wp-content/uploads/2025/12/VideoSection.svg",
                 hotspots:[
                     {   x:57.2, y:10, width:5.2, height: 9,
@@ -1896,7 +1894,7 @@
                 ]
             },
             {
-                // Step 38
+                // Step 37
                 image: "https://www.acepeak.com/wp-content/uploads/2025/12/VideoSection.svg",
                 hotspots:[
                     {   x:72.2, y:10.2, width:5.2, height: 9,
@@ -1906,7 +1904,7 @@
                 ]
             },
             {
-                // Step 39
+                // Step 38
                 image: "https://www.acepeak.com/wp-content/uploads/2025/12/VideoSection.svg",
                 hotspots:[
                     {   x:5.1, y:25.5, width:16.8, height:5.6, 
@@ -1919,7 +1917,7 @@
                 ]
             },
             {
-                // Step 40
+                // Step 39
                 image: 'https://www.acepeak.com/wp-content/uploads/2026/01/VideoSection2.svg',
                 hotspots: [
                     {
@@ -1932,7 +1930,7 @@
             },
             {
             //  Inbox Section
-            // Step 41
+            // Step 40
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/InboxSection3.svg',
             hotspots:[
                 {   x:0.9,
@@ -1944,7 +1942,7 @@
             ]
            },
            {
-            // Step 42
+            // Step 41
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/InboxSection3.svg',
             hotspots:[
                 {   x: 24.6, y: 8.7, width: 3, height: 5,
@@ -1953,7 +1951,7 @@
             ]
            },
            {
-            // Step 43
+            // Step 42
             image:'https://www.acepeak.com/wp-content/uploads/2026/01/InboxSection.svg',
             hotspots:[
                 {   x: 55, y: 1, width: 45, height: 99,
@@ -1962,7 +1960,7 @@
             ]
            },
            {
-            // Step 44
+            // Step 43
             image:'https://www.acepeak.com/wp-content/uploads/2026/01/InboxSection.svg',
             hotspots:[
                 {   x: 94.1, y: 93, width: 4.5, height: 5,
@@ -1972,7 +1970,7 @@
            },
            {
             // Contact Section
-            // Step 45
+            // Step 44
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/ContactsSection.svg',
             hotspots:[
                 {   x:0.9,
@@ -1984,28 +1982,28 @@
             ]
            },
            {
-            // Step 46
+            // Step 45
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation3.svg',
             hotspots:[
                 { x:17.6, y:13.9, width: 10.9, height: 8.4, tooltip: "Click the (+) button to <span class='steptooltiphighlight'>Create a contact</span> or <span class='steptooltiphighlight'>Sync with Google.</span>", position:'right' }
             ]
            },
            {
-            // Step 47
+            // Step 46
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/CreateNewContact.svg',
             hotspots:[
                 { x:28, y:8, width: 72, height:92, tooltip: "<ul class='tooltip-bullet-list'><li>Enter the <span class='steptooltiphighlight'>First and Last name</span> to personlise outreach and keep records complete.</li><li>Add an <span class='steptooltiphighlight'>Email Adress</span> to enable multi-channel outreach.</li><li>Include a <span class='steptooltiphighlight'>Phone Number</span> with country code.</li></ul>", position:'left'   }
             ]
            },
            {
-            // Step 48
+            // Step 47
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/CreateNewContact.svg',
                 hotspots:[
                     { x:93.3, y:93, width: 5.2, height:4.5, tooltip: "Save the contact with <span class='steptooltiphighlight'>submit</span> to add it to your database.", position:'top'}
                 ]
            },
            {
-            // Step 49
+            // Step 48
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/newcontactsection.svg',
             hotspots:[
                 {   x:82, y:8.6, width: 17.4, height: 5, tooltip: "<ul class='tooltip-bullet-list'><li>Open <span class='steptooltiphighlight'>Contact notes</span> to log rich context.</li><li>View <span class='steptooltiphighlight'>Contact activity</span> to see Calls, Messages.</li><li>Use the <span class='steptooltiphighlight'>Email icon</span> to compose messages directly.</li><li>Click the <span class='steptooltiphighlight'>Edit icon</span> to update the profile fields.</li><li>Click the <span class='steptooltiphighlight'>Call icon</span> for one-click dialing and capture leads fast.</li><li>Use the <span class='steptooltiphighlight'>Delete icon</span> to remove the duplicates and keep lists healthy.</li></ul>",
@@ -2015,7 +2013,7 @@
            },
            {
             // department section
-            // Step 50
+            // Step 49
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Departments.svg',
             hotspots:[
                 {   x:0.4,
@@ -2027,7 +2025,7 @@
             ]
            },
            {
-            // Step 51
+            // Step 50
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Departments.svg',
             hotspots:[
                 {
@@ -2038,7 +2036,7 @@
             ]
            },
            {
-            // Step 52
+            // Step 51
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Departments.svg',
             hotspots:[
                 {
@@ -2049,7 +2047,7 @@
             ]
            },
            {
-            // Step 53
+            // Step 52
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Departments.svg',
             hotspots:[
                 {
@@ -2061,7 +2059,7 @@
            },
            {
             // Campaigns Section
-            // Step 54
+            // Step 53
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
                 {   x:0.8,
@@ -2073,7 +2071,7 @@
             ]
            },
            {
-            // Step 55
+            // Step 54
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
                 {   x:5,
@@ -2085,7 +2083,7 @@
             ]
            },
            {
-            // Step 56
+            // Step 55
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
                 {   x:23,
@@ -2098,7 +2096,7 @@
            },
            
            {
-            // Step 57
+            // Step 56
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
                 {   x:42,
@@ -2110,7 +2108,7 @@
             ]
            },
            {
-            // Step 58
+            // Step 57
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
                 {   x:61,
@@ -2122,7 +2120,7 @@
             ]
            },
            {
-            // Step 59
+            // Step 58
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
                 {   x:81,
@@ -2134,7 +2132,7 @@
             ]
            },
            {
-            // Step 60
+            // Step 59
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
                 {   x: 90.5,
@@ -2146,7 +2144,161 @@
             ]
            },
            {
+            // Reports Section
+            // Step 60
+            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
+            hotspots:[
+                {   x:0.9,
+                    y:63.8,
+                    width:4,
+                    height:7,
+                    tooltip:'<span class="steptooltiphighlight">Access Reports</span> to analyze call logs and performance metrics, export activity for attribution, uncover trends, and refine messaging to maximize lead-to-opportunity conversions.',tooltipWidth:30,position:'right'
+                }
+            ]
+           },
+           {
             // Step 61
+            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
+            hotspots:[
+                {   x: 5, y: 14.5, width: 17, height: 12,
+                    tooltip:"<ul class='tooltip-bullet-list'><li><span class='steptooltiphighlight'>Call log</span> shows all the previous incoming, outgoing, and missed call reports.</li><li><span class='steptooltiphighlight'>SMS log</span> shows all the incoming outgoing sms reports</li></ul>",position:'right'
+                }
+            ]
+           },
+           {
+            // Step 62
+            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
+            hotspots:[
+                {   x: 58.4, y: 8.7, width: 15.7, height: 4.9,
+                    tooltip:"<span class='steptooltiphighlight'>Search</span>Search for a specific log for a detailed inspection.",position:'bottom'
+                }
+            ]
+           },
+           {
+            // Step 63
+            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
+            hotspots:[
+                {   x: 74.3, y: 8.4, width: 15.5, height: 5.3,
+                    tooltip:"<span class='steptooltiphighlight'>Filter</span> the reports based on the date.",position:'left'
+                }
+            ]
+           },
+           {
+            // Step 64
+            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
+            hotspots:[
+                {   x: 90.1, y: 8.5, width: 2.8, height: 5,
+                    tooltip:"<span class='steptooltiphighlight'>Refresh</span> the report the fetch the latest report.",position:'left'
+                }
+            ]
+           },
+           {
+            // Step 65
+            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
+            hotspots:[
+                {   x: 93.3, y: 8.5, width: 2.8, height: 5,
+                    tooltip:"You can <span class='steptooltiphighlight'>Download</span> the report in csv format, by clicking on the down arrow button.",position:'left'
+                }
+            ]
+           },
+           {
+            // Step 66
+            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
+            hotspots:[
+                {   x: 96.5, y: 8.5, width: 2.7, height: 5,
+                    tooltip:"You can <span class='steptooltiphighlight'>Sort</span> the report based on various criteria using the <span class='steptooltiphighlight'>sort button</span>.",position:'left'
+                }
+            ]
+           },
+            
+           {
+               // Integration Section
+               // Step 67
+               image:'https://www.acepeak.com/wp-content/uploads/2025/12/Integration.svg',
+               hotspots:[
+                   {   x:0.7,
+                       y:70.8,
+                       width:4.5,
+                       height:7,
+                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Open Integration</span> to connect CRM and tools.</li> <li><span class="steptooltiphighlight">Sync contacts</span> and activity with platforms like <span class="steptooltiphighlight"> Hubspot, Zoho, Pipedrive</span> and <span class="steptooltiphighlight">Monday</span> </li> <li><span class="steptooltiphighlight">Keep marketing workflows aligned</span> and data-driven</li>',tooltipWidth:35, position:'right'
+                   }
+               ]
+              },
+              {
+               // Step 68
+               image:'https://www.acepeak.com/wp-content/uploads/2025/12/Calender.svg',
+               hotspots:[
+                   {   x:66,
+                       y:1.3,
+                       width:2.7,
+                       height:4.7,
+                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use the Calendar Icon</span> to schedule and view events.</li><li><span class="steptooltiphighlight">Coordinate, Demos, Webinars</span> and follow-ups directly from the platform.</li><li>Ensure your team <span class="steptooltiphighlight"> never misses high-value</span> engagements.</li>',tooltipWidth:35, position:'bottom'
+                   }
+               ]
+              },
+              {
+               // Step 69
+               image:'https://www.acepeak.com/wp-content/uploads/2025/12/CampaignFrom-Navigation-pane.svg',
+               hotspots:[
+                   {   x:69.6,
+                       y:1.3,
+                       width:2.7,
+                       height:4.7,
+                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Click the headset icon</span> to monitor agent availabilty and support coverage.</li><li><span class="steptooltiphighlight">Ensure reps are online</span> during campaign windows.</li><li><span class="steptooltiphighlight">Allocate resources efficiently</span> to maximize contact rates.</li>',tooltipWidth:35, position:'bottom'
+                   }
+               ]
+              },
+              {
+                //Step 70
+               image:'https://www.acepeak.com/wp-content/uploads/2025/12/Activity2.svg',
+               hotspots:[
+                   {   x:73.2,
+                       y:1.3,
+                       width:2.7,
+                       height:4.7,
+                       tooltip:'Open the <span class="steptooltiphighlight">activity waveform or analytics</span> view to identify peak engagement times and use these insights to schedule campaigns when leads are most likely to respond.',tooltipWidth:35,position:'bottom'
+                   }
+               ]
+              },
+              {
+               // Step 71
+               image:'https://www.acepeak.com/wp-content/uploads/2025/12/Monitoring.svg',
+               hotspots:[
+                   {   x:76.8,
+                       y:1.3,
+                       width:2.7,
+                       height:4.7,
+                       tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">The monitor Icon</span> displays campaign dashboard and live activity.</li><li><span class="steptooltiphighlight">Watch calls and tasks in real time</span> to troubleshoot and coarch reps.</li><li><span class="steptooltiphighlight">Improve campaign performance</span> on the fly.</li>',tooltipWidth:30, position:'bottom'
+                   }
+               ]
+              },
+              {
+               // Step 72
+               image:'https://www.acepeak.com/wp-content/uploads/2025/12/UserProfileSettings.svg', 
+               hotspots:[
+                   {   x:87.8,
+                       y:1.3,
+                       width:2.7,
+                       height:4.7,
+                       tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">Use the Settings gear</span> to configure company, billing and phone system options.</li><li><span class="steptooltiphighlight">Customize caller IDs and Templates</span> to align with brand messaging and compliance requirements.</li>',tooltipWidth:30, position:'bottom ,left: 950px !important;'
+                   }
+               ]
+              },
+              {
+               // Step 73
+               image:'https://www.acepeak.com/wp-content/uploads/2025/12/UserProfileSettings.svg',
+               hotspots:[
+                   {   x:20,
+                       y:50,
+                       width:1,
+                       height:2,
+                       tooltip:'<ul class="tooltip-bullet-list"> <li>Manage your<span class="steptooltiphighlight"> profile details</span> communication preferences, and device setting for calls and video.</li><li>Set up<span class="steptooltiphighlight"> notifications</span>, <span class="steptooltiphighlight">greetings</span> and <span class="steptooltiphighlight">media files</span> to customize your calling experience.</li><li>Control <span class="steptooltiphighlight">Security and Privacy options</span> to keep your <span class="steptooltiphighlight">account safe</span> and personalized.</li>',tooltipWidth:35, position:'right'
+                   }
+               ]
+              },
+              {
+                  // Admin Section
+                  // Step 74
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/AdminSection.svg',
             hotspots:
             [
@@ -2160,7 +2312,7 @@
             ]
            },
            {
-            // Step 62
+            // Step 75
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/CreateKnowledgeBase.svg',
             hotspots:
             [
@@ -2180,7 +2332,7 @@
             ]
            },
            {
-            // Step 63
+            // Step 76
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/AIAgentsDashboard.svg',
             hotspots:
             [
@@ -2200,7 +2352,7 @@
             ]
            },
            {
-            // Step 64
+            // Step 77
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/AIAgentsCreation2-2.svg',
             hotspots:[
                 {
@@ -2219,7 +2371,7 @@
             ]
            },
            {
-            // Step 65
+            // Step 78
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/SocialMediaChannelsOmnichannelChats.svg',
             hotspots:
             [
@@ -2229,157 +2381,6 @@
                     width:17,
                     height:5.5,
                     tooltip: 'Integrate and manage your social media accounts, allowing you to track interactions, respond to customer queries, and maintain a strong social media presence from within the platform.<span class="steptooltiphighlight"></span>',position:'right',
-                }
-            ]
-           },
-           {
-            // Reports Section
-            // Step 66
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
-            hotspots:[
-                {   x:0.9,
-                    y:63.8,
-                    width:4,
-                    height:7,
-                    tooltip:'<span class="steptooltiphighlight">Access Reports</span> to analyze call logs and performance metrics, export activity for attribution, uncover trends, and refine messaging to maximize lead-to-opportunity conversions.',tooltipWidth:30,position:'right'
-                }
-            ]
-           },
-           {
-            // Step 67
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
-            hotspots:[
-                {   x: 5, y: 14.5, width: 17, height: 12,
-                    tooltip:"<ul class='tooltip-bullet-list'><li><span class='steptooltiphighlight'>Call log</span> shows all the previous incoming, outgoing, and missed call reports.</li><li><span class='steptooltiphighlight'>SMS log</span> shows all the incoming outgoing sms reports</li></ul>",position:'right'
-                }
-            ]
-           },
-           {
-            // Step 68
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
-            hotspots:[
-                {   x: 58.4, y: 8.7, width: 15.7, height: 4.9,
-                    tooltip:"<span class='steptooltiphighlight'>Search</span>Search for a specific log for a detailed inspection.",position:'bottom'
-                }
-            ]
-           },
-           {
-            // Step 69
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
-            hotspots:[
-                {   x: 74.3, y: 8.4, width: 15.5, height: 5.3,
-                    tooltip:"<span class='steptooltiphighlight'>Filter</span> the reports based on the date.",position:'left'
-                }
-            ]
-           },
-           {
-            // Step 70
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
-            hotspots:[
-                {   x: 90.1, y: 8.5, width: 2.8, height: 5,
-                    tooltip:"<span class='steptooltiphighlight'>Refresh</span> the report the fetch the latest report.",position:'left'
-                }
-            ]
-           },
-           {
-            // Step 71
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
-            hotspots:[
-                {   x: 93.3, y: 8.5, width: 2.8, height: 5,
-                    tooltip:"You can <span class='steptooltiphighlight'>Download</span> the report in csv format, by clicking on the down arrow button.",position:'left'
-                }
-            ]
-           },
-           {
-            // Step 72
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
-            hotspots:[
-                {   x: 96.5, y: 8.5, width: 2.7, height: 5,
-                    tooltip:"You can <span class='steptooltiphighlight'>Sort</span> the report based on various criteria using the <span class='steptooltiphighlight'>sort button</span>.",position:'left'
-                }
-            ]
-           },
-           {
-            // Step 73
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Integration.svg',
-            hotspots:[
-                {   x:0.7,
-                    y:70.8,
-                    width:4.5,
-                    height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Open Integration</span> to connect CRM and tools.</li> <li><span class="steptooltiphighlight">Sync contacts</span> and activity with platforms like <span class="steptooltiphighlight"> Hubspot, Zoho, Pipedrive</span> and <span class="steptooltiphighlight">Monday</span> </li> <li><span class="steptooltiphighlight">Keep marketing workflows aligned</span> and data-driven</li>',tooltipWidth:35, position:'right'
-                }
-            ]
-           },
-           {
-            // Step 74
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Calender.svg',
-            hotspots:[
-                {   x:66,
-                    y:1.3,
-                    width:2.7,
-                    height:4.7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use the Calendar Icon</span> to schedule and view events.</li><li><span class="steptooltiphighlight">Coordinate, Demos, Webinars</span> and follow-ups directly from the platform.</li><li>Ensure your team <span class="steptooltiphighlight"> never misses high-value</span> engagements.</li>',tooltipWidth:35, position:'bottom'
-                }
-            ]
-           },
-           {
-            // Step 75
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/CampaignFrom-Navigation-pane.svg',
-            hotspots:[
-                {   x:69.6,
-                    y:1.3,
-                    width:2.7,
-                    height:4.7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Click the headset icon</span> to monitor agent availabilty and support coverage.</li><li><span class="steptooltiphighlight">Ensure reps are online</span> during campaign windows.</li><li><span class="steptooltiphighlight">Allocate resources efficiently</span> to maximize contact rates.</li>',tooltipWidth:35, position:'bottom'
-                }
-            ]
-           },
-           {
-             //Step 76
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Activity2.svg',
-            hotspots:[
-                {   x:73.2,
-                    y:1.3,
-                    width:2.7,
-                    height:4.7,
-                    tooltip:'Open the <span class="steptooltiphighlight">activity waveform or analytics</span> view to identify peak engagement times and use these insights to schedule campaigns when leads are most likely to respond.',tooltipWidth:35,position:'bottom'
-                }
-            ]
-           },
-           {
-            // Step 77
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/Monitoring.svg',
-            hotspots:[
-                {   x:76.8,
-                    y:1.3,
-                    width:2.7,
-                    height:4.7,
-                    tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">The monitor Icon</span> displays campaign dashboard and live activity.</li><li><span class="steptooltiphighlight">Watch calls and tasks in real time</span> to troubleshoot and coarch reps.</li><li><span class="steptooltiphighlight">Improve campaign performance</span> on the fly.</li>',tooltipWidth:30, position:'bottom'
-                }
-            ]
-           },
-           {
-            // Step 78
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/UserProfileSettings.svg', 
-            hotspots:[
-                {   x:87.8,
-                    y:1.3,
-                    width:2.7,
-                    height:4.7,
-                    tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">Use the Settings gear</span> to configure company, billing and phone system options.</li><li><span class="steptooltiphighlight">Customize caller IDs and Templates</span> to align with brand messaging and compliance requirements.</li>',tooltipWidth:30, position:'bottom ,left: 950px !important;'
-                }
-            ]
-           },
-           {
-            // Step 79
-            image:'https://www.acepeak.com/wp-content/uploads/2025/12/UserProfileSettings.svg',
-            hotspots:[
-                {   x:20,
-                    y:50,
-                    width:1,
-                    height:2,
-                    tooltip:'<ul class="tooltip-bullet-list"> <li>Manage your<span class="steptooltiphighlight"> profile details</span> communication preferences, and device setting for calls and video.</li><li>Set up<span class="steptooltiphighlight"> notifications</span>, <span class="steptooltiphighlight">greetings</span> and <span class="steptooltiphighlight">media files</span> to customize your calling experience.</li><li>Control <span class="steptooltiphighlight">Security and Privacy options</span> to keep your <span class="steptooltiphighlight">account safe</span> and personalized.</li>',tooltipWidth:35, position:'right'
                 }
             ]
            },
@@ -2395,9 +2396,9 @@
             "Contact Demo",
             "Department Demo",
             "Campaign Demo",
-            "Admin Demo",
             "Reports Demo",
-            "Integrations Demo"
+            "Integrations Demo",
+            "Admin Demo"
         ];
 
         const demoGroups = [
@@ -2826,6 +2827,7 @@
                     <button class="tooltip-close" onclick="hideTooltips()">✕</button>
                 </div>
                 <div class="tooltip-content">
+                    <span class="welcomeimage"><img src="https://www.acepeak.com/wp-content/uploads/2025/11/ACEPEAK-LOGO-scaled-1.png" alt="acepeaklogo"></span>
                     <span class="welcomegreeting">Demo Completed!</span>
                     You've finished the <span class="step1tooltiphighlight">${demoNames[demoIndex]}</span>.
                 </div>
