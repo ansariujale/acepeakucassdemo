@@ -148,28 +148,28 @@
         .hotspot.step-38 {border-radius: 28px !important;}
         .hotspot.step-41 {border-radius: 11px !important;}
         .hotspot.step-42 {border-radius: 25px !important;}
-        .hotspot.step-44 {border-radius: 18px !important;}
+        .hotspot.step-44 {border-radius: 12px !important;}
         .hotspot.step-45 {border-radius: 11px !important;}
-        .hotspot.step-46 {border-radius: 17px !important;}
+        .hotspot.step-46 {border-radius: 9px !important;}
         .hotspot.step-49 {border-radius: 25px !important;}
         .hotspot.step-50 {border-radius: 11px !important;}
-        .hotspot.step-53 {border-radius: 18px !important;}
+        .hotspot.step-53 {border-radius: 7px !important;}
         .hotspot.step-54 {border-radius: 11px !important;}
-        .hotspot.step-60 {border-radius: 17px !important;}
-        .hotspot.step-63.hotspot-1 {border-radius: 17px !important;}
-        .hotspot.step-64.hotspot-2 {border-radius: 25px !important;}
-        .hotspot.step-66 {border-radius: 11px !important;}
-        .hotspot.step-68 {border-radius: 15px !important;}
+        .hotspot.step-60 {border-radius: 5px !important;}
+        .hotspot.step-63 {border-radius: 8px !important;}
+        .hotspot.step-64 {border-radius: 8px !important;}
+        .hotspot.step-66 {border-radius: 9px !important;}
+        .hotspot.step-68 {border-radius: 11px !important;}
         .hotspot.step-69 {border-radius: 15px !important;}
         .hotspot.step-70 {border-radius: 18px !important;}
         .hotspot.step-71 {border-radius: 18px !important;}
         .hotspot.step-72 {border-radius: 18px !important;}
-        .hotspot.step-73 {border-radius: 11px !important;}
-        .hotspot.step-74 {border-radius: 25px !important;}
-        .hotspot.step-75 {border-radius: 25px !important;}
-        .hotspot.step-76 {border-radius: 25px !important;}
-        .hotspot.step-77 {border-radius: 25px !important;}
-        .hotspot.step-78 {border-radius: 25px !important;}
+        .hotspot.step-73 {border-radius: 18px !important;}
+        .hotspot.step-74 {border-radius: 11px !important;}
+        .hotspot.step-75 {border-radius: 11px !important;}
+        .hotspot.step-76 {border-radius: 7px !important;}
+        .hotspot.step-77 {border-radius: 7px !important;}
+        .hotspot.step-78 .hotspot-2 {border-radius: 11px !important;}
 
         /* Professional Tooltip Styles */
         .tooltip {
@@ -594,6 +594,7 @@
 
         .tour-dots {
             display: flex;
+            flex-wrap: wrap;
             gap: 2px;
         }
 
@@ -611,8 +612,9 @@
 
         .nav-left {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 8px;
+            width: 50%;
         }
 
         .nav-buttons {
@@ -673,7 +675,249 @@
             border-left: 0 none !important;
         }
 
+        /* Ensure no conflicts with WordPress themes */
+        .demo-wrapper * {
+            box-sizing: border-box !important;
+        }
 
+        /* Preloader Styles */
+        .preloader-overlay {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important; 
+            width: 100% !important;
+            height: 100% !important;
+            background: #CCCCCC !important;
+            display: flex !important;
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 9999 !important;
+            transition: opacity 0.5s ease, visibility 0.5s ease !important;
+        }
+
+        .preloader-overlay.hidden {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+
+        .spinner {
+            width: 50px !important;
+            height: 50px !important;
+            border: 3px solid rgba(255, 255, 255, 0.1) !important;
+            border-top: 3px solid #f12d39 !important;
+            border-radius: 50% !important;
+            animation: spin 1s linear infinite !important;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .preloader-text {
+            margin-top: 20px !important;
+            color: #000000 !important;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 400 !important;
+            letter-spacing: 1px !important;
+        }
+
+        /* Modal styles */
+        .modal {
+            position: fixed !important;
+            z-index: 1000 !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            backdrop-filter: blur(1.5px) !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transition: opacity 0.3s ease !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        .modal.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .modal-content {
+            background-color: #fff !important;
+            margin: 5% auto !important;
+            padding: 20px !important;
+            border: 1px solid #888 !important;
+            width: 80% !important;
+            max-width: 35% !important;
+            max-height: 80vh !important;
+            overflow-y: hidden !important;
+            border-radius: 25px !important;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+            position: relative !important;
+            box-sizing: border-box !important;
+        }
+
+        .modal-list-container {
+            max-height: 50vh !important;
+            overflow-y: auto !important;
+        }
+
+        .modal-sticky-header {
+            position: sticky !important;
+            top: 0 !important;
+            background-color: #fff !important;
+            z-index: 1 !important;
+            padding-top: 10px !important;
+            font-size: smaller;
+        }
+
+        .modal-header {
+            color: #f12d39 !important;
+            font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+        }
+
+        .close {
+            color: #aaa !important;
+            float: right !important;
+            font-size: 25px !important;
+            font-weight: bold !important;
+            cursor: pointer !important;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black !important;
+            text-decoration: none !important;
+            cursor: pointer !important;
+        }
+
+        .modal li {
+                padding: 8px 0;
+                border-bottom: 1px solid #eee;
+                display: flex;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: 600;
+                align-items: center;
+                cursor: pointer;
+                margin-bottom: 3px !important;
+                border-radius: 17px !important;
+                margin: auto;
+            }
+
+        .modal ul { 
+            padding-left: 0;
+            box-sizing: border-box;
+
+        }
+        .modal li:hover {
+            background-color: #e2e2e2;
+            border-radius: 17px !important;
+        }
+
+        .modal li input[type="checkbox"] {
+            margin-right: 10px;
+            width: 18px;
+            height: 18px;
+            appearance: none;
+            border: 2px dashed #999;
+            background: transparent;
+            position: relative;
+            border-radius: 50%;
+        }
+
+        .modal li input[type="checkbox"]:checked {
+            background: #f12d39;
+            border: 1px solid;  
+        }
+
+        .modal li input[type="checkbox"]:checked::after {
+            content: '✔';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 15px;
+        }
+
+        .modal li.checked {
+            text-decoration: line-through;
+            color: #000000;
+        }
+
+        .modal li.checked {
+            text-decoration: line-through;
+            background-color: #eeeeee;
+        }
+
+        .modal-progress {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .modal-progress-bar-container {
+            flex-grow: 1;
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .modal-progress-bar {
+            height: 100%;
+            background-color: #f12d39;
+            width: 0%;
+            border-radius: 0 2px 2px 0;
+            transition: width 0.3s ease;
+        }
+
+        .modal-progress-text {
+            font-size: 12px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: #333333;
+            font-weight: 500;
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 7%;
+            right: 7%;
+            z-index: 10;
+        }
+
+        .bottom-right-button {
+            padding: 18% 15% !important;
+            background: #f12d39 !important;
+            color: white !important;   
+            border: none !important;
+            white-space: nowrap !important;
+            border-radius: 5px !important;
+            cursor: pointer !important;
+            font-size: 14px !important;
+            font-weight: bolder !important;
+            border-radius: 35px !important;
+        }
+
+        .bottom-right-button:hover {
+            background: #68060c !important;
+            transform: translateY(-3px) !important;
+            background: linear-gradient(180deg, #8b0000 0%, #68060c 100%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0,0,0,0.3);
+            transition: all 0.2s !important;
+
+        }
 
         /* Mobile Navigation Panel Styles */
         @media (max-width: 768px) {
@@ -703,9 +947,8 @@
             /*Outro tooltip*/
             .tooltip.outro-tooltip {
                 width: 80vw !important;
-                height: 30vh !important;
-                max-height: 30vh !important;
-                min-height: 30vh !important;
+                height: 35vh !important;
+                min-height: 35vh !important;
             }
             .tooltip.outro-tooltip .tooltip-content {
                 font-size: clamp(3px, 1.6vw, 15px) !important;
@@ -719,13 +962,23 @@
                 padding: 10px 25px !important;
                 font-size: clamp(3px, 1.6vw, 15px) !important;
             }
-
+            
+            .tooltip.demo-completed-tooltip {
+                font-size: clamp(3px, 1.6vw, 15px) !important;
+                width: 35vw !important;
+                min-height: 28vh !important;
+                height: 28vh !important;
+            }
+            .tooltip.demo-completed-tooltip .tooltip-btn {
+                font-size: clamp(3px, 1.3vw, 15px) !important;
+                padding: 7px 4px !important;
+            }
+            
             /*Tooltip Styling*/
             .tooltip {
-                max-height: 65% !important;
+                /* max-height: 65% !important; */
                 max-width: 35% !important;
             }
-
             .tooltip .tooltip-content {
                 font-size: clamp(3px, 1.5vw, 15px) !important;
                 padding: 10px 15px 10px !important;
@@ -739,21 +992,81 @@
                 font-size: clamp(3px, 1.5vw, 12px) !important;
                 /* padding: 1px 4px 3px !important; */
             }
+            .numbered-list {
+                font-size: clamp(3px, 1.5vw, 12px) !important;
+            }
+            .numbered-list li {
+                padding-left: 0 !important;
+                margin: 0 !important;
+            }
 
+            /* Individual tooltip styling*/
+            .tooltip.step-12-tooltip {
+                top: 0px !important;
+            }
+
+            .tooltip.step-55-tooltip {
+                top: 0px !important;
+            }
+
+            /*Tooltip Navbar Settings*/
+            .step-counter {
+                font-size: clamp(3px, 1.6vw, 9px) !important;
+            }
+
+            .tour-dot {
+                width: 8px !important;
+                height: 8px !important;
+            }
+
+            /* Tour guide button*/
+            .bottom-right-button {
+                padding: 12% 10% !important;
+                font-size: 12px !important;
+            }
+            /* Modal Content Popup*/
+            .modal-content {
+                margin: 5% auto !important;
+                padding: 0px 15px 7px !important;
+                max-width: 40% !important;
+                max-height: 80vh !important;
+            }
+
+            .modal-header {
+                font-size: 15px !important;
+            }
+
+            .modal li {
+                font-size: 12px !important;
+            }
+
+            .modal-list-container {
+                max-height: 40vh !important;
+                overflow-y : auto !important;
+            }
+            
             /*Hotspot styling*/
             .hotspot.step-4 {border-radius:4px !important;}
+            .hotspot.step-5 {border-radius: 6px !important;}
             .hotspot.step-6 {border-radius:7px !important;}
             .hotspot.step-7 {border-radius:7px !important;}
+            .hotspot.step-8 {border-radius:5px !important;}
+            .hotspot.step-10 {border-radius:5px !important;}
+            .hotspot.step-11 {border-radius:5px !important;}
             .hotspot.step-18 {border-radius:10px !important;}
+            .hotspot.step-19 {border-radius:7px !important;}
             .hotspot.step-21 {border-radius:7px !important;}
+            .hotspot.step-22 {border-radius:7px !important;}
             .hotspot.step-31 {border-radius:7px !important;}
             .hotspot.step-36 {border-radius:12px !important;}
             .hotspot.step-37 {border-radius:12px !important;}
             .hotspot.step-38 {border-radius:12px !important;}
+            .hotspot.step-39 {border-radius:5px !important;}
+            .hotspot.step-40 {border-radius:5px !important;}
             .hotspot.step-44 {border-radius:7px !important;}
-            .hotspot.step-46 {border-radius:10px !important;}
+            .hotspot.step-46 {border-radius:9px !important;}
             .hotspot.step-53 {border-radius:7px !important;}
-            .hotspot.step-60 {border-radius:7px !important;}
+            .hotspot.step-60 {border-radius:5px !important;}
             .hotspot.step-70 {border-radius:9px !important;}
             .hotspot.step-71 {border-radius:9px !important;}
             .hotspot.step-72 {border-radius:9px !important;}
@@ -1231,250 +1544,9 @@
                 max-height: 1012px !important;
                 margin: 0 auto !important;
             }
-        }
+        }   
 
-        /* Ensure no conflicts with WordPress themes */
-        .demo-wrapper * {
-            box-sizing: border-box !important;
-        }
 
-        /* Preloader Styles */
-        .preloader-overlay {
-            position: absolute !important;
-            top: 0 !important;
-            left: 0 !important; 
-            width: 100% !important;
-            height: 100% !important;
-            background: #CCCCCC !important;
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: center !important;
-            align-items: center !important;
-            z-index: 9999 !important;
-            transition: opacity 0.5s ease, visibility 0.5s ease !important;
-        }
-
-        .preloader-overlay.hidden {
-            opacity: 0 !important;
-            visibility: hidden !important;
-        }
-
-        .spinner {
-            width: 50px !important;
-            height: 50px !important;
-            border: 3px solid rgba(255, 255, 255, 0.1) !important;
-            border-top: 3px solid #f12d39 !important;
-            border-radius: 50% !important;
-            animation: spin 1s linear infinite !important;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .preloader-text {
-            margin-top: 20px !important;
-            color: #000000 !important;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
-            font-size: 14px !important;
-            font-weight: 400 !important;
-            letter-spacing: 1px !important;
-        }
-
-        /* Modal styles */
-        .modal {
-            position: fixed !important;
-            z-index: 1000 !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            background-color: rgba(0, 0, 0, 0.5) !important;
-            backdrop-filter: blur(1.5px) !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transition: opacity 0.3s ease !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-        }
-
-        .modal.show {
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-
-        .modal-content {
-            background-color: #fff !important;
-            margin: 5% auto !important;
-            padding: 20px !important;
-            border: 1px solid #888 !important;
-            width: 80% !important;
-            max-width: 35% !important;
-            max-height: 80vh !important;
-            overflow-y: hidden !important;
-            border-radius: 25px !important;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
-            position: relative !important;
-            box-sizing: border-box !important;
-        }
-
-        .modal-list-container {
-            max-height: 50vh;
-            overflow-y: auto;
-        }
-
-        .modal-sticky-header {
-            position: sticky;
-            top: 0;
-            background-color: #fff;
-            z-index: 1;
-            padding-top: 10px;
-        }
-
-        .modal-header {
-            color: #f12d39;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-
-        .close {
-            color: #aaa !important;
-            float: right !important;
-            font-size: 28px !important;
-            font-weight: bold !important;
-            cursor: pointer !important;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black !important;
-            text-decoration: none !important;
-            cursor: pointer !important;
-        }
-
-        .modal li {
-                padding: 8px 0;
-                border-bottom: 1px solid #eee;
-                display: flex;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-weight: 600;
-                align-items: center;
-                cursor: pointer;
-                margin-bottom: 3px !important;
-                border-radius: 17px !important;
-                margin: auto;
-            }
-
-        .modal ul { 
-            padding-left: 0;
-            box-sizing: border-box;
-
-        }
-        .modal li:hover {
-            background-color: #e2e2e2;
-            border-radius: 17px !important;
-        }
-
-        .modal li input[type="checkbox"] {
-            margin-right: 10px;
-            width: 18px;
-            height: 18px;
-            appearance: none;
-            border: 2px dashed #999;
-            background: transparent;
-            position: relative;
-            border-radius: 50%;
-        }
-
-        .modal li input[type="checkbox"]:checked {
-            background: #f12d39;
-            border: 1px solid;  
-        }
-
-        .modal li input[type="checkbox"]:checked::after {
-            content: '✔';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 15px;
-        }
-
-        .modal li.checked {
-            text-decoration: line-through;
-            color: #000000;
-        }
-
-        .modal li.checked {
-            text-decoration: line-through;
-            background-color: #eeeeee;
-        }
-
-        .modal-progress {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 10px 0;
-        }
-
-        .modal-progress-bar-container {
-            flex-grow: 1;
-            height: 10px;
-            background-color: #e9ecef;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .modal-progress-bar {
-            height: 100%;
-            background-color: #f12d39;
-            width: 0%;
-            border-radius: 0 2px 2px 0;
-            transition: width 0.3s ease;
-        }
-
-        .modal-progress-text {
-            font-size: 12px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            color: #333333;
-            font-weight: 500;
-        }
-
-        .button-container {
-            position: absolute;
-            bottom: 7%;
-            right: 7%;
-            z-index: 10;
-        }
-
-        .bottom-right-button {
-            padding: 18% 15%;
-            background: #f12d39;
-            color: white;   
-            border: none;
-            white-space: nowrap;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: bolder;
-            border-radius: 35px !important;
-        }
-
-        .bottom-right-button:hover {
-            background: #68060c !important;
-            transform: translateY(-3px) !important;
-            background: linear-gradient(180deg, #8b0000 0%, #68060c 100%);
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0,0,0,0.3);
-            transition: all 0.2s !important;
-
-        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
@@ -1654,7 +1726,6 @@
                         width:24.3, 
                         height: 56,
                         tooltip:"<ol class='numbered-list'><li><span class='steptooltiphighlight'>Mute</span> to block background noise.</li><li>Use to <span class='steptooltiphighlight'>Keypad</span> to send DTMF tones for IVR.</li><li>Start <span class='steptooltiphighlight'>Live Transcription</span> for real-time searchable text.</li><li>Put callers on <span class='steptooltiphighlight'>Hold</span> to manage Transfers.</li><li>Start <span class='steptooltiphighlight'>Recording</span> for training and compliance, and check status to confirm capture.</li><li><span class='steptooltiphighlight'>Transcript</span>: View Real-time searchable text with speaker labels and playback icons.</li><li>Enable <span class='steptooltiphighlight'>AI Assist</span> for live coaching, suggested responses, and instant summaries.</li></ol>",
-                        tooltipWidth: 35,
                         position:"left"
                     }
                 ]
@@ -1682,7 +1753,6 @@
                         width:52.7,
                         height:5.3,
                         tooltip:"<ul><li class='tooltip-bullet-list'><span class='steptooltiphighlight'>Call Activity</span>:  View a quick timeline of the call with key events, duration, and outcomes.</li><li><span class='steptooltiphighlight'>Transcript</span>: Open the transcript tab to review or start transcription for searchable, actionable call text.</li><li><span class='steptooltiphighlight'>Notes</span>: Add or review notes to capture context, customer issues, and follow-up actions.</li></ul>",
-                        tooltipWidth: 30,
                         position:"bottom"
                     }
                 ]
@@ -1696,7 +1766,7 @@
                     y:21.9,
                     width:4,
                     height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Switch to chat</span> to manage all live lead conversations in one place.</li><li><span class="steptooltiphighlight">Respond instantly</span> to improve engagement.</li><li><span class="steptooltiphighlight">Move high-intent chats into calls or meetings</span> to boost conversions.</li></ul>',tooltipWidth:35,position:'right'}
+                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Switch to chat</span> to manage all live lead conversations in one place.</li><li><span class="steptooltiphighlight">Respond instantly</span> to improve engagement.</li><li><span class="steptooltiphighlight">Move high-intent chats into calls or meetings</span> to boost conversions.</li></ul>',position:'right'}
             ]
            },
            {
@@ -1782,7 +1852,7 @@
             //step 23                                                                           
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation2.svg',
             hotspots:[
-                {   x:93, y: 92, width: 5, height: 5,
+                {   x:92.8, y: 92, width: 5, height: 5,
                     tooltip: "After taking the notes, Click <span class='steptooltiphighlight'>Create</span> to <span class='steptooltiphighlight'>Create and Save</span> new note.",
                     position:'left'
                  }
@@ -1832,7 +1902,7 @@
             //Step 27
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder2.svg',
             hotspots:[
-                {   x:37.5, y: 41, width: 25, height : 18,
+                {   x:37.5, y: 40.7, width: 25, height : 18,
                     tooltip: "Enter the <span class='steptooltiphighlight'>Name</span> of the folder you want to create and press the <span class='steptooltiphighlight'>Create</span> button to create the folder."
                  }
             ]
@@ -1908,7 +1978,7 @@
                     y:28.9,
                     width:4,
                     height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use Video to start or join meetings</span> instantly.</li><li><span class="steptooltiphighlight">Host face-to-face demos and webinars </span>without needing extra tools.</li><li><span class="steptooltiphighlight">Build trust faster</span> through real time interactions.</li><li><span class="steptooltiphighlight">Shorten the sales cycle</span> and increase the close rate with more engaging meetings.</li></ul>',tooltipWidth:35, position:'right'}
+                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use Video to start or join meetings</span> instantly.</li><li><span class="steptooltiphighlight">Host face-to-face demos and webinars </span>without needing extra tools.</li><li><span class="steptooltiphighlight">Build trust faster</span> through real time interactions.</li><li><span class="steptooltiphighlight">Shorten the sales cycle</span> and increase the close rate with more engaging meetings.</li></ul>', position:'right'}
                 ]
             },
             {
@@ -1947,7 +2017,6 @@
                 hotspots:[
                     {   x:5.1, y:25.5, width:16.8, height:5.6, 
                         tooltip:"<span class='steptooltiphighlight'>Ongoing Meetings:</span> Join live sessions instantly.<br><span class='steptooltiphighlight'>Invited Meetings:</span> See all upcoming invites in one place.<br><span class='steptooltiphighlight'>Past Meetings:</span> Review completed sessions and follow up easily",                                
-                        tooltipWidth: 35,
                         position:"right"
                     },
                     {   x:5.1, y:20, width:16.8, height:5.6},
@@ -1961,7 +2030,6 @@
                     {
                         x:5.1, y: 37.1, width:16.8, height: 5.6,
                         tooltip: "Access all stored call meeting archives.<br><span class='steptooltiphighlight'>All Recordings:</span> View every call for audits and documentations.<br><span class='steptooltiphighlight'>My Recorings:</span> Quickly find your own calls and demos.<br><span class='steptooltiphighlight'>Shared with me:</span> Acccess recordings shared by others for easy collaboration.",
-                        tooltipWidth: 35,
                         position:"right"
                     }
                 ]
@@ -1975,7 +2043,7 @@
                     y:35.8,
                     width:4,
                     height:7,
-                    tooltip:'<span class="steptooltiphighlight">Open Inbox</span> to manage <span class="steptooltiphighlight">SMS, MMS,</span> and <span class="steptooltiphighlight">FAX threads</span>, send targeted follow-ups, and automate reminders to nurture leads with timely, trackable engagement.',tooltipWidth:30, position:'right'
+                    tooltip:'<span class="steptooltiphighlight">Open Inbox</span> to manage <span class="steptooltiphighlight">SMS, MMS,</span> and <span class="steptooltiphighlight">FAX threads</span>, send targeted follow-ups, and automate reminders to nurture leads with timely, trackable engagement.', position:'right'
                 }
             ]
            },
@@ -2015,7 +2083,7 @@
                     y:42.8,
                     width:4,
                     height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Visit contacts </span>to view or edit lead profiles.</li><li><span class="steptooltiphighlight">Enrich records</span>with emails, social IDs and notes.</li><li><span class="steptooltiphighlight">Segment audiences and personlize outreach</span> effectively.</li>',tooltipWidth:35,position:'right'
+                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Visit contacts </span>to view or edit lead profiles.</li><li><span class="steptooltiphighlight">Enrich records</span>with emails, social IDs and notes.</li><li><span class="steptooltiphighlight">Segment audiences and personlize outreach</span> effectively.</li>',position:'right'
                 }
             ]
            },
@@ -2037,7 +2105,7 @@
             // Step 47
             image: 'https://www.acepeak.com/wp-content/uploads/2026/01/CreateNewContact.svg',
                 hotspots:[
-                    { x:93.3, y:93, width: 5.2, height:4.5, tooltip: "Save the contact with <span class='steptooltiphighlight'>submit</span> to add it to your database.", position:'top'}
+                    { x:93, y:93, width: 5.5, height:4.8, tooltip: "Save the contact with <span class='steptooltiphighlight'>submit</span> to add it to your database.", position:'top'}
                 ]
            },
            {
@@ -2058,7 +2126,7 @@
                     y:49.8,
                     width:4.7,
                     height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Click Department</span> to assign users and extension.</li><li><span class="steptooltiphighlight">Organize teams around campaigns</span> for efficient leads routing.</li><li><span class="steptooltiphighlight">Ensure leads reach the right reps,</span> improving response time and accountability.</li>',tooltipWidth: 35, position:'right'
+                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Click Department</span> to assign users and extension.</li><li><span class="steptooltiphighlight">Organize teams around campaigns</span> for efficient leads routing.</li><li><span class="steptooltiphighlight">Ensure leads reach the right reps,</span> improving response time and accountability.</li>', position:'right'
                 }
             ]
            },
@@ -2104,7 +2172,7 @@
                     y:56.8,
                     width:4,
                     height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Open Campaigns</span> to create and manage dialing campaigns.</li><li><span class="steptooltiphighlight">Preview and run lead lists</span> and track lead counts.</li><li><span class="steptooltiphighlight">Monitor member activity</span> to scale outreach efficiently.</li><li><span class="steptooltiphighlight">Measure Campaign ROI</span> quickly and effectively.</li>',tooltipWidth:38, position:'right'
+                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Open Campaigns</span> to create and manage dialing campaigns.</li><li><span class="steptooltiphighlight">Preview and run lead lists</span> and track lead counts.</li><li><span class="steptooltiphighlight">Monitor member activity</span> to scale outreach efficiently.</li><li><span class="steptooltiphighlight">Measure Campaign ROI</span> quickly and effectively.</li>', position:'right'
                 }
             ]
            },
@@ -2116,7 +2184,7 @@
                     y:15,
                     width:17,
                     height:35,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Campaigns list:</span> shows all the currently running and completed campaigns.</li><li><span class="steptooltiphighlight">Leads:</span> Track and collect and manage leads.</li><li><span class="steptooltiphighlight">Call Scripts:</span> to manage calls automation and ivr.</li><li><span class="steptooltiphighlight">Dispositions:</span> classify the outcome of customer interactions (e.g., calls, chats, emails).</li><li><span class="steptooltiphighlight">Campaign logs:</span> list all the campaigns and their outcomes.</li><li><span class="steptooltiphighlight">Disposition logs:</span> Structured records of all the dispositions, outcomes and follow-up actions.</li>',tooltipWidth:38, position:'right'
+                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Campaigns list:</span> shows all the currently running and completed campaigns.</li><li><span class="steptooltiphighlight">Leads:</span> Track and collect and manage leads.</li><li><span class="steptooltiphighlight">Call Scripts:</span> to manage calls automation and ivr.</li><li><span class="steptooltiphighlight">Dispositions:</span> classify the outcome of customer interactions (e.g., calls, chats, emails).</li><li><span class="steptooltiphighlight">Campaign logs:</span> list all the campaigns and their outcomes.</li><li><span class="steptooltiphighlight">Disposition logs:</span> Structured records of all the dispositions, outcomes and follow-up actions.</li>', position:'right'
                 }
             ]
            },
@@ -2161,7 +2229,7 @@
             // Step 58
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Campaign.svg',
             hotspots:[
-                {   x:81,
+                {   x:80,
                     y:16,
                     width:18.5,
                     height:10,
@@ -2190,7 +2258,7 @@
                     y:63.8,
                     width:4,
                     height:7,
-                    tooltip:'<span class="steptooltiphighlight">Access Reports</span> to analyze call logs and performance metrics, export activity for attribution, uncover trends, and refine messaging to maximize lead-to-opportunity conversions.',tooltipWidth:30,position:'right'
+                    tooltip:'<span class="steptooltiphighlight">Access Reports</span> to analyze call logs and performance metrics, export activity for attribution, uncover trends, and refine messaging to maximize lead-to-opportunity conversions.',position:'right'
                 }
             ]
            },
@@ -2225,7 +2293,7 @@
             // Step 64
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
             hotspots:[
-                {   x: 90.1, y: 8.5, width: 2.8, height: 5,
+                {   x: 90, y: 8.5, width: 2.8, height: 5,
                     tooltip:"<span class='steptooltiphighlight'>Refresh</span> the report the fetch the latest report.",position:'left'
                 }
             ]
@@ -2234,7 +2302,7 @@
             // Step 65
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
             hotspots:[
-                {   x: 93.3, y: 8.5, width: 2.8, height: 5,
+                {   x: 93.1, y: 8.5, width: 2.8, height: 5,
                     tooltip:"You can <span class='steptooltiphighlight'>Download</span> the report in csv format, by clicking on the down arrow button.",position:'left'
                 }
             ]
@@ -2243,7 +2311,7 @@
             // Step 66
             image:'https://www.acepeak.com/wp-content/uploads/2025/12/Reports-CallLogs.svg',
             hotspots:[
-                {   x: 96.5, y: 8.5, width: 2.7, height: 5,
+                {   x: 96.3, y: 8.5, width: 2.7, height: 5,
                     tooltip:"You can <span class='steptooltiphighlight'>Sort</span> the report based on various criteria using the <span class='steptooltiphighlight'>sort button</span>.",position:'left'
                 }
             ]
@@ -2258,7 +2326,7 @@
                        y:70.8,
                        width:4.5,
                        height:7,
-                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Open Integration</span> to connect CRM and tools.</li> <li><span class="steptooltiphighlight">Sync contacts</span> and activity with platforms like <span class="steptooltiphighlight"> Hubspot, Zoho, Pipedrive</span> and <span class="steptooltiphighlight">Monday</span> </li> <li><span class="steptooltiphighlight">Keep marketing workflows aligned</span> and data-driven</li>',tooltipWidth:35, position:'right'
+                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Open Integration</span> to connect CRM and tools.</li> <li><span class="steptooltiphighlight">Sync contacts</span> and activity with platforms like <span class="steptooltiphighlight"> Hubspot, Zoho, Pipedrive</span> and <span class="steptooltiphighlight">Monday</span> </li> <li><span class="steptooltiphighlight">Keep marketing workflows aligned</span> and data-driven</li>', position:'right'
                    }
                ]
               },
@@ -2270,7 +2338,7 @@
                        y:1.3,
                        width:2.7,
                        height:4.7,
-                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use the Calendar Icon</span> to schedule and view events.</li><li><span class="steptooltiphighlight">Coordinate, Demos, Webinars</span> and follow-ups directly from the platform.</li><li>Ensure your team <span class="steptooltiphighlight"> never misses high-value</span> engagements.</li>',tooltipWidth:35, position:'bottom'
+                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use the Calendar Icon</span> to schedule and view events.</li><li><span class="steptooltiphighlight">Coordinate, Demos, Webinars</span> and follow-ups directly from the platform.</li><li>Ensure your team <span class="steptooltiphighlight"> never misses high-value</span> engagements.</li>', position:'bottom'
                    }
                ]
               },
@@ -2282,7 +2350,7 @@
                        y:1.3,
                        width:2.7,
                        height:4.7,
-                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Click the headset icon</span> to monitor agent availabilty and support coverage.</li><li><span class="steptooltiphighlight">Ensure reps are online</span> during campaign windows.</li><li><span class="steptooltiphighlight">Allocate resources efficiently</span> to maximize contact rates.</li>',tooltipWidth:35, position:'bottom'
+                       tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Click the headset icon</span> to monitor agent availabilty and support coverage.</li><li><span class="steptooltiphighlight">Ensure reps are online</span> during campaign windows.</li><li><span class="steptooltiphighlight">Allocate resources efficiently</span> to maximize contact rates.</li>', position:'bottom'
                    }
                ]
               },
@@ -2294,7 +2362,7 @@
                        y:1.3,
                        width:2.7,
                        height:4.7,
-                       tooltip:'Open the <span class="steptooltiphighlight">activity waveform or analytics</span> view to identify peak engagement times and use these insights to schedule campaigns when leads are most likely to respond.',tooltipWidth:35,position:'bottom'
+                       tooltip:'Open the <span class="steptooltiphighlight">activity waveform or analytics</span> view to identify peak engagement times and use these insights to schedule campaigns when leads are most likely to respond.',position:'bottom'
                    }
                ]
               },
@@ -2306,7 +2374,7 @@
                        y:1.3,
                        width:2.7,
                        height:4.7,
-                       tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">The monitor Icon</span> displays campaign dashboard and live activity.</li><li><span class="steptooltiphighlight">Watch calls and tasks in real time</span> to troubleshoot and coarch reps.</li><li><span class="steptooltiphighlight">Improve campaign performance</span> on the fly.</li>',tooltipWidth:30, position:'bottom'
+                       tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">The monitor Icon</span> displays campaign dashboard and live activity.</li><li><span class="steptooltiphighlight">Watch calls and tasks in real time</span> to troubleshoot and coarch reps.</li><li><span class="steptooltiphighlight">Improve campaign performance</span> on the fly.</li>', position:'bottom'
                    }
                ]
               },
@@ -2318,7 +2386,7 @@
                        y:1.3,
                        width:2.7,
                        height:4.7,
-                       tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">Use the Settings gear</span> to configure company, billing and phone system options.</li><li><span class="steptooltiphighlight">Customize caller IDs and Templates</span> to align with brand messaging and compliance requirements.</li>',tooltipWidth:30, position:'bottom ,left: 950px !important;'
+                       tooltip:'<ul class="tooltip-bullet-list"> <li><span class="steptooltiphighlight">Use the Settings gear</span> to configure company, billing and phone system options.</li><li><span class="steptooltiphighlight">Customize caller IDs and Templates</span> to align with brand messaging and compliance requirements.</li>', position:'bottom ,left: 950px !important;'
                    }
                ]
               },
@@ -2326,11 +2394,11 @@
                // Step 73
                image:'https://www.acepeak.com/wp-content/uploads/2025/12/UserProfileSettings.svg',
                hotspots:[
-                   {   x:20,
-                       y:50,
+                   {   x:20.2,
+                       y:50.3,
                        width:1,
                        height:2,
-                       tooltip:'<ul class="tooltip-bullet-list"> <li>Manage your<span class="steptooltiphighlight"> profile details</span> communication preferences, and device setting for calls and video.</li><li>Set up<span class="steptooltiphighlight"> notifications</span>, <span class="steptooltiphighlight">greetings</span> and <span class="steptooltiphighlight">media files</span> to customize your calling experience.</li><li>Control <span class="steptooltiphighlight">Security and Privacy options</span> to keep your <span class="steptooltiphighlight">account safe</span> and personalized.</li>',tooltipWidth:35, position:'right'
+                       tooltip:'<ul class="tooltip-bullet-list"> <li>Manage your<span class="steptooltiphighlight"> profile details</span> communication preferences, and device setting for calls and video.</li><li>Set up<span class="steptooltiphighlight"> notifications</span>, <span class="steptooltiphighlight">greetings</span> and <span class="steptooltiphighlight">media files</span> to customize your calling experience.</li><li>Control <span class="steptooltiphighlight">Security and Privacy options</span> to keep your <span class="steptooltiphighlight">account safe</span> and personalized.</li>', position:'right'
                    }
                ]
               },
@@ -2342,10 +2410,10 @@
             [
                 {
                     x:0.9,
-                    y:93,
+                    y:92.5,
                     width:4,
-                    height:6,
-                    tooltip:'<ul class="tooltip-bullet-list"><li>Manage <span class="steptooltiphighlight">Company Details, Users,Numbers, and Phone System Settings</span></li> <li>Configure<span class="steptooltiphighlight">AI Agents, Social Media Channels, Templates and Billing.</span></li>',tooltipWidth:35,position:'right'
+                    height:7,
+                    tooltip:'<ul class="tooltip-bullet-list"><li>Manage <span class="steptooltiphighlight">Company Details, Users,Numbers, and Phone System Settings</span></li> <li>Configure<span class="steptooltiphighlight">AI Agents, Social Media Channels, Templates and Billing.</span></li>',position:'right'
                 }
             ]
            },
@@ -2453,6 +2521,7 @@
                 [74, 75, 76, 77, 78]      //Admin Demo
         ]
         let visitedSteps = new Set();
+        let visitedDemos = new Set();
         let currentStep = 0;
         let isTransitioning = false;
 
@@ -2736,7 +2805,6 @@
             const overlayLayer = document.getElementById('overlayLayer');
 
             const step = demoSteps[stepIndex];
-
             // Always prefer preloaded images for instant access
             if (imagesLoaded && preloadedImages[step.image]) {
                 // console.log(`⚡ Instant transition to step ${stepIndex + 1} using preloaded image`);
@@ -2832,7 +2900,12 @@
 
         function isDemoCompleted(demoIndex) {
             const steps = demoGroups[demoIndex];
+            if (steps===demoGroups[demoIndex].length){
+                visitedDemos.add(demoGroups[demoIndex])
+                console.log("Visited Demo: ", visitedDemos)
+            }else {
             return steps.every(step => visitedSteps.has(step));
+            }
         }
 
         function getDemoForStep(stepIndex) {
@@ -2846,43 +2919,49 @@
             if (existingTooltip) {
                 return; // Don't create a duplicate
             }
+            
+            // Calculate the number of demos completed
+            const completedDemos= demoGroups.reduce((count, steps, index)=> count + (isDemoCompleted(index) ? 1:0),0);
+            const isAllDemoCompleted = completedDemos === 11 ? true : false;
 
-            // Check if this is the Admin Demo (index 8) or any specific demo that needs special handling
-            if (demoNames[demoIndex] === 'Admin Demo') {
-                 showAllTourCompletedTooltip();
-                 return;
+            if (isAllDemoCompleted){
+                showAllTourCompletedTooltip();
             }
+            else {
+                if (!isAllDemoCompleted && demoGroups[demoIndex]==="Admin Demo"){
+                    
+                }
+                const nextDemoName = demoNames[demoIndex + 1] || demoNames[0];
 
-            const nextDemoName = demoNames[demoIndex + 1] || "End of Tour";
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip demo-completed-tooltip outro-tooltip'; // Reuse outro styles
 
-            const tooltip = document.createElement('div');
-            tooltip.className = 'tooltip demo-completed-tooltip outro-tooltip'; // Reuse outro styles
+                tooltip.innerHTML = `
+                    <div class="tooltip-header">
+                        <button class="tooltip-close" onclick="hideTooltips()">✕</button>
+                    </div>
+                    <div class="tooltip-content">
+                        <span class="welcomeimage"><img src="https://www.acepeak.com/wp-content/uploads/2025/11/ACEPEAK-LOGO-scaled-1.png" alt="acepeaklogo"></span>
+                        <span class="welcomegreeting">${demoNames[demoIndex]} Completed!</span>
+                        You've finished the <span class="step1tooltiphighlight">${demoNames[demoIndex]}</span>.
+                    </div>
+                    <div class="tooltip-nav">
+                        <button class="tooltip-btn tooltip-btn-nextdemo" onclick="goToDemo(${demoIndex<10?demoIndex+1 : 0})">${nextDemoName}</button>
+                        <button class="tooltip-btn tooltip-btn-continue" onclick="handleContinueTour()">Continue Tour</button>
+                    </div>
+                `;
+                
+                // Position tooltip in the center of the frame
+                positionOutroTooltip(tooltip);
 
-            tooltip.innerHTML = `
-                <div class="tooltip-header">
-                    <button class="tooltip-close" onclick="hideTooltips()">✕</button>
-                </div>
-                <div class="tooltip-content">
-                    <span class="welcomeimage"><img src="https://www.acepeak.com/wp-content/uploads/2025/11/ACEPEAK-LOGO-scaled-1.png" alt="acepeaklogo"></span>
-                    <span class="welcomegreeting">${demoNames[demoIndex]} Demo Completed!</span>
-                    You've finished the <span class="step1tooltiphighlight">${demoNames[demoIndex]}</span>.
-                </div>
-                <div class="tooltip-nav">
-                    <button class="tooltip-btn tooltip-btn-nextdemo" onclick="goToDemo(${demoIndex+1})">${nextDemoName}</button>
-                    <button class="tooltip-btn tooltip-btn-continue" onclick="handleContinueTour()">Continue Tour</button>
-                </div>
-            `;
+                // Append to overlay layer
+                document.getElementById('overlayLayer').appendChild(tooltip);
 
-            // Position tooltip in the center of the frame
-            positionOutroTooltip(tooltip);
-
-            // Append to overlay layer
-            document.getElementById('overlayLayer').appendChild(tooltip);
-
-            // Trigger animation
-            setTimeout(() => {
-                tooltip.classList.add('visible');
-            }, 10);
+                // Trigger animation
+                setTimeout(() => {
+                    tooltip.classList.add('visible');
+                }, 10);
+            }
         }
 
         function showAllTourCompletedTooltip() {
@@ -2894,6 +2973,7 @@
                     <button class="tooltip-close" onclick="hideTooltips()">✕</button>
                 </div>
                 <div class="tooltip-content">
+                    <span class="welcomeimage"><img src="https://www.acepeak.com/wp-content/uploads/2025/11/ACEPEAK-LOGO-scaled-1.png" alt="acepeaklogo"></span>
                     <span class="welcomegreeting">🎉 Tour Completed!</span>
                     You have successfully completed <span class="step1tooltiphighlight">All the Tours</span>.
                 </div>
@@ -2993,8 +3073,7 @@
             }[positionClass] || 'top';
 
             // Check if we should use mobile navigation panel
-            const useMobileNav = isMobileDevice();
-            const mobileClass = useMobileNav ? 'mobile-navigation' : '';
+            const mobileClass = '';
 
             // Conditionally apply step-specific classes - only if no custom dimensions are provided
             const hasCustomDimensions = hotspot.tooltipWidth || hotspot.tooltipHeight;
@@ -3330,7 +3409,7 @@
             if (currentStep >= 1 && currentStep <= 7) {
                 // Overall Dashboard Section
                 return [currentStep, dashboardSection];
-            } 
+            }
             else if (currentStep >= 8 && currentStep <= 13) {
                 // Phone Section
                 return [currentStep - 7, phoneSection];
