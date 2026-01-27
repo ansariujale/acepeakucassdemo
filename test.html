@@ -898,15 +898,13 @@
             left: 0 !important;
             width: 100% !important;
             height: 100% !important;
-            background-color: rgba(0, 0, 0, 0.5) !important;
-            backdrop-filter: blur(1.5px) !important;
             opacity: 0 !important;
             visibility: hidden !important;
             transition: opacity 0.3s ease !important;
             display: flex !important;
-            justify-content: center !important;
+            justify-content: flex-end !important;
             align-items: center !important;
-            
+            padding: 2% !important;
         }
 
         .modal.show {
@@ -926,11 +924,11 @@
             /* margin: 5% auto !important; */
             padding: 10px !important;
             border: 1px solid #888 !important;
-            width: 80% !important;
-            max-width: 35% !important;
+            width: 30% !important;
+            max-width: 30% !important;
             max-height: 80vh !important;
             overflow-y: hidden !important;
-            border-radius: 25px !important;
+            border-radius: 15px !important;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
             position: relative !important;
             box-sizing: border-box !important;
@@ -955,12 +953,6 @@
             color: #f12d39 !important;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
             padding-top: 0px !important;
-        }
-
-        .modal-list-info {
-            visibility: hidden;
-            display: inline-block;
-            position: relative;
         }
 
         .close {
@@ -1007,8 +999,8 @@
 
         .modal li input[type="checkbox"] {
             margin-right: 10px;
-            width: 30px;
-            height: 30px;
+            width: 18px;
+            height: 18px;
             appearance: none;
             border: 1px solid #999;
             background: transparent;
@@ -1037,7 +1029,7 @@
             left: 49%;
             transform: translate(-50%, -50%);
             color: #f00;
-            font-size: 18px;
+            font-size: 10px;
         }
 
 
@@ -4361,5 +4353,4 @@
         };
     </script>
 </body>
-
 </html>
