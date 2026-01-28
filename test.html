@@ -3781,7 +3781,7 @@
                         <div class='step-counter'>${getStepSection(currentStep)[0]} / ${getStepSection(currentStep)[1]}</div>
                     </div>
                     <div class="nav-buttons">
-                        <button class="tooltip-btn tooltip-btn-skipdemo" onclick="skipDemo()">Skip Demo</button>
+                        <button class="tooltip-btn tooltip-btn-skipdemo" onclick="skipDemo(${stepIndex})">Skip Demo</button>
                         <button class="tooltip-btn tooltip-btn-back" onclick="previousStep()">Back</button>
                         <button class="tooltip-btn tooltip-btn-finish" onclick="nextStep()">${currentStep === demoSteps.length - 1 ? 'Finish' : 'Next'}</button>
                     </div>
@@ -3812,10 +3812,24 @@
 
             firstStepOfTooltips = [1, 8, 14, 34, 40, 44, 49, 53, 60, 67, 74];
 
-            if ( firstStepOfTooltips.includes(stepIndex) ) {
-                backBtn = document.querySelector(".tooltip-btn-back");
-                backBtn.style.display = "none";   
-            }
+                const backBtn = document.querySelector(".tooltip-btn-back");
+                const isFirstStep = firstStepOfTooltips.includes(stepIndex);
+
+                if (backBtn) {
+                backBtn.style.display = isFirstStep ? "none" : "block";
+                }
+
+                window.addEventListener('keydown', function(e) {
+                const btn = document.querySelector(".tooltip-btn-back");
+
+                if (btn && btn.style.display === "none") {
+                    if (e.key === "ArrowLeft") {
+                        e.preventDefault();  
+                        e.stopPropagation();  
+                    }
+                }
+                }, true); 
+
 
             // Trigger animation
             setTimeout(() => {
@@ -4046,7 +4060,14 @@
             }
         }
 
-        function skipDemo() {
+        function skipDemo(stepIndex){
+            const demoIndex= getDemoForStep(stepIndex)
+            if (demoIndex === 10){
+                goToDemo(0);
+            }
+            else{
+                goToDemo(demoIndex+1)
+            }
             
         }
 
