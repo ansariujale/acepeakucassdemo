@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Product Demo - Overall</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-
         /* WordPress-compatible reset and container styles */
         .demo-wrapper {
             width: 100% !important;
@@ -983,17 +982,17 @@
         }
 
         .modal li {
-                padding: 8px 0;
-                display: flex;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-weight: 600;
-                align-items: center;
-                cursor: pointer;
-                margin-bottom: 3px !important;
-                border-radius: 17px !important;
-                margin: auto;
-                color: #333 !important;
-            }
+            padding: 8px 0;
+            display: flex;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            align-items: center;
+            cursor: pointer;
+            margin-bottom: 3px !important;
+            border-radius: 17px !important;
+            margin: auto;
+            color: #333 !important;
+        }
 
         .modal ul {
             padding-left: 0;
@@ -1020,12 +1019,12 @@
 
         .modal li input[type="checkbox"]:checked {
             background: #f12d39;
-            border: 1px solid; 
+            border: 1px solid;
             color: #fff;
         }
 
         .modal li input[type="checkbox"]:checked::after {
-            background: #f12d39; 
+            background: #f12d39;
             color: #ffffff;
         }
 
@@ -1042,17 +1041,49 @@
         }
 
 
-        .home-demo input[type="checkbox"]::after { content: '\f015' !important; }
-        .phone-demo input[type="checkbox"]::after { content: '\f095' !important; }
-        .chat-demo input[type="checkbox"]::after { content: '\f086' !important; }
-        .video-demo input[type="checkbox"]::after { content: '\f03d' !important; }
-        .inbox-demo input[type="checkbox"]::after { content: '\f01c' !important; }
-        .contact-demo input[type="checkbox"]::after { content: '\f007' !important; }
-        .department-demo input[type="checkbox"]::after { content: '\f0c0' !important; }
-        .campaign-demo input[type="checkbox"]::after { content: '\f0a1' !important; }
-        .reports-demo input[type="checkbox"]::after { content: '\f080' !important; }
-        .integrations-demo input[type="checkbox"]::after { content: '\f1e6' !important; }
-        .admin-demo input[type="checkbox"]::after { content: '\f013' !important; }
+        .home-demo input[type="checkbox"]::after {
+            content: '\f015' !important;
+        }
+
+        .phone-demo input[type="checkbox"]::after {
+            content: '\f095' !important;
+        }
+
+        .chat-demo input[type="checkbox"]::after {
+            content: '\f086' !important;
+        }
+
+        .video-demo input[type="checkbox"]::after {
+            content: '\f03d' !important;
+        }
+
+        .inbox-demo input[type="checkbox"]::after {
+            content: '\f01c' !important;
+        }
+
+        .contact-demo input[type="checkbox"]::after {
+            content: '\f007' !important;
+        }
+
+        .department-demo input[type="checkbox"]::after {
+            content: '\f0c0' !important;
+        }
+
+        .campaign-demo input[type="checkbox"]::after {
+            content: '\f0a1' !important;
+        }
+
+        .reports-demo input[type="checkbox"]::after {
+            content: '\f080' !important;
+        }
+
+        .integrations-demo input[type="checkbox"]::after {
+            content: '\f1e6' !important;
+        }
+
+        .admin-demo input[type="checkbox"]::after {
+            content: '\f013' !important;
+        }
 
         .modal li.checked {
             text-decoration: line-through !important;
@@ -1260,37 +1291,129 @@
             }
 
             /*Hotspot styling*/
-            .hotspot.step-2 {border-radius: 7px !important;}
-            .hotspot.step-3 {border-radius: 5px !important;}
-            .hotspot.step-4 {border-radius:4px !important;}
-            .hotspot.step-5 {border-radius: 6px !important;}
-            .hotspot.step-6 {border-radius:7px !important;}
-            .hotspot.step-7 {border-radius:6px !important;}
-            .hotspot.step-9 {border-radius: 7px !important;}
-            .hotspot.step-8 {border-radius:5px !important;}
-            .hotspot.step-10 {border-radius:5px !important;}
-            .hotspot.step-11 {border-radius:5px !important;}
-            .hotspot.step-15 {border-radius: 7px !important;}
-            .hotspot.step-16 {border-radius: 8px !important;}
-            .hotspot.step-17 {border-radius: 8px !important;}
-            .hotspot.step-18 {border-radius:7px !important;}
-            .hotspot.step-19 {border-radius:7px !important;}
-            .hotspot.step-21 {border-radius:7px !important;}
-            .hotspot.step-22 {border-radius:7px !important;}
-            .hotspot.step-24 {border-radius:5px !important;}
-            .hotspot.step-31 {border-radius:7px !important;}
-            .hotspot.step-36 {border-radius:12px !important;}
-            .hotspot.step-37 {border-radius:12px !important;}
-            .hotspot.step-38 {border-radius:12px !important;}
-            .hotspot.step-39 {border-radius:5px !important;}
-            .hotspot.step-40 {border-radius:5px !important;}
-            .hotspot.step-44 {border-radius:7px !important;}
-            .hotspot.step-46 {border-radius:9px !important;}
-            .hotspot.step-53 {border-radius:7px !important;}
-            .hotspot.step-60 {border-radius:5px !important;}
-            .hotspot.step-70 {border-radius:9px !important;}
-            .hotspot.step-71 {border-radius:9px !important;}
-            .hotspot.step-72 {border-radius:9px !important;}
+            .hotspot.step-2 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-3 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-4 {
+                border-radius: 4px !important;
+            }
+
+            .hotspot.step-5 {
+                border-radius: 6px !important;
+            }
+
+            .hotspot.step-6 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-7 {
+                border-radius: 6px !important;
+            }
+
+            .hotspot.step-9 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-8 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-10 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-11 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-15 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-16 {
+                border-radius: 8px !important;
+            }
+
+            .hotspot.step-17 {
+                border-radius: 8px !important;
+            }
+
+            .hotspot.step-18 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-19 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-21 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-22 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-24 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-31 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-36 {
+                border-radius: 12px !important;
+            }
+
+            .hotspot.step-37 {
+                border-radius: 12px !important;
+            }
+
+            .hotspot.step-38 {
+                border-radius: 12px !important;
+            }
+
+            .hotspot.step-39 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-40 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-44 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-46 {
+                border-radius: 9px !important;
+            }
+
+            .hotspot.step-53 {
+                border-radius: 7px !important;
+            }
+
+            .hotspot.step-60 {
+                border-radius: 5px !important;
+            }
+
+            .hotspot.step-70 {
+                border-radius: 9px !important;
+            }
+
+            .hotspot.step-71 {
+                border-radius: 9px !important;
+            }
+
+            .hotspot.step-72 {
+                border-radius: 9px !important;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1741,11 +1864,12 @@
 
             /* .tooltip.outro-tooltip {
             } */
-            .tooltip.demo-completed-tooltip{
+            .tooltip.demo-completed-tooltip {
                 width: 70vw !important;
                 height: 23vh !important;
                 min-height: 100px !important;
             }
+
             .tooltip.outro-tooltip .tooltip-content {
                 font-size: clamp(0.4rem, 2vw, 1.1rem) !important;
             }
@@ -1785,8 +1909,20 @@
                 color: #fff !important;
             }
 
-            .hotspot.step-9,
-            .hotspot.step-15,
+            .hotspot.step-9 {
+                left: 0% !important;
+                top: 22% !important;
+                width: 5% !important;
+                border-radius: 4px !important;
+            }
+
+            .hotspot.step-15 {
+                left: 0% !important;
+                top: 27.5% !important;
+                width: 5% !important;
+                border-radius: 4px !important;
+            }
+
             .hotspot.step-35,
             .hotspot.step-41,
             .hotspot.step-45,
@@ -1803,7 +1939,7 @@
 
             .hotspot.step-2 {
                 left: 0% !important;
-                top: 17% !important;
+                top: 16.5% !important;
                 width: 5% !important;
                 border-radius: 4px !important;
             }
@@ -1841,90 +1977,117 @@
                 max-width: 62vw !important;
                 left: 35px !important;
             }
-        
-            .hotspot.step-7{
+
+            .hotspot.step-7 {
                 top: 23.5% !important;
                 border-radius: 3px !important;
             }
+
             .hotspot.step-8 {
                 top: 23% !important;
                 border-radius: 3px !important;
             }
 
             .hotspot.step-10 {
-                top: 15.6% !important;
+                top: 22% !important;
                 border-radius: 3px !important;
             }
 
             .hotspot.step-11 {
                 border-radius: 3px !important;
-                top: 29% !important;
+                top: 32.9% !important;
                 left: 54.5% !important;
             }
 
+            .hotspot.step-12 {
+                top: 25.3% !important;
+                border-radius: 3px !important;
+            }
+
             .hotspot.step-13 {
-                left: 69.8% !important;
-                top: 21.8% !important;
-                width: 2.3% !important;
-                height: 3.9% !important;
+                left: 69.6% !important;
+                top: 26.3% !important;
+                width: 2.7% !important;
+                height: 4.1% !important;
                 border-radius: 3px !important;
             }
 
             .hotspot.step-14 {
-                top: 13% !important;
+                top: 19% !important;
                 border-radius: 3px !important;
             }
 
-            .hotspot.step-16.hotspot-1,
-            .hotspot.step-17.hotspot-1 {
-                left: 27.2% !important;
+            .hotspot.step-16.hotspot-1
+            {
+                left: 27% !important;
+                top: 23.3% !important;
+                height: 65.5% !important;
             }
 
             .hotspot.step-16,
-            .hotspot.step-17,
-            .hotspot.step-19 {
+            .hotspot.step-17 {
                 border-radius: 6px !important;
             }
 
+            .hotspot.step-19 {
+                border-radius: 6px !important;
+                top: 11% !important;
+                height: 77% !important;
+            }
+
             .hotspot.step-18 {
-                top: 15% !important;
-                border-radius: 4px !important;
+                top: 21% !important;
+                border-radius: 3px !important;
             }
 
             .hotspot.step-20 {
-                top: 5% !important;
-                border-radius: 12px !important;
+                top: 12.3% !important;
+                border-radius: 9px !important;
             }
 
             .hotspot.step-21 {
-                top: 7% !important;
-                height: 86% !important;
+                top: 15% !important;
+                height: 71% !important;
                 border-radius: 4px !important;
             }
 
             .hotspot.step-22 {
-                top: 71% !important;
-                height: 26.3% !important;
+                top: 66% !important;
+                height: 22.3% !important;
                 border-radius: 3px !important;
             }
 
+            .hotspot.step-23.hotspot-1, .hotspot.step-26.hotspot-2, .hotspot.step-17.hotspot-1 {
+                left: 27.9% !important;
+                top: 17% !important;
+                width: 73% !important;
+                height: 73% !important;
+            }
+
             .hotspot.step-24 {
-                top: 90.3% !important;
+                top: 82.3% !important;
+                width: 6% !important;
                 border-radius: 3px !important;
             }
 
             .hotspot.step-25.hotspot-1 {
                 left: 27% !important;
                 width: 18% !important;
-                height: 13% !important;
-                top: 9% !important;
+                height: 12% !important;
+                top: 29% !important;
+            }
+            .hotspot.step-26.hotspot-1 {
+                left: 27% !important;
+                width: 18% !important;
+                height: 12% !important;
+                top: 29% !important;
             }
 
             .hotspot.step-25.hotspot-2 {
-                left: 82.6% !important;
-                top: 10.6% !important;
-                width: 2.4% !important;
-                border-radius: 3px !important;
+                left: 82.2% !important;
+                top: 17.7% !important;
+                width: 2.9% !important;
+                border-radius: 12px !important;
             }
 
             .hotspot.step-26 {
@@ -2006,8 +2169,8 @@
             }
 
             .hotspot.step-49 {
-            top: 9.6% !important;
-            border-radius: 4px !important;
+                top: 9.6% !important;
+                border-radius: 4px !important;
             }
 
             .hotspot.step-51 {
@@ -2071,7 +2234,7 @@
 
         }
 
-        
+
 
         @media (max-width: 1280px) {
             .demo-container {
@@ -2209,7 +2372,9 @@
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <div class="modal-sticky-header">
-                        <span class="welcomeimage"><img src="https://www.acepeak.com/wp-content/uploads/2025/11/ACEPEAK-LOGO-scaled-1.png" alt="acepeaklogo"></span>
+                        <span class="welcomeimage"><img
+                                src="https://www.acepeak.com/wp-content/uploads/2025/11/ACEPEAK-LOGO-scaled-1.png"
+                                alt="acepeaklogo"></span>
                         <h2 class="modal-header">Welcome to Acepeak UCaaS Tour</h2>
                         <div class="modal-progress">
                             <div class="modal-progress-bar-container">
@@ -2220,17 +2385,28 @@
                     </div>
                     <div class="modal-list-container">
                         <ul>
-                            <li data-step="0" onclick="goToDemo(0)" class="demo-item home-demo"><input type="checkbox" disabled>Overall Demo</li>
-                            <li data-step="1" onclick="goToDemo(1)" class="demo-item phone-demo"><input type="checkbox" disabled>Phone Demo</li>
-                            <li data-step="2" onclick="goToDemo(2)" class="demo-item chat-demo"><input type="checkbox" disabled>Chat Demo</li>
-                            <li data-step="3" onclick="goToDemo(3)" class="demo-item video-demo"><input type="checkbox" disabled>Video Demo</li>
-                            <li data-step="4" onclick="goToDemo(4)" class="demo-item inbox-demo"><input type="checkbox" disabled>Inbox Demo</li>
-                            <li data-step="5" onclick="goToDemo(5)" class="demo-item contact-demo"><input type="checkbox" disabled>Contact Demo</li>
-                            <li data-step="6" onclick="goToDemo(6)" class="demo-item department-demo"><input type="checkbox" disabled>Department Demo</li>
-                            <li data-step="7" onclick="goToDemo(7)" class="demo-item campaign-demo"><input type="checkbox" disabled>Campaign Demo</li>
-                            <li data-step="9" onclick="goToDemo(8)" class="demo-item reports-demo"><input type="checkbox" disabled>Reports Demo</li>
-                            <li data-step="10" onclick="goToDemo(9)" class="demo-item integrations-demo"><input type="checkbox" disabled>Integrations Demo</li>
-                            <li data-step="8" onclick="goToDemo(10)" class="demo-item admin-demo"><input type="checkbox" disabled>Admin Demo</li>
+                            <li data-step="0" onclick="goToDemo(0)" class="demo-item home-demo"><input type="checkbox"
+                                    disabled>Overall Demo</li>
+                            <li data-step="1" onclick="goToDemo(1)" class="demo-item phone-demo"><input type="checkbox"
+                                    disabled>Phone Demo</li>
+                            <li data-step="2" onclick="goToDemo(2)" class="demo-item chat-demo"><input type="checkbox"
+                                    disabled>Chat Demo</li>
+                            <li data-step="3" onclick="goToDemo(3)" class="demo-item video-demo"><input type="checkbox"
+                                    disabled>Video Demo</li>
+                            <li data-step="4" onclick="goToDemo(4)" class="demo-item inbox-demo"><input type="checkbox"
+                                    disabled>Inbox Demo</li>
+                            <li data-step="5" onclick="goToDemo(5)" class="demo-item contact-demo"><input
+                                    type="checkbox" disabled>Contact Demo</li>
+                            <li data-step="6" onclick="goToDemo(6)" class="demo-item department-demo"><input
+                                    type="checkbox" disabled>Department Demo</li>
+                            <li data-step="7" onclick="goToDemo(7)" class="demo-item campaign-demo"><input
+                                    type="checkbox" disabled>Campaign Demo</li>
+                            <li data-step="9" onclick="goToDemo(8)" class="demo-item reports-demo"><input
+                                    type="checkbox" disabled>Reports Demo</li>
+                            <li data-step="10" onclick="goToDemo(9)" class="demo-item integrations-demo"><input
+                                    type="checkbox" disabled>Integrations Demo</li>
+                            <li data-step="8" onclick="goToDemo(10)" class="demo-item admin-demo"><input type="checkbox"
+                                    disabled>Admin Demo</li>
                         </ul>
                     </div>
                 </div>
@@ -2436,199 +2612,215 @@
                         x: 27.6, y: 16.3, width: 72.6, height: 82.5,
                         tooltip: "This is the Group chat section, Here we can create a <span class='steptooltiphighlight'>Group</span> where multiple members can <span class='steptooltiphighlight'>Communicate</span> and have a group discussion. Eliminating the Need to <span class='steptooltiphighlight'> continously switch between chats.</span> and maximizing <span class='steptooltiphighlight'>Seamless</span> communicaion.",
                         position: 'left'
-                     }
-            ]
-           },
-           {
-            // Step 17
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation6.svg',
-            hotspots: [
-                { x:17.5, y: 13.9, width: 11, height: 8.7,
-                    tooltip: "You can create a new <span class='steptooltiphighlight'>Team</span> by clicking on the <span class='steptooltiphighlight'>Create New Team</span> Button.",
-                    position: 'bottom'
-                 }
-            ]
-           },
-           {
-            // Step 18
-            image:'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation7.svg',
-            hotspots: [
-                {   x: 55, y: 2, width: 45, height: 97,
-                    tooltip: "Fill the details<br>Enter the name of the <span class='steptooltiphighlight'>Team.</span><br>Select the <span class='steptooltiphighlight'>Team Members</span><br>Give the <span class='steptooltiphighlight'>Description</span> about the team.<br>Enter the team <span class='steptooltiphighlight'>Message.</span><br>And press the <span class='steptooltiphighlight'>Send Button</span> to send and create a new team.",
-                    position: 'left'
-                 }
-            ]
-           },
-           {
-            // Step 19
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation8.svg',
-            hotspots:[
-                {   x: 40.25, y:3, width: 19.6, height: 9.3,
-                    tooltip: "During an Incoming Call a <span class='steptooltiphighlight'>Pop-Up notification</span> appears."
-                 }
-            ]
-           },
-           {
-            // Step 20
-            image : 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCall1.svg',
-            hotspots: [
-                {   x: 10, y: 5, width: 80, height: 90,
-                    tooltip: "The call window opens in a <span class='steptooltiphighlight'>Maximised state</span> where you can find all the <span class='steptooltiphighlight'>controls</span>",
-                    position: 'left'
-                 }
-            ]
-           },
-           {
-            // Step 21
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCall2.svg',
-            hotspots: [
-                {   x: 79.5, y: 71.7, width: 20.4, height: 26.7,
-                    tooltip: "You can <span class='steptooltiphighlight'>Minimize</span> the call screen to continue with Other works while the call is running in the <span class='steptooltiphighlight'>Background.</span>",
-                    position: 'left'
-                }
-            ]
-           },
-           {
-            // Step 22
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation.svg',
-            hotspots:[
-                {   x: 28.5, y: 7, width: 71, height:92,
-                    tooltip: "You can Create a <span class='steptooltiphighlight'>New Note</span> In the <span class='steptooltiphighlight'>Chat</span> to keep <span class='steptooltiphighlight'>Note</span> of <span clas='steptooltiphighlight'>Important</span> Things.",
-                    position: 'left'
-                 }
-            ]
-           },
-           {
-            //step 23                                                                           
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation2.svg',
-            hotspots:[
-                {   x:92.8, y: 92, width: 5, height: 5,
-                    tooltip: "After taking the notes, Click <span class='steptooltiphighlight'>Create</span> to <span class='steptooltiphighlight'>Create and Save</span> new note.",
-                    position:'left'
-                 }
-            ]
-           },
-           {
-            // Step 24
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation3.svg',
-            hotspots: [
-                { x: 29, y:24, width: 17, height: 11,
-                    tooltip: "You can see all your <span class='steptooltiphighlight'>previously saved notes</span> and also recheck and edit them."
-                 },
-                 {
-                    x: 82.3, y: 9.1, width: 2.5, height: 4
-                 }
-            ]
-           },
-           {
-            // Step 25
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNotePinned.svg',
-            hotspots: [
-                {
-                   x: 85.2, y: 9.1, width: 2.5, height: 4,
-                   tooltip: "The notes can also be <span class='steptooltiphighlight'>Pinned</span> to keep the important notes on top for quick access.",
-                   position:'left'
-                },
-                {  
-                    x: 28.5, y: 7, width: 73, height: 92,
-                 }
-            ]
-           },
-           {
-            // step 26
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder.svg',
-            hotspots: [
-                {
-                    x: 88.5, y: 10, width: 2.5, height: 4,
-                    tooltip: "We can also create <span class='steptooltiphighlight'>Folders</span> inside the chat to keep stuff <span class='steptooltiphighlight'>Organised</span> and <span class='steptooltiphighlight'>easy to find<span>",
-                    position: 'bottom'
-                 },
-                {
-                    x: 27.7, y: 7.4, width: 71, height: 92,
-                },
-            ]
-           },
-           {
-            //Step 27
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder2.svg',
-            hotspots:[
-                {   x:37.3, y: 40.5, width: 25.5, height : 19,
-                    tooltip: "Enter the <span class='steptooltiphighlight'>Name</span> of the folder you want to create and press the <span class='steptooltiphighlight'>Create</span> button to create the folder."
-                 }
-            ]
-           },
-           {
-            // Step 28
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder3.svg',
-            hotspots: [
-                {
-                   x: 88.5, y: 10, width: 2.5, height: 4,
-                   tooltip: "We can also create <span class='steptooltiphighlight'>Folders</span> inside the chat to keep stuff <span class='steptooltiphighlight'>Organised</span> and <span class='steptooltiphighlight'>easy to find<span>",
-                   position: 'bottom'
-                },
-                { 
-                    x: 27.7, y: 7.4, width: 71, height: 92
-                },
-            ]
-           },
-           {
-            // Step 29
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile.svg',
-            hotspots: [
-                { x: 27.7, y: 7.4, width: 72, height: 92,
-                    tooltip:"You can also add <span class='steptooltiphighlight'>Local Files</span> from your device to the chat folder section.",
-                    position: 'bottom'
-                 }
-            ]
-           },
-           {
-            // Step 30
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile2.svg',
-            hotspots: [
-                { x:37.5, y: 35, width: 25, height : 30,
-                    tooltip: "You can <span class='steptooltiphighlight'>Select</span> the file and the <span class='steptooltiphighlight'>add</span> them to upload into the folder section",
-                 }
-            ]
-           },
-           {
-            // Step 31
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile3.svg',
-            hotspots: [
-                {   x: 27.7, y: 7.4, width: 72, height: 92,
-                    tooltip:"You can see all your <span class='steptooltiphighlight'>important</span> files and also share them easily with anyone.",
-                    position: 'left',
-                 }
-            ]
-           },
-           {
-            // Step 32
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatComparison.svg',
-            hotspots: [
-                {   x: 27.7, y: 7.4, width: 72, height: 92,
-                    tooltip: "You can <span class='steptooltiphighlight'>View, Compare</span> multiple teams to measure <span class='steptooltiphighlight'>Performance</span> and <span class='steptooltiphighlight'>Evaluate</span> them.",
-                    position: 'left',
-                 }
-            ]
-           },
-           {
-            // Step 33
-            image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationEditTeam.svg',
-            hotspots: [
-                {   x:55, y: 1, width: 45, height: 99,
-                    tooltip: "You can also <span class='steptooltiphighlight'>Edit</span>teams. <span class='steptooltiphighlight'>Add / Remove Members.</span>",
-                    position:'left'
-                 }
-            ]
-           },
-           {   // Video Section
-               // Step 34
-               image:'https://www.acepeak.com/wp-content/uploads/2025/12/VideoSection.svg',
-               hotspots:[
-                   {   x:0.9,
-                    y:28.9,
-                    width:4,
-                    height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use Video to start or join meetings</span> instantly.</li><li><span class="steptooltiphighlight">Host face-to-face demos and webinars </span>without needing extra tools.</li><li><span class="steptooltiphighlight">Build trust faster</span> through real time interactions.</li><li><span class="steptooltiphighlight">Shorten the sales cycle</span> and increase the close rate with more engaging meetings.</li></ul>', position:'right'}
+                    }
+                ]
+            },
+            {
+                // Step 17
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation6.svg',
+                hotspots: [
+                    {
+                        x: 17.5, y: 13.9, width: 11, height: 8.7,
+                        tooltip: "You can create a new <span class='steptooltiphighlight'>Team</span> by clicking on the <span class='steptooltiphighlight'>Create New Team</span> Button.",
+                        position: 'bottom'
+                    }
+                ]
+            },
+            {
+                // Step 18
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation7.svg',
+                hotspots: [
+                    {
+                        x: 55, y: 2, width: 45, height: 97,
+                        tooltip: "Fill the details<br>Enter the name of the <span class='steptooltiphighlight'>Team.</span><br>Select the <span class='steptooltiphighlight'>Team Members</span><br>Give the <span class='steptooltiphighlight'>Description</span> about the team.<br>Enter the team <span class='steptooltiphighlight'>Message.</span><br>And press the <span class='steptooltiphighlight'>Send Button</span> to send and create a new team.",
+                        position: 'left'
+                    }
+                ]
+            },
+            {
+                // Step 19
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreation8.svg',
+                hotspots: [
+                    {
+                        x: 40.25, y: 3, width: 19.6, height: 9.3,
+                        tooltip: "During an Incoming Call a <span class='steptooltiphighlight'>Pop-Up notification</span> appears."
+                    }
+                ]
+            },
+            {
+                // Step 20
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCall1.svg',
+                hotspots: [
+                    {
+                        x: 10, y: 5, width: 80, height: 90,
+                        tooltip: "The call window opens in a <span class='steptooltiphighlight'>Maximised state</span> where you can find all the <span class='steptooltiphighlight'>controls</span>",
+                        position: 'left'
+                    }
+                ]
+            },
+            {
+                // Step 21
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCall2.svg',
+                hotspots: [
+                    {
+                        x: 79.5, y: 71.7, width: 20.4, height: 26.7,
+                        tooltip: "You can <span class='steptooltiphighlight'>Minimize</span> the call screen to continue with Other works while the call is running in the <span class='steptooltiphighlight'>Background.</span>",
+                        position: 'left'
+                    }
+                ]
+            },
+            {
+                // Step 22
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation.svg',
+                hotspots: [
+                    {
+                        x: 28.5, y: 7, width: 71, height: 92,
+                        tooltip: "You can Create a <span class='steptooltiphighlight'>New Note</span> In the <span class='steptooltiphighlight'>Chat</span> to keep <span class='steptooltiphighlight'>Note</span> of <span clas='steptooltiphighlight'>Important</span> Things.",
+                        position: 'left'
+                    }
+                ]
+            },
+            {
+                //step 23                                                                           
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation2.svg',
+                hotspots: [
+                    {
+                        x: 92.8, y: 92, width: 5, height: 5,
+                        tooltip: "After taking the notes, Click <span class='steptooltiphighlight'>Create</span> to <span class='steptooltiphighlight'>Create and Save</span> new note.",
+                        position: 'left'
+                    }
+                ]
+            },
+            {
+                // Step 24
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNoteCreation3.svg',
+                hotspots: [
+                    {
+                        x: 29, y: 24, width: 17, height: 11,
+                        tooltip: "You can see all your <span class='steptooltiphighlight'>previously saved notes</span> and also recheck and edit them."
+                    },
+                    {
+                        x: 82.3, y: 9.1, width: 2.5, height: 4
+                    }
+                ]
+            },
+            {
+                // Step 25
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatNotePinned.svg',
+                hotspots: [
+                    {
+                        x: 85.2, y: 9.1, width: 2.5, height: 4,
+                        tooltip: "The notes can also be <span class='steptooltiphighlight'>Pinned</span> to keep the important notes on top for quick access.",
+                        position: 'left'
+                    },
+                    {
+                        x: 28.5, y: 7, width: 73, height: 92,
+                    }
+                ]
+            },
+            {
+                // step 26
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder.svg',
+                hotspots: [
+                    {
+                        x: 88.5, y: 10, width: 2.5, height: 4,
+                        tooltip: "We can also create <span class='steptooltiphighlight'>Folders</span> inside the chat to keep stuff <span class='steptooltiphighlight'>Organised</span> and <span class='steptooltiphighlight'>easy to find<span>",
+                        position: 'bottom'
+                    },
+                    {
+                        x: 27.7, y: 7.4, width: 71, height: 92,
+                    },
+                ]
+            },
+            {
+                //Step 27
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder2.svg',
+                hotspots: [
+                    {
+                        x: 37.3, y: 40.5, width: 25.5, height: 19,
+                        tooltip: "Enter the <span class='steptooltiphighlight'>Name</span> of the folder you want to create and press the <span class='steptooltiphighlight'>Create</span> button to create the folder."
+                    }
+                ]
+            },
+            {
+                // Step 28
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFolder3.svg',
+                hotspots: [
+                    {
+                        x: 88.5, y: 10, width: 2.5, height: 4,
+                        tooltip: "We can also create <span class='steptooltiphighlight'>Folders</span> inside the chat to keep stuff <span class='steptooltiphighlight'>Organised</span> and <span class='steptooltiphighlight'>easy to find<span>",
+                        position: 'bottom'
+                    },
+                    {
+                        x: 27.7, y: 7.4, width: 71, height: 92
+                    },
+                ]
+            },
+            {
+                // Step 29
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile.svg',
+                hotspots: [
+                    {
+                        x: 27.7, y: 7.4, width: 72, height: 92,
+                        tooltip: "You can also add <span class='steptooltiphighlight'>Local Files</span> from your device to the chat folder section.",
+                        position: 'bottom'
+                    }
+                ]
+            },
+            {
+                // Step 30
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile2.svg',
+                hotspots: [
+                    {
+                        x: 37.5, y: 35, width: 25, height: 30,
+                        tooltip: "You can <span class='steptooltiphighlight'>Select</span> the file and the <span class='steptooltiphighlight'>add</span> them to upload into the folder section",
+                    }
+                ]
+            },
+            {
+                // Step 31
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationFile3.svg',
+                hotspots: [
+                    {
+                        x: 27.7, y: 7.4, width: 72, height: 92,
+                        tooltip: "You can see all your <span class='steptooltiphighlight'>important</span> files and also share them easily with anyone.",
+                        position: 'left',
+                    }
+                ]
+            },
+            {
+                // Step 32
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatComparison.svg',
+                hotspots: [
+                    {
+                        x: 27.7, y: 7.4, width: 72, height: 92,
+                        tooltip: "You can <span class='steptooltiphighlight'>View, Compare</span> multiple teams to measure <span class='steptooltiphighlight'>Performance</span> and <span class='steptooltiphighlight'>Evaluate</span> them.",
+                        position: 'left',
+                    }
+                ]
+            },
+            {
+                // Step 33
+                image: 'https://www.acepeak.com/wp-content/uploads/2026/01/TeamChatCreationEditTeam.svg',
+                hotspots: [
+                    {
+                        x: 55, y: 1, width: 45, height: 99,
+                        tooltip: "You can also <span class='steptooltiphighlight'>Edit</span>teams. <span class='steptooltiphighlight'>Add / Remove Members.</span>",
+                        position: 'left'
+                    }
+                ]
+            },
+            {   // Video Section
+                // Step 34
+                image: 'https://www.acepeak.com/wp-content/uploads/2025/12/VideoSection.svg',
+                hotspots: [
+                    {
+                        x: 0.9,
+                        y: 28.9,
+                        width: 4,
+                        height: 7,
+                        tooltip: '<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use Video to start or join meetings</span> instantly.</li><li><span class="steptooltiphighlight">Host face-to-face demos and webinars </span>without needing extra tools.</li><li><span class="steptooltiphighlight">Build trust faster</span> through real time interactions.</li><li><span class="steptooltiphighlight">Shorten the sales cycle</span> and increase the close rate with more engaging meetings.</li></ul>', position: 'right'
+                    }
                 ]
             },
             {
@@ -3223,14 +3415,14 @@
             preloadProgress = 0;
 
             console.log(`Starting to preload ${totalImages} unique images...`);
-            let starttime=Date.now()
+            let starttime = Date.now()
             // Preload first 35 images
             const firstBatch = uniqueImages.slice(0, 15);
             const remainingBatch = uniqueImages.slice(35);
 
             const preloadBatch = (batch) => {
                 const promises = batch.map((imagePath) => {
-                        return new Promise((resolve, reject) => {
+                    return new Promise((resolve, reject) => {
                         if (preloadedImages[imagePath]) {
                             resolve();
                             return;
@@ -3255,9 +3447,9 @@
             };
             // Preload first 15 images, then start demo
             return preloadBatch(firstBatch).then(() => {
-                let endtime=Date.now();
+                let endtime = Date.now();
                 console.log('✅ First batch of images preloaded, starting demo...');
-                console.log("Elapsed time to load first batch: ", (endtime-starttime)/1000, "s")
+                console.log("Elapsed time to load first batch: ", (endtime - starttime) / 1000, "s")
                 // Start the demo with first image
                 console.log('🚀 Starting demo with first batch images');
                 loadStep(0);
@@ -3441,7 +3633,7 @@
             loadStep(0);
             visitedSteps.clear()
         }
-        
+
         function startNextDemo() {
             hideTooltips();
             // Navigate to the Top-up Credit Demo
@@ -3812,9 +4004,9 @@
 
             firstStepOfTooltips = [1, 8, 14, 34, 40, 44, 49, 53, 60, 67, 74];
 
-            if ( firstStepOfTooltips.includes(stepIndex) ) {
+            if (firstStepOfTooltips.includes(stepIndex)) {
                 backBtn = document.querySelector(".tooltip-btn-back");
-                backBtn.style.display = "none";   
+                backBtn.style.display = "none";
             }
 
             // Trigger animation
@@ -4047,7 +4239,7 @@
         }
 
         function skipDemo() {
-            
+
         }
 
         function goToDemo(demoIndex) {
@@ -4184,7 +4376,7 @@
 
             let dotsHtml = '<div class="tour-dots">';
             for (let i = 0; i < totalSectionSteps; i++) {
-                const stepIndex = sectionStartStep + i;              
+                const stepIndex = sectionStartStep + i;
                 const isVisited = visitedSteps.has(stepIndex);
                 const dotClass = isVisited ? 'tour-dot visited' : 'tour-dot';
                 dotsHtml += `<div class="${dotClass}"></div>`;
@@ -4371,4 +4563,5 @@
         };
     </script>
 </body>
+
 </html>
