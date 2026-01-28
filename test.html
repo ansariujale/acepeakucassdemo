@@ -3223,14 +3223,14 @@
             preloadProgress = 0;
 
             console.log(`Starting to preload ${totalImages} unique images...`);
-
+            let starttime=Date.now()
             // Preload first 35 images
             const firstBatch = uniqueImages.slice(0, 15);
             const remainingBatch = uniqueImages.slice(35);
 
             const preloadBatch = (batch) => {
                 const promises = batch.map((imagePath) => {
-                    return new Promise((resolve, reject) => {
+                        return new Promise((resolve, reject) => {
                         if (preloadedImages[imagePath]) {
                             resolve();
                             return;
@@ -3255,8 +3255,9 @@
             };
             // Preload first 15 images, then start demo
             return preloadBatch(firstBatch).then(() => {
+                let endtime=Date.now();
                 console.log('✅ First batch of images preloaded, starting demo...');
-
+                console.log("Elapsed time to load first batch: ", (endtime-starttime)/1000, "s")
                 // Start the demo with first image
                 console.log('🚀 Starting demo with first batch images');
                 loadStep(0);
@@ -4046,7 +4047,7 @@
         }
 
         function skipDemo() {
-
+            
         }
 
         function goToDemo(demoIndex) {
