@@ -4067,6 +4067,7 @@
             }
             else{
                 goToDemo(demoIndex+1)
+                demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
             }
             
         }
