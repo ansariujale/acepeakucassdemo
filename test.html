@@ -4064,6 +4064,7 @@
             const demoIndex= getDemoForStep(stepIndex)
             if (demoIndex === 10){
                 goToDemo(0);
+                demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
             }
             else{
                 goToDemo(demoIndex+1)
