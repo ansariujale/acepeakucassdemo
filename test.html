@@ -4062,16 +4062,33 @@
 
         function skipDemo(stepIndex){
             const demoIndex= getDemoForStep(stepIndex)
-            if (demoIndex === 10){
-                goToDemo(0);
-                demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
+            demoGroups[demoIndex].forEach(item=> visitedSteps.add(item))
+            
+            if(demoIndex === 10){
+                // goToDemo(0)
+                if(visitedSteps.size === 79){
+                    // console.log('Hora hai')
+                    hideTooltips()
+                    showAllTourCompletedTooltip()
+                }
+                else if(demoIndex === 10){
+                    goToDemo(0);
+                }
             }
             else{
-                goToDemo(demoIndex+1)
-                demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
+                demoGroups[demoIndex].forEach(item=> visitedSteps.add(item))
+                goToDemo(demoIndex + 1)
+                }
             }
             
-        }
+            // if (demoIndex === 10){
+            //     goToDemo(0);
+            // }
+            // else{
+            //     goToDemo(demoIndex+1)
+            //     demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
+            // }
+            
 
         function goToDemo(demoIndex) {
             const steps = demoGroups[demoIndex];
@@ -4079,6 +4096,7 @@
                 closeModal();
                 goToStep(steps[0]);
             }
+            
         }
 
         // Keyboard navigation
@@ -4115,7 +4133,7 @@
 
             //Splitting the steps into different sections
             let dashboardSection = 7;
-            let phoneSection = 6;
+            let phoneSection = 14;
             let chatSection = 20;
             let videoSection = 6;
             let inboxSection = 4;
