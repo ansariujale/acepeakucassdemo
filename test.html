@@ -250,23 +250,26 @@
         }
 
         .hotspot.step-49 {
-            border-radius: 25px !important;
-        }
-
-        .hotspot.step-50 {
             border-radius: 11px !important;
         }
 
+        .hotspot.step-50 {
+            border-radius: 20px !important;
+        }
+
         .hotspot.step-53 {
-            border-radius: 7px !important;
+            border-radius: 11px !important;
         }
 
         .hotspot.step-54 {
             border-radius: 11px !important;
         }
 
+        .hotspot.step-57 {
+            border-radius: 20px !important;
+        }
         .hotspot.step-60 {
-            border-radius: 5px !important;
+            border-radius: 15px !important;
         }
 
         .hotspot.step-63 {
@@ -282,11 +285,11 @@
         }
 
         .hotspot.step-68 {
-            border-radius: 11px !important;
+            border-radius: 7px !important;
         }
 
         .hotspot.step-69 {
-            border-radius: 15px !important;
+            border-radius: 11px !important;
         }
 
         .hotspot.step-70 {
@@ -2914,11 +2917,13 @@
                // Step 42
                image:'https://www.acepeak.com/wp-content/uploads/2026/01/VideoSection-scaled.webp',
                hotspots:[
-                   {   x:0.9,
+                   {
+                    x:0.9,
                     y:28.9,
                     width:4,
                     height:7,
-                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use Video to start or join meetings</span> instantly.</li><li><span class="steptooltiphighlight">Host face-to-face demos and webinars </span>without needing extra tools.</li><li><span class="steptooltiphighlight">Build trust faster</span> through real time interactions.</li><li><span class="steptooltiphighlight">Shorten the sales cycle</span> and increase the close rate with more engaging meetings.</li></ul>', position:'right'}
+                    tooltip:'<ul class="tooltip-bullet-list"><li><span class="steptooltiphighlight">Use Video to start or join meetings</span> instantly.</li><li><span class="steptooltiphighlight">Host face-to-face demos and webinars </span>without needing extra tools.</li><li><span class="steptooltiphighlight">Build trust faster</span> through real time interactions.</li><li><span class="steptooltiphighlight">Shorten the sales cycle</span> and increase the close rate with more engaging meetings.</li></ul>', position:'right'
+                }
                 ]
             },
             {
@@ -4100,7 +4105,7 @@
             // Append to overlay layer instead of hotspot for proper positioning
             document.getElementById('overlayLayer').appendChild(tooltip);
 
-            firstStepOfTooltips = [1, 8, 14, 34, 40, 44, 49, 53, 60, 67, 74];
+            firstStepOfTooltips = [1, 8, 22, 42, 48, 52, 57, 61, 68, 75, 82];
 
                 const backBtn = document.querySelector(".tooltip-btn-back");
                 const isFirstStep = firstStepOfTooltips.includes(stepIndex);
