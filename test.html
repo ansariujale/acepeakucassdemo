@@ -2584,11 +2584,12 @@
                 image:"mainassets/PhoneSection(callMerge).svg",
                 hotspots:[
                     {
-                        x: 46.2,
-                        y: 50,
-                        width: 10,
-                        height: 35,
-                        tooltip: "abcd"
+                        x: 51.5,
+                        y: 18.3,
+                        width: 24.6,
+                        height: 70.5,
+                        tooltip: "Combine multiple active lines into a single conversation effortlessly. Use the dialer to <span class='steptooltiphighlight'>add a new participant</span> or <span class='steptooltiphighlight'>select contacts from your existing list</span>. Once connected, tap <span class='steptooltiphighlight'>merge</span> to bring everyone together for a seamless, high-quality call.",
+                        position:"left"
                     }
                 ]
             },
@@ -2601,8 +2602,8 @@
                         y:32.3,
                         width: 24.3,
                         height: 56,
-                        tooltip: "ai assistant call translation"
-
+                        tooltip: "Break down <span class='steptooltiphighlight'>language barriers</span> instantly during your calls. The <span class='steptooltiphighlight'>AI-powered</span> tool <span class='steptooltiphighlight'>translates your conversation in real-time</span>, displaying text in the chat window so you can communicate fluently with global contacts regardless of language differences.",
+                        position: "left",
                     }
                 ]
             },
@@ -2615,7 +2616,8 @@
                         y:32.3,
                         width: 24.3,
                         height: 56,
-                        tooltip: "ai assistant call translation"
+                        tooltip: "Use the <span class='steptooltiphighlight'>chat interface</span> to <span class='steptooltiphighlight'>send queries</span> and <span class='steptooltiphighlight'>receive immediate guidance</span>, ensuring you have the right data at your fingertips while staying connected.",
+                        position:"left",
 
                     }
                 ]
@@ -2629,8 +2631,8 @@
                         y:32.3,
                         width: 24.3,
                         height: 56,
-                        tooltip: "ai assistant call translation"
-
+                        tooltip: "Effortlessly handle incoming calls with quick actions <span class='steptooltiphighlight'>like Answer, Decline, or Decline with message</span>.",
+                        position:"left"
                     }
                 ]
             },
@@ -2643,7 +2645,8 @@
                         y:32.3,
                         width: 24.3,
                         height: 56,
-                        tooltip: "ai assistant call translation"
+                        tooltip: "Effortlessly manage your calls by using the <span class='steptooltiphighlight'>Merge button</span> to <span class='steptooltiphighlight'>combine</span> active lines into a <span class='steptooltiphighlight'>conference</span> or the <span class='steptooltiphighlight'>Transfer button</span> to route callers to another extension.",
+                        position:"left"
 
                     }
                 ]
@@ -2657,8 +2660,8 @@
                         y:32.3,
                         width: 24.3,
                         height: 56,
-                        tooltip: "ai assistant call translation"
-
+                        tooltip: "Use the <span class='steptooltiphighlight'>Recording button</span> to <span class='steptooltiphighlight'>capture and save</span> your active conversations for later review or compliance. <span class='steptooltiphighlight'>Easily toggle</span> this feature <span class='steptooltiphighlight'>on and off</span> during any ongoing call to ensure important details are <span class='steptooltiphighlight'>never missed</span>.",
+                        position:"left"
                     }
                 ]
             },
@@ -2671,7 +2674,7 @@
                         y:32.3,
                         width: 24.3,
                         height: 56,
-                        tooltip: "ai assistant call translation"
+                        tooltip: "Easily manage <span class='steptooltiphiglight'>multiple active lines</span> by <span class='steptooltiphiglight'>viewing all</span> participants in a <span class='steptooltiphiglight'>single list</span>, where you can <span class='steptooltiphiglight'>monitor call durations</span> and choose to disconnect specific callers individually or merge them into a conference"
 
                     }
                 ]
@@ -2685,8 +2688,8 @@
                         y:32.3,
                         width: 24.3,
                         height: 56,
-                        tooltip: "ai assistant call translation"
-
+                        tooltip: "<span class='steptooltiphiglight'>Expand your conversation</span> by using the <span class='steptooltiphiglight'>Add button</span> to dial a <span class='steptooltiphiglight'>new number</span> or select a <span class='steptooltiphiglight'>contact</span> from your list to bring them into the <span class='steptooltiphiglight'>ongoing call</span>.",
+                        position:"left"
                     }
                 ]
             },
@@ -4349,16 +4352,33 @@
 
         function skipDemo(stepIndex){
             const demoIndex= getDemoForStep(stepIndex)
-            if (demoIndex === 10){
-                goToDemo(0);
-                demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
+            demoGroups[demoIndex].forEach(item=> visitedSteps.add(item))
+            
+            if(demoIndex === 10){
+                // goToDemo(0)
+                if(visitedSteps.size === 79){
+                    // console.log('Hora hai')
+                    hideTooltips()
+                    showAllTourCompletedTooltip()
+                }
+                else if(demoIndex === 10){
+                    goToDemo(0);
+                }
             }
             else{
-                goToDemo(demoIndex+1)
-                demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
+                demoGroups[demoIndex].forEach(item=> visitedSteps.add(item))
+                goToDemo(demoIndex + 1)
+                }
             }
             
-        }
+            // if (demoIndex === 10){
+            //     goToDemo(0);
+            // }
+            // else{
+            //     goToDemo(demoIndex+1)
+            //     demoGroups[demoIndex].forEach(item=>visitedSteps.add(item));
+            // }
+            
 
         function goToDemo(demoIndex) {
             const steps = demoGroups[demoIndex];
@@ -4366,6 +4386,7 @@
                 closeModal();
                 goToStep(steps[0]);
             }
+            
         }
 
         // Keyboard navigation
