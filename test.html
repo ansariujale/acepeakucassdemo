@@ -3513,6 +3513,7 @@
             [82, 83, 84, 85, 86]      //Admin Demo
         ]
         let visitedSteps = new Set();
+        let visitedDemos= new Set();
         let currentStep = 0;
         let isTransitioning = false;
 
@@ -3535,8 +3536,8 @@
             console.log(`Starting to preload ${totalImages} unique images...`);
             let starttime = Date.now()
             // Preload first 35 images
-            const firstBatch = uniqueImages.slice(0, 15);
-            const remainingBatch = uniqueImages.slice(35);
+            const firstBatch = uniqueImages.slice(0, 20);
+            const remainingBatch = uniqueImages.slice(37);
 
             const preloadBatch = (batch) => {
                 const promises = batch.map((imagePath) => {
@@ -3895,7 +3896,7 @@
         function isDemoCompleted(demoIndex) {
             const steps = demoGroups[demoIndex];
             if (steps === demoGroups[demoIndex].length) {
-                visitedDemos.add(demoGroups[demoIndex])
+                visitedDemos.add(demoNames[demoIndex])
                 console.log("Visited Demo: ", visitedDemos)
             } else {
                 return steps.every(step => visitedSteps.has(step));
@@ -4372,24 +4373,23 @@
 
         function skipDemo(stepIndex){
             const demoIndex= getDemoForStep(stepIndex)
-            demoGroups[demoIndex].forEach(item=> visitedSteps.add(item))
+            demoGroups[demoIndex].forEach(item=> visitedSteps.add(item))      
+            const completedDemos = demoGroups.reduce((count, steps, index) => count + (isDemoCompleted(index) ? 1 : 0), 0);
             
-            if(demoIndex === 10){
-                // goToDemo(0)
-                if(visitedSteps.size === 79){
-                    // console.log('Hora hai')
-                    hideTooltips()
-                    showAllTourCompletedTooltip()
-                }
-                else if(demoIndex === 10){
-                    goToDemo(0);
-                }
+            if (completedDemos===11){
+                hideTooltips();
+                showAllTourCompletedTooltip();
             }
             else{
-                demoGroups[demoIndex].forEach(item=> visitedSteps.add(item))
-                goToDemo(demoIndex + 1)
+                if(demoIndex===10){
+                    goToDemo(0);
+                }
+                else{
+
+                    goToDemo(demoIndex+1);
                 }
             }
+        }
             
             // if (demoIndex === 10){
             //     goToDemo(0);
